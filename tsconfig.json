@@ -1,3 +1,5 @@
 {
   "extends": "astro/tsconfigs/strict"
 }
+
+// CMD Click will take you to the TS file.
