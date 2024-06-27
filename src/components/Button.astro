@@ -1,0 +1,112 @@
+---
+interface Props {
+  href: string;
+  size?: "md" | "lg";
+  full?: boolean;
+  style?: "outline" | "primary" | "secondary";
+  class?: string;
+  [x: string]: any;
+}
+
+const {
+  href,
+  full,
+  size = "lg",
+  style = "primary",
+  class: className,
+  ...rest
+} = Astro.props;
+
+const sizes = {
+  lg: "btn-lg",
+  md: "btn-md",
+};
+
+const styles = {
+  outline: "btn-outline",
+  primary: "btn-primary",
+  secondary: "btn-secondary",
+};
+---
+
+<style>
+  
+  .btn {
+    border-radius: 40px;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin: 8px 0;
+  }
+
+  .btn-lg {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    
+  }
+
+  .btn-md {
+    padding: 0.5rem 1rem;
+    font-size: .8rem;
+
+  }
+  
+
+  
+  /* Primary blue button */
+    .btn-primary {
+      background-color: var(--celtic-blue);
+      color: var(--white);
+      border: 2px solid transparent;
+    }
+
+    .btn-primary:hover {
+        background-color: var(--cornflower-blue);
+    }
+
+    .btn-outline {
+        background-color: var(--white);
+        border: 2px solid var(--celtic-blue);
+        color: var(--celtic-blue);
+    }
+
+    .btn-outline:hover {
+        background-color: var(-cornflower-blue);
+    }
+    
+ /* Secondary pink button */
+    .btn-secondary {
+      background-color: var(--melon);
+      color: var(--white);
+      border: 2px solid transparent;
+    }
+
+    .btn-secondary:hover {
+        background-color: var(--tea-rose);
+    }
+
+  .full {
+    width: 100%;
+  }
+
+  .btn-primary.dropdown-btn {
+      font-size: 1.6rem !important;
+  }
+
+
+</style>
+
+<a
+  href={href}
+  {...rest}
+  class={[
+    "btn",
+    full ? "full" : "",
+    sizes[size],
+    styles[style],
+    className,
+  ].filter(Boolean).join(' ')}
+><slot /></a>

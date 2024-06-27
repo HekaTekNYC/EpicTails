@@ -1,75 +1,165 @@
 ---
-import ThemeToggler from "./ThemeToggler.astro";
+import Button from "./Button.astro";
 ---
 
+
+
 <nav>
-  <ul>
-    <li>
-      <a href="/">Home</a>
-    </li>
+  <a href="/" class="logo" >
+    <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719508987/EPIC_v2y3q7.png" alt="epic tails logo" 
+    height="50">
+  </a>
 
-    <li>
-      <a href="/philosophies">Philosophies</a>
-    </li>
-
-    <li>
-      <a href="/beyond-tech">Beyond technology</a>
-    </li>
-  </ul>
-
-  <ThemeToggler />
+  <img src="icons/hamburger-menu.svg" alt="hamburger icon" height="35" class="hamburger"/>
+  
+  <!-- top banner -->
+  <div class="top-nav">
+    <!-- contact info -->
+    <div class="contact-nav">
+      <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719509043/email_loxjqv.svg" alt="email icon">
+      <p>info@epictails.com</p>
+      <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719509197/phone_fhe49v.svg" alt="phone icon">
+      <p>917-555-4444</p>
+      <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719514204/clock_owdtd3.svg" alt="clock icon">
+      <p>Sun - Fri (8AM - 8PM)</p>
+    </div>
+    <!-- social icons -->
+    <div class="socials-nav">
+      <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719513150/facebook_etf7ak.svg" alt="facebook icon">
+      <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719512521/x_ot4bow.svg" alt="x icon">
+      <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719513934/instagram_t6awxz.svg" alt="instagram icon">
+    </div>
+  </div>
+  <!-- navigation menu -->
+  <div class="lower-nav ">
+    <ul>
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/about">About</a>
+      </li>
+      <li>
+        <a href="/services">Services</a>
+      </li>
+      <li>
+        <a href="/services">Contact</a>
+      </li>
+      <li>
+        <a href="/blog">Blog</a>
+      </li>
+    </ul>
+    <Button href="#" size="lg" style="primary"  class="dropdown-btn">Book Now</Button>
+  </div>
 </nav>
+
+
+
 
 <style>
   nav {
+    position: sticky;
+    height: 70px;
+    width: 100%;
+    background-color: var(--white);
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 30px;
+    /* box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px; */
+
+  }
+  
+  .logo {
     display: flex;
-    align-items: flex-start;
-    padding: 2rem 0;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hamburger {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
   }
 
-  ul {
+  .top-nav {
+    display: none;
+  }
+
+  .lower-nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
     display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    margin: 0 auto 0 0;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  
   }
 
-  nav li {
-    opacity: 0.8;
-    list-style: none;
-    font-size: 0.95rem;
+  .lower-nav.active {
+    display: flex;
+  }
+  .lower-nav a {
+    font-size: 1.6rem;
+    font-weight: 500;
   }
 
-  a {
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-    text-decoration: none;
+  .lower-nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 60%;
+    margin-bottom:  30px;
+
+  }
+a:hover {
+  color: var( --celtic-blue);
+}
+    
+  /* X-Small devices (None specified, assumed to be default styles) */
+  /* Small devices (sm) - 576px and above */
+  @media (min-width: 576px) {
+    /* Your styles for small devices */
   }
 
-  a {
-    color: var(--grey-400);
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-    text-decoration: none;
+  /* Medium devices (md) - 768px and above */
+  @media (min-width: 768px) {
+    /* Your styles for medium devices */
   }
 
-  a:hover {
-    color: var(--grey-900);
+  /* Large devices (lg) - 992px and above */
+  @media (min-width: 992px) {
+    /* Your styles for large devices */
   }
 
-  a.active {
-    background: var(--grey-900);
-    color: var(--background);
+  /* Extra large devices (xl) - 1200px and above */
+  @media (min-width: 1200px) {
+    /* Your styles for extra large devices */
   }
+
+  /* Extra extra large devices (xxl) - 1400px and above */
+  @media (min-width: 1400px) {
+    /* Your styles for extra extra large devices */
+  }
+
 </style>
 
 <script>
-  const { pathname } = window.location;
-  const activeNavigationElement = document.querySelector(
-    `nav a[href="${pathname}"]`
-  );
 
-  if (activeNavigationElement) {
-    activeNavigationElement.classList.add("active");
-  }
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const dropdownNav = document.querySelector('.lower-nav');
+
+    if (hamburger && dropdownNav) {
+      hamburger.addEventListener('click', () => {
+        dropdownNav.classList.toggle('active');
+      });
+    }
+  });
+
+
 </script>
