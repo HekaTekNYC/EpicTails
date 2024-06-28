@@ -8,14 +8,35 @@ export type Props = {
   gradientTo: string;
 };
 ---
+<div class="service-card-container">
+  <div class="service-blob">
+    <img/>
+  </div>
+  <div class="service-info">
+    <img />
+    <h4></h4>
+    <p></p>
+    <div class="service-read-more">
+      <img />
+      <p></p>
+    <div>
+  </div>
+  <div class="service-paws">
+    <img />
+  </div>
+</div>
+
+
 
 <a href={to} class="card" data-gradientfrom={gradientFrom}>
   <div class="card__inner">
     <div class="card__title">{title}</div>
     <!-- Render the arrow via HTML entity -->
-    <div class="card__footer">&rarr;</div>
+   <div class="card__footer">&rarr;</div>
   </div>
 </a>
+
+
 
 <style define:vars={{ gradientFrom, gradientTo }}>
   .card {
