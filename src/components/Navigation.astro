@@ -2,164 +2,174 @@
 import Button from "./Button.astro";
 ---
 
-
-
-<nav>
-  <a href="/" class="logo" >
-    <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719508987/EPIC_v2y3q7.png" alt="epic tails logo" 
-    height="50">
+<nav class="nav-bar" aria-label="Primary navigation">
+  <a href="/" class="logo" aria-label="Home">
+    <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719536256/epic-logo_ga6k5l.png" alt="Epic Tails logo" height="50">
   </a>
 
-  <img src="icons/hamburger-menu.svg" alt="hamburger icon" height="35" class="hamburger"/>
+  <button aria-label="Toggle navigation" class="hamburger">
+    <img src="icons/hamburger-menu.svg" alt="hamburger icon" height="35"/>
+  </button>
   
-  <!-- top banner -->
-  <div class="top-nav">
-    <!-- contact info -->
-    <div class="contact-nav">
-      <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719509043/email_loxjqv.svg" alt="email icon">
-      <p>info@epictails.com</p>
-      <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719509197/phone_fhe49v.svg" alt="phone icon">
-      <p>917-555-4444</p>
-      <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719514204/clock_owdtd3.svg" alt="clock icon">
-      <p>Sun - Fri (8AM - 8PM)</p>
-    </div>
-    <!-- social icons -->
-    <div class="socials-nav">
-      <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719513150/facebook_etf7ak.svg" alt="facebook icon">
-      <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719512521/x_ot4bow.svg" alt="x icon">
-      <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719513934/instagram_t6awxz.svg" alt="instagram icon">
-    </div>
-  </div>
-  <!-- navigation menu -->
-  <div class="lower-nav ">
+  <!-- Navigation menu -->
+  <div class="nav-links">
     <ul>
-      <li>
-        <a href="/">Home</a>
-      </li>
-      <li>
-        <a href="/about">About</a>
-      </li>
-      <li>
-        <a href="/services">Services</a>
-      </li>
-      <li>
-        <a href="/services">Contact</a>
-      </li>
-      <li>
-        <a href="/blog">Blog</a>
-      </li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/services">Services</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/blog">Blog</a></li>
     </ul>
-    <Button href="#" size="lg" style="primary"  class="dropdown-btn">Book Now</Button>
+    <Button href="#" size="lg" style="secondary" class="booking-btn">Book Now</Button>
   </div>
 </nav>
-
-
-
 
 <style>
   nav {
     position: sticky;
-    height: 70px;
-    width: 100%;
+    top: 0;
     background-color: var(--white);
     display: flex; 
     justify-content: space-between;
     align-items: center;
     padding: 5px 30px;
-    /* box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px; */
-
+    height: 90px;
+    width: 100%;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    z-index: 1000; 
   }
   
   .logo {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
   }
   
   .hamburger {
     height: 40px;
     width: 40px;
     cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
   }
 
-  .top-nav {
+  .nav-links {
     display: none;
   }
 
-  .lower-nav {
+  .nav-links.active {
+    display: flex;
     position: absolute;
-    top: 70px;
+    top: 90px;
     left: 0;
     width: 100%;
-    height: 100vh;
-    display: flex;
+    height: 85vh;
     flex-direction: column;
     align-items: center;
-    display: none;
-  
+    padding: 40px 0;
+    background-color: var(--white);
   }
 
-  .lower-nav.active {
-    display: flex;
-  }
-  .lower-nav a {
+  .nav-links a {
     font-size: 1.6rem;
-    font-weight: 500;
+    font-weight: 700;
   }
 
-  .lower-nav ul {
+  .nav-links a:hover {
+    font-weight: 700;
+  }
+  .nav-links > ul > li > a:hover {
+    color: var(--sapphire);
+  }
+
+  .nav-links ul {
+    font-family: "Quicksand", sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     height: 60%;
-    margin-bottom:  30px;
-
-  }
-a:hover {
-  color: var( --celtic-blue);
-}
-    
-  /* X-Small devices (None specified, assumed to be default styles) */
-  /* Small devices (sm) - 576px and above */
-  @media (min-width: 576px) {
-    /* Your styles for small devices */
+    margin-bottom: 30px;
   }
 
-  /* Medium devices (md) - 768px and above */
+
   @media (min-width: 768px) {
-    /* Your styles for medium devices */
+    nav {
+      padding: 5px 40px;
+    }
   }
 
-  /* Large devices (lg) - 992px and above */
   @media (min-width: 992px) {
-    /* Your styles for large devices */
+    nav {
+      padding: 5px 60px;
+      height: 92px;
+    }
+
+    .hamburger {
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+      position: static;
+      height: auto;
+      padding: 0;
+      background: none; 
+    }
+
+    .nav-links ul {
+      flex-direction: row;
+      justify-content: flex-end;
+      margin: 0 10px 0 0;
+    }
+
+    .nav-links li {
+      margin: 0 10px;
+    }
+
+    .nav-links a {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
   }
 
-  /* Extra large devices (xl) - 1200px and above */
   @media (min-width: 1200px) {
-    /* Your styles for extra large devices */
+    /* Extra large devices styles */
   }
 
-  /* Extra extra large devices (xxl) - 1400px and above */
   @media (min-width: 1400px) {
-    /* Your styles for extra extra large devices */
+    /* Extra extra large devices styles */
   }
-
 </style>
 
 <script>
-
-document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
-    const dropdownNav = document.querySelector('.lower-nav');
+    const dropdownNav = document.querySelector('.nav-links');
+    const mediaQuery = window.matchMedia('(min-width: 992px)');
 
     if (hamburger && dropdownNav) {
+      // Event listener for the hamburger menu click
       hamburger.addEventListener('click', () => {
         dropdownNav.classList.toggle('active');
       });
+
+      mediaQuery.addEventListener('change', (e) => {
+        if (e.matches) {
+          // Remove active class if the viewport is 992px or wider
+          dropdownNav.classList.remove('active');
+        }
+      });
+
+      // Initial check for viewport width
+      if (mediaQuery.matches) {
+        dropdownNav.classList.remove('active');
+      }
     }
   });
-
-
 </script>

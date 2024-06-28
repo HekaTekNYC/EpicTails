@@ -61,11 +61,16 @@ const styles = {
       background-color: var(--celtic-blue);
       color: var(--white);
       border: 2px solid transparent;
+      border-radius: 20px;
     }
 
     .btn-primary:hover {
         background-color: var(--cornflower-blue);
+        color: var(--white);
     }
+    .btn-primary a:hover, .btn-primary a:focus, .btn-primary a:active {
+        color: var(--white);
+    } 
 
     .btn-outline {
         background-color: var(--white);
@@ -79,23 +84,43 @@ const styles = {
     
  /* Secondary pink button */
     .btn-secondary {
-      background-color: var(--melon);
+      background-color: var(--light-red);
       color: var(--white);
+
       border: 2px solid transparent;
     }
 
     .btn-secondary:hover {
-        background-color: var(--tea-rose);
+        background-color: var(--light-coral);
+ 
     }
 
   .full {
     width: 100%;
   }
 
-  .btn-primary.dropdown-btn {
+  .btn-primary.booking-btn {
       font-size: 1.6rem !important;
   }
 
+/* Large devices (lg) - 992px and above */
+@media (min-width: 992px) {
+  /* Your styles for large devices */
+  .btn-primary.booking-btn {
+    padding: 0.8rem 1rem;
+    font-size: 1.2rem !important;  
+  }
+}
+
+/* Extra large devices (xl) - 1200px and above */
+@media (min-width: 1200px) {
+  /* Your styles for extra large devices */
+}
+
+/* Extra extra large devices (xxl) - 1400px and above */
+@media (min-width: 1400px) {
+  /* Your styles for extra extra large devices */
+}
 
 </style>
 

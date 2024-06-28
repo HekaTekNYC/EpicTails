@@ -2,7 +2,7 @@ html {
   --background: #ffffff;
   --white: #ffffff;
   /* Greys */
-  --outer-space: #303030;
+  --outer-space: #282828;
   --gray: #808386;
   --antiflash-white: #f1f1f2;
   /* Greens */
@@ -10,12 +10,15 @@ html {
   --ice-blue: #98eceb;
   --celeste: #bffaf9;
   /* Blues */
+  --sapphire: #2452a7;
   --celtic-blue: #4c76c4;
   --cornflower-blue: #7099e4;
   --jordy-blue: #a4c1f7;
   --periwinkle: #cbddfb;
   --ghost-white: #f4f6ff;
   /* Pinks */
+  --light-red: #f67c79;
+  --light-coral: #f89290;
   --melon: #f9a8a7;
   --tea-rose-red: #ffbfbf;
   --tea-rose: #ffcfcf;
@@ -63,7 +66,7 @@ h1 + h2 {
 }
 
 main {
-  max-width: 90rem;
+  max-width: 100%;
   margin: auto;
 }
 
