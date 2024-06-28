@@ -1,0 +1,49 @@
+---
+import Button from "./Button.astro"
+---
+
+<section class="hero-section">
+    <div class="hero-left">
+        <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719590265/paw-prints-celeste_z4rpmx.png" alt="celeste blue colored paw prints">
+        <div class="hero-img-group">
+            <div class="blob-left">
+                <img src="/images/blob-1.svg" alt="pastel pink blob">
+            </div>
+            <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719512239/russian-blue_ycnauo.webp" alt="russian blue cat with green eyes sitting">
+        </div>
+    </div>
+    <div class="hero-header">
+        <h1>Caring for Your Pets Like They're Our Own</h1>
+        <h2> Providing compassionate and attentive pet sitting services that prioritize your pet's comfort and well-being, because e treat them like family.</h2>
+        <Button href="#" size="lg" style="primary" class="booking-btn">Book Now</Button>
+    </div>
+    <div class="hero-right">
+        <div class="blob-right">
+            <img src="/images/blob-2.svg" alt="light blue blob">
+        </div>
+        <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719513045/golden-lab_yojrju.webp" alt="golden labrador retriever sitting looking happy">
+    </div>
+</section>
+
+<style>
+    .hero-left {
+        display: none;
+    }
+
+    .hero.header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-header h1 {
+        text-align: center;
+        
+    }
+
+    .hero-right {
+        display: none
+    }
+
+</style>
