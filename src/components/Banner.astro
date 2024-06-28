@@ -16,11 +16,24 @@
         </div>
     </div>
     <!-- social icons -->
-    <div class="socials-nav">
-      <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719513150/facebook_etf7ak.svg" alt="facebook icon">
-      <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719512521/x_ot4bow.svg" alt="x icon">
-      <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719513934/instagram_t6awxz.svg" alt="instagram icon">
-    </div>
+    <ul class="social-nav">
+        <li class="banner-fb">
+            <a href="#" aria-label="Facebook Link">
+                <img src="/icons/facebook.svg" alt="facebook icon" height="25">
+            </a>
+        </li>
+        <li class="banner-x">
+            <a href="#" aria-label="Twitter Link">
+                <img src="/icons/x.svg" alt="twitter icon" height="25">
+            </a>
+        </li>
+        <li class="banner-insta">
+            <a href="#" aria-label="Instagram Link">
+                <img src="/icons/instagram.svg" alt="instagram icon" height="25">
+            </a>
+        </li>
+    </ul>
+  
   </div>
 
   <style>
@@ -62,6 +75,37 @@
         .contact-hours img {
         margin: 3px 3px 0 10px;
         }
+
+        .social-nav {
+        display: flex;
+        list-style-type: none; 
+        margin: 0;
+        padding: 0;
+        }
+
+        .social-nav li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px; 
+        }
+
+        .social-nav a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .banner-x img,
+        .banner-fb img,
+        .banner-insta img {
+            border: 1px solid var(--white);
+            border-radius: 40px;
+            padding: 4px;
+            margin: 0 2px;
+            cursor: pointer;
+        }
+
         
     }
 
