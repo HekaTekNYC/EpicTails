@@ -1,8 +1,13 @@
+:root {
+  --gelica: "gelica", sans-serif;
+  --bryant: "bryant-web", sans-serif;
+}
+
 html {
   --background: #ffffff;
   --white: #ffffff;
   /* Greys */
-  --outer-space: #282828;
+  --outer-space: #444548;
   --gray: #808386;
   --antiflash-white: #f1f1f2;
   /* Greens */
@@ -24,10 +29,13 @@ html {
   --tea-rose: #ffcfcf;
   --misty-rose: #ffdfdf;
   --snow: #fff7f7;
+
 }
 
 body {
-  font-family: "Questrial", sans-serif;
+  font-family: var(--bryant);
+font-weight: 400;
+font-style: normal;
   margin: 0;
   padding: 0;
   color: var(--outer-space);
@@ -52,22 +60,74 @@ ul {
   padding: 0;
 }
 
+/* hero */
 h1 {
-  font-family: "Quicksand", sans-serif;
-  font-size: 2rem;
+  font-family: var(--gelica);
+  font-weight: 900;
+  font-size: 2.6rem;
   line-height: 1;
+  color: var(--outer-space);
+  margin: 0;
 }
 
-h1 + h2 {
-  font-size: 1.1rem;
-  margin-top: -1.4rem;
-  opacity: 0.9;
+/* all header sections */
+h2 {
+  font-family: var(--gelica);
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.9rem;
+  line-height: 1.2;
+  color: var(--outer-space);
+  margin: 0;
+}
+
+/* above the h2 and h1 */
+h3 {
+  font-family: var(--bryant);
+  font-size: 2rem;
   font-weight: 400;
+  line-height: 2.2rem;
+  text-transform: uppercase;
+  color: var(--light-red)
+  margin: 0;
+}
+
+/* Card headers and employee names and section internal header */
+h4 {
+  font-family: var(--bryant);
+  font-size: 1.375rem;
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--celtic-blue)
+  margin: 0;
+}
+
+h5 {
+  font-family: var(--bryant);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--light-red)
+  margin: 0;
+}
+
+
+/* mini subheaders */
+h6 {
+  font-family: var(--bryant);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--light-red)
+  margin: 0;
 }
 
 main {
   max-width: 100%;
   margin: auto;
+}
+p {
+  font-family: var(--bryant);
+  font-weight: 400;
+  font-style: normal;
 }
 
 p,
