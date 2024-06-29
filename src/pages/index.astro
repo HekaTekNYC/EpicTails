@@ -1,6 +1,7 @@
 ---
 import Cards from "../components/BlogCards.astro";
 import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
 import Main from "../layouts/Main.astro";
 
 const profilePicture = "https://i.imgur.com/JPGFE75.jpg";
@@ -15,6 +16,7 @@ const blogs = await Astro.glob<{
 
 <Main title="Epic Tails">
   <Hero />
+  <About/>
 
 
 </Main>
