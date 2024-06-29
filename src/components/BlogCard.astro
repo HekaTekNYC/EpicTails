@@ -1,23 +1,41 @@
 ---
-const { title, to, gradientFrom, gradientTo } = Astro.props;
+const { title, blogBody, blogTag, blogCal, blogImage } = Astro.props;
 
 export type Props = {
   to: string;
   title: string;
-  gradientFrom: string;
-  gradientTo: string;
+  blogBody: string;
+  blogTag: string;
+  blogCal: string;
+  blogImage: string;
 };
 ---
-
-<a href={to} class="card" data-gradientfrom={gradientFrom}>
-  <div class="card__inner">
-    <div class="card__title">{title}</div>
-    <!-- Render the arrow via HTML entity -->
-    <div class="card__footer">&rarr;</div>
+<img class="blog-container">
+  <img class="blog-img"/>{blogImage}</img>
+  <div class="blog-subheader">
+    <div class="blog-icons">
+      <img>{blogTag}<img/>      
+      <p></p>
+    <div>
+    <div class="blog-icons">
+      <img>{blogCal}<img/>   
+      <p></p>
+    <div>
   </div>
-</a>
+  <h2>{title}</h2>
+  <p>{blogBody}</p>
+  <button></button>
+</div>
 
-<style define:vars={{ gradientFrom, gradientTo }}>
+<!-- <a href={to} class="card" data-gradientfrom={gradientFrom}>
+  <div class="card__inner">
+    <div class="card__title">{title}</div> -->
+    <!-- Render the arrow via HTML entity -->
+    <!-- <div class="card__footer">&rarr;</div>
+  </div>
+</a> -->
+
+<style >
   .card {
     --radius: 10px;
 /* we are defining our props here to pass into our Cards component as variables within our index.astro */
