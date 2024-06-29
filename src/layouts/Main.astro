@@ -25,10 +25,6 @@ const { title } = Astro.props;
     <meta name="description" content="Epic Tails website" />
     <title>{title}</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Questrial&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-  
     <link rel="stylesheet" href="https://use.typekit.net/ixi4ixd.css">
 
     <!-- <script is:inline>
@@ -83,9 +79,16 @@ const { title } = Astro.props;
       <Banner />
       <NavigationBar />
 
-      <slot />
-
+      <div class="content-wrapper">
+        <slot />
+      </div>
       <!-- <Footer /> -->
     </main>
   </body>
 </html>
+
+<style>
+   <style>
+ 
+  </style>
+</style>
