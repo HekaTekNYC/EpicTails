@@ -82,13 +82,14 @@ h2 {
 }
 
 /* above the h2 and h1 */
+
 h3 {
   font-family: var(--bryant);
-  font-size: 2rem;
-  font-weight: 400;
+  font-size: 1.2rem;
+  font-weight: 600;
   line-height: 2.2rem;
   text-transform: uppercase;
-  color: var(--light-red)
+  color: var(--light-red);
   margin: 0;
 }
 
@@ -141,6 +142,43 @@ li {
   margin: 1rem 0;
 }
 
+#hero-section, #about-section {
+  padding: 0 40px;
+}
+
+/* X-Small devices (None specified, assumed to be default styles) */
+/* Small devices (sm) - 576px and above */
+@media (min-width: 576px) {
+  #hero-section, #about-section {
+    padding: 0 40px;
+  }
+}
+
+/* Medium devices (md) - 768px and above */
+@media (min-width: 768px) {
+  #hero-section, #about-section {
+    padding: 0 40px;
+  }
+}
+
+/* Large devices (lg) - 992px and above */
+@media (min-width: 992px) {
+  #hero-section, #about-section {
+    padding: 0 60px;
+  }
+}
+
+/* Extra large devices (xl) - 1200px and above */
+@media (min-width: 1200px) {
+  #hero-section, #about-section {
+    padding: 0 100px;
+  }
+}
+
+/* Extra extra large devices (xxl) - 1400px and above */
+@media (min-width: 1400px) {
+  /* Your styles for extra extra large devices */
+}
 /* X-Small devices (None specified, assumed to be default styles) */
 /* Small devices (sm) - 576px and above */
 @media (min-width: 576px) {

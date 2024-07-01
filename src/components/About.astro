@@ -2,20 +2,20 @@
 ---
 
 
-<section class="about-us-section">
+<section id="about-section">
     <div class="about-left-side">
         <div class="about-img-container">
-            <img class="about-img" alt="happy girls with their dogs"/>
+            <img src='https://res.cloudinary.com/daecnx7ih/image/upload/v1719690697/dog-kisses_neo4lv.webp' class="about-img" alt="Woman kissing her golden retriever"  width=420>
             <div class="yrs-exp-circle">
                 <p class="about-yrs-exp"><span class="about-10">10 +</span> Years of Experience </p>
             </div>
         </div>
-        <img class="bkg-blob"/>
+        <img src='images/about-blob.svg' class="about-blob" alt="pink blob behind woman kissing dog image" width=420/>
     </div>
     <div class="about-right-side">
-        <h3>ABOUT US</h3>
-        <h2></h2>
-        <p></p>
+        <h3>About Us</h3>
+        <h2>We Are the Best For Your <span style={{color: 'purple'}} >Pet Care</span> Services</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae fuga odio veritatis, id explicabo reprehenderit accusantium sequi dicta eveniet debitis necessitatibus quasi quibusdam blanditiis delectus. Sint porro sunt autem reiciendis?</p>
         <ul>
             <li><img/><p></p></li>
             <li><img/><p></p></li>
@@ -26,12 +26,61 @@
 </section>
 
 <style>
-    .about-us-section{
+    #about-section {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        height: 1000px;
     }
     .about-left-side {
         display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .about-img-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        z-index: 2;
+
+    }
+    .about-img {
+        position: absolute;
+        width: 320px;
+        /* height: 280px;
+        width: 420px; */
         
+    }
+    .about-blob {
+        position: absolute;
+        z-index: -1;
+        height: 380px;
+        /* left: 5px;
+        bottom: 0; */
+        transform: rotate(5deg)
+    }
+
+    .yrs-exp-circle {
+        display: flex;
+        position: absolute;
+        background-color: aquamarine;
+        border-radius: 50%;
+        border: 5px white;
+    }
+
+    .about-yrs-exp {
+
+       
+        
+    }
+    .about-right-side  {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 </style>
