@@ -20,7 +20,9 @@ html {
   --cornflower-blue: #7099e4;
   --jordy-blue: #a4c1f7;
   --periwinkle: #cbddfb;
+  --lavendar: #E0EAFF;
   --ghost-white: #f4f6ff;
+
   /* Pinks */
   --light-red: #f67c79;
   --light-coral: #f89290;
@@ -100,7 +102,7 @@ h4 {
   font-size: 1.375rem;
   line-height: 1.2;
   font-weight: 600;
-  color: var(--celtic-blue)
+  color: var(--sapphire);
   margin: 0;
 }
 
@@ -145,7 +147,7 @@ li {
   margin: 1rem 0;
 }
 
-.pink-font {
+.focus-font {
   color: var(--light-red)
 }
 
