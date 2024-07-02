@@ -1,5 +1,8 @@
 ---
 import Button from "./Button.astro"
+import HeroCards from "./HeroCards.astro"
+
+
 ---
 
 <section id="hero-section">
@@ -13,7 +16,7 @@ import Button from "./Button.astro"
         </div>
         <div class="hero-header">
             <h3>Pet Sitting & Dog Walking</h3>
-            <h1>Caring for <span class="pink-font">Your Pets</span> Like They're Our Own</h1>
+            <h1>Caring for <span class="focus-font">Your Pets</span> Like They're Our Own</h1>
             <p class="hero-p"> Providing compassionate and attentive pet sitting services that prioritize your pet's comfort and well-being, because we treat them like family.</p>
             <Button href="#" size="lg" style="primary" class="booking-btn">Book Now</Button>
         </div>
@@ -25,23 +28,42 @@ import Button from "./Button.astro"
         </div>
     </div>
     <div class="hero-points">
-
+        <HeroCards
+            heroCards={[
+            {
+                icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1719943945/pet-clock_oelilr.svg",
+                iconDesc: "icon of",
+                title: 'Professional Certification',
+            },
+            {
+                icon: 'https://res.cloudinary.com/daecnx7ih/image/upload/v1719943945/pet-clock_oelilr.svg',
+                iconDesc: "icon of clock with paw print",
+                title: 'Flexible Scheduling',
+            },
+            {
+                icon: 'https://res.cloudinary.com/daecnx7ih/image/upload/v1719943945/pet-clock_oelilr.svg',
+                iconDesc: "icon of",
+                title: 'Personalized Care',
+            },
+            ]}
+        />
     </div>
 </section>
 
 <style>
     #hero-section {
-        height: calc(100vh - 92px);
-        width: 100%;
         display: flex;
         flex-direction: column;
-      
+        height: auto;
+        width: 100%;
+        margin: 60px 0 40px 0;
     }
     .hero {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
+  
     }
 
 
@@ -76,17 +98,23 @@ import Button from "./Button.astro"
         display: none
  
     }
+    .hero-points {
+        margin: 50px 0;
+        display: flex;
+       justify-content: center;
+     
+    }
 
-/* Medium devices (md) - 768px and above */
-@media (min-width: 768px) {
-   
-}
 
-/* Large devices (lg) - 992px and above */
-
+/* Large devices (lg) - 1024px and above */
 @media (min-width: 1024px) {
     #hero-section {
-        height: calc(100vh - 128px);
+        /* height: calc(100vh - 128px); */
+        /* height: 90vh; */
+        max-height: 900px;
+    }
+    .hero {
+        height: 50vh;
     }
 
     
@@ -104,7 +132,7 @@ import Button from "./Button.astro"
         flex: 1;
         height: 100%;
         width: auto;
-        margin-bottom: 300px;
+        /* margin-bottom: 300px; */
       
     }
 
@@ -128,13 +156,13 @@ import Button from "./Button.astro"
         flex: 1;
         height: 100%;
         width: auto;
-        margin-bottom: 300px;
+        margin-bottom: 80px;
     }
 
     .hero-paws {
         position: absolute;
         z-index: -1;
-        top: 240px;
+        top: 30px;
         left: 0;
         width: 80px;
         height: auto;

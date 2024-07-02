@@ -1,32 +1,35 @@
 ---
-// Import the Card component
-import Card from "./BlogCard.astro";
+import HeroCard from "./HeroCard.astro";
 // Import the Card Props type
-import type { Props as CardProp } from "./BlogCard.astro";
+import type { Props as HeroCardProp } from "./HeroCard.astro";
 
 // defined the Props for this component
 type Props = {
-  cards: CardProp[]; // accepts an array of CardProps
+  heroCards: HeroCardProp[]; // accepts an array of CardProps
 };
 
-const { cards } = Astro.props;
+const { heroCards } = Astro.props;
 ---
 
-<div class="cards">
+<div class="hero-cards">
   {/** Dynamically render multiple Card components */}
-  {cards.map((card) => <Card {...card} />)}
+  {heroCards.map((card) => <HeroCard {...card} />)}
 </div>
 
 <style>
-  .cards {
+  .hero-cards {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
+    height: auto;
+    width: 100%;
   }
 
   /* Since this is standard CSS, we can have media queries here */
-  @media screen and (min-width: 768px) {
-    .cards {
+  @media screen and (min-width: 1024px) {
+    .hero-cards {
       flex-direction: row;
     }
   }
