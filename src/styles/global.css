@@ -34,10 +34,12 @@ html {
 
 body {
   font-family: var(--bryant);
-font-weight: 400;
-font-style: normal;
+  font-weight: 400;
+  font-style: normal;
   margin: 0;
   padding: 0;
+  height: 100%;
+  width: 100%;
   color: var(--outer-space);
   background: var(--background);
 }
@@ -122,9 +124,11 @@ h6 {
 }
 
 main {
-  max-width: 100%;
+  width: 100%;
   margin: auto;
+ 
 }
+
 p {
   font-family: var(--bryant);
   font-weight: 400;
@@ -142,14 +146,27 @@ li {
   margin: 1rem 0;
 }
 
+.pink-font {
+  color: var(--light-red)
+}
+
+.content-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+
+}
+
 #hero-section, #about-section {
+  
   padding: 0 40px;
+
 }
 
 /* X-Small devices (None specified, assumed to be default styles) */
 /* Small devices (sm) - 576px and above */
 @media (min-width: 576px) {
   #hero-section, #about-section {
+    
     padding: 0 40px;
   }
 }
@@ -173,31 +190,6 @@ li {
   #hero-section, #about-section {
     padding: 0 100px;
   }
-}
-
-/* Extra extra large devices (xxl) - 1400px and above */
-@media (min-width: 1400px) {
-  /* Your styles for extra extra large devices */
-}
-/* X-Small devices (None specified, assumed to be default styles) */
-/* Small devices (sm) - 576px and above */
-@media (min-width: 576px) {
-  /* Your styles for small devices */
-}
-
-/* Medium devices (md) - 768px and above */
-@media (min-width: 768px) {
-  /* Your styles for medium devices */
-}
-
-/* Large devices (lg) - 992px and above */
-@media (min-width: 992px) {
-  /* Your styles for large devices */
-}
-
-/* Extra large devices (xl) - 1200px and above */
-@media (min-width: 1200px) {
-  /* Your styles for extra large devices */
 }
 
 /* Extra extra large devices (xxl) - 1400px and above */

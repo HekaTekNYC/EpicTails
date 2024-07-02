@@ -1,24 +1,24 @@
 ---
 // Import the Card component
-import BlogCard from "./BlogCard.astro";
+import Card from "./BlogCard.astro";
 // Import the Card Props type
-import type { Props as BlogCardProp } from "./BlogCard.astro";
+import type { Props as CardProp } from "./BlogCard.astro";
 
 // defined the Props for this component
 type Props = {
-  blogCards: BlogCardProp[]; // accepts an array of CardProps
+  cards: CardProp[]; // accepts an array of CardProps
 };
 
-const { blogCards } = Astro.props;
+const { cards } = Astro.props;
 ---
 
-<div class="blog-cards">
+<div class="cards">
   {/** Dynamically render multiple Card components */}
-  {blogCards.map((card) => <BlogCard {...card} />)}
+  {cards.map((card) => <Card {...card} />)}
 </div>
 
 <style>
-  .blog-cards {
+  .cards {
     display: flex;
     flex-direction: column;
     gap: 1rem;
