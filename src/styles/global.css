@@ -6,14 +6,18 @@
 html {
   --background: #ffffff;
   --white: #ffffff;
+  
   /* Greys */
   --outer-space: #444548;
   --gray: #808386;
   --antiflash-white: #f1f1f2;
+
   /* Greens */
   --robin-egg-blue: #58d3d1;
   --ice-blue: #98eceb;
   --celeste: #bffaf9;
+  --light-mint: #e5ffff;
+
   /* Blues */
   --sapphire: #2452a7;
   --celtic-blue: #4c76c4;
@@ -92,7 +96,7 @@ h3 {
   font-weight: 600;
   line-height: 2.2rem;
   text-transform: uppercase;
-  color: var(--light-red);
+  color: var(--cornflower-blue);
   margin: 0;
 }
 
@@ -102,7 +106,7 @@ h4 {
   font-size: 1.375rem;
   line-height: 1.2;
   font-weight: 600;
-  color: var(--sapphire);
+  color: var(--outer-space);
   margin: 0;
 }
 
@@ -118,9 +122,9 @@ h5 {
 /* mini subheaders */
 h6 {
   font-family: var(--bryant);
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--light-red)
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--outer-space);
   margin: 0;
 }
 
@@ -134,14 +138,16 @@ p {
   font-family: var(--bryant);
   font-weight: 400;
   font-style: normal;
+  line-height: 1.5;
+  margin: 10px 0;
 }
 
-p,
+/* p,
 li {
   font-size: 1rem;
   color: var(--gray-400);
   opacity: 0.8;
-}
+} */
 
 li {
   margin: 1rem 0;
@@ -158,15 +164,18 @@ li {
 }
 
 #hero-section, #about-section {
-  
-  padding: 0 40px;
+  padding: 0 20px;
+}
 
+#services-section {
+  padding: 80px 20px;
+  background-color: var(--ghost-white);
 }
 
 /* X-Small devices (None specified, assumed to be default styles) */
 /* Small devices (sm) - 576px and above */
 @media (min-width: 576px) {
-  #hero-section, #about-section {
+  #hero-section, #about-section, #services-section {
     
     padding: 0 40px;
   }
@@ -174,21 +183,21 @@ li {
 
 /* Medium devices (md) - 768px and above */
 @media (min-width: 768px) {
-  #hero-section, #about-section {
+  #hero-section, #about-section, #services-section {
     padding: 0 40px;
   }
 }
 
 /* Large devices (lg) - 992px and above */
 @media (min-width: 992px) {
-  #hero-section, #about-section {
+  #hero-section, #about-section, #services-section {
     padding: 0 60px;
   }
 }
 
 /* Extra large devices (xl) - 1200px and above */
 @media (min-width: 1200px) {
-  #hero-section, #about-section {
+  #hero-section, #about-section, #services-section {
     padding: 0 100px;
   }
 }
