@@ -1,66 +1,65 @@
 ---
-const { title, to, gradientFrom, gradientTo } = Astro.props;
+import { string } from 'astro/zod';
+
+const { icon, iconDesc, title } = Astro.props;
 
 export type Props = {
-  to: string;
+  icon: string;
+  iconDesc: string;
   title: string;
-  gradientFrom: string;
-  gradientTo: string;
 };
 ---
 <div class="hero-card-container">
+  <div class="hero-icon-container">
+    <img src={icon} alt={iconDesc}>
+  </div>
+  <h4>{title}</h4>
 </div>
 
 
 
-<a href={to} class="card" data-gradientfrom={gradientFrom}>
-  <div class="card__inner">
-    <div class="card__title">{title}</div>
-    <!-- Render the arrow via HTML entity -->
-   <div class="card__footer">&rarr;</div>
-  </div>
-</a>
-
-
-
-<style define:vars={{ gradientFrom, gradientTo }}>
-  .card {
-    --radius: 10px;
-/* we are defining our props here to pass into our Cards component as variables within our index.astro */
-    background-image: linear-gradient(
-      to right,
-      var(--gradientFrom),
-      var(--gradientTo)
-    );
-    padding: 4px;
-    border-radius: var(--radius);
-    text-decoration: none;
-    transition: all 0.2s ease-in-out;
-  }
-
-  .card:hover {
-    transform: scale(0.95);
-  }
-
-  .card__inner {
-    background: var(--background);
-    padding: 1.5rem;
-    border-radius: var(--radius);
+<style >
+  .hero-card-container {
+    position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    height: 115px;
+    border: 2px solid var(--primary-dark);
+    border-radius: 10px;
+    margin-top: 50px;
+
   }
 
-  .card__title {
-    font-size: 1.2rem;
-    color: var(--grey-900);
-    font-weight: 500;
-    line-height: 1.75rem;
+  .hero-card-container h4 {
+    white-space: nowrap;
   }
 
-  .card__footer {
-    padding-top: 2rem;
-    font-size: 1.2rem;
-    color: var(--grey-900);
-    margin: auto 0 0 auto;
+  .hero-icon-container {
+    position: absolute;
+    top: -40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    border: 1px solid var(--primary-lighter);
+    border-radius: 50%;
+    background-color: var(--accent-medium);
   }
+
+  .hero-icon-container img {
+    width: 50px;
+    height: 50px;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-card-container {
+      width: 275px;
+    }
+  }
+
 </style>
