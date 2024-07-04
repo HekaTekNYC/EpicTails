@@ -1,145 +1,129 @@
 ---
-import Cards from "../components/BlogCards.astro";
+// import Cards from "../components/BlogCards.astro";
 import Hero from "../components/Hero.astro";
 import Main from "../layouts/Main.astro";
 import ServicesCards from "../components/ServicesCards.astro";
+import ContactForm from "../components/ContactForm.astro";
+import ContactInfo from "../components/ContactInfo.astro";
 
-const profilePicture = "https://i.imgur.com/JPGFE75.jpg";
 
 // Astro.glob
-const blogs = await Astro.glob<{
-  poster: string;
-  title: string;
-  subtitle: string;
-}>("../pages/blogs/*.md");
+// const blogs = await Astro.glob<{
+//   poster: string;
+//   title: string;
+//   subtitle: string;
+// }>("../pages/blogs/*.md");
+
+const servicesCardsData = [
+    {
+      icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
+      iconAlt: "cat icon",
+      title: "Cat and Critter Care",
+      desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
+    },
+    {
+      icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
+      iconAlt: "cat icon",
+      title: "Cat and Critter Care",
+      desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
+    },
+    {
+      icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
+      iconAlt: "cat icon",
+      title: "Cat and Critter Care",
+      desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
+    },
+    {
+      icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
+      iconAlt: "cat icon",
+      title: "Cat and Critter Care",
+      desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
+    },
+    {
+      icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
+      iconAlt: "cat icon",
+      title: "Cat and Critter Care",
+      desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
+    },
+    {
+      icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
+      iconAlt: "cat icon",
+      title: "Cat and Critter Care",
+      desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
+    },
+  ]
+
+  const contactInfoData = [
+  {
+    icon: "fa-solid fa-location-dot",
+    iconDesc: "locaion pin icon",
+    title: "Location",
+    desc: "777 Pacific St Brooklyn, NY 11111",
+  },
+  {
+    icon: "fa-regular fa-clock",
+    iconDesc: "clock icon",
+    title: "Hours",
+    desc: "Mon - Fri 8:00am - 8:00pm",
+  },
+  {
+    icon: "fa-solid fa-phone-volume",
+    iconDesc: "telephone icon",
+    title: "Telephone",
+    desc: "917-555-4444",
+  },
+  {
+    icon: "fa-regular fa-envelope",
+    iconDesc: "email icon",
+    title: "Email",
+    desc: "info@epictails.com",
+  },
+];
 ---
 
 <Main title="Epic Tails">
   <Hero />
   <div class="blue-section">
   <section id="services-section">
-  <ServicesCards  
-    servicesCards={[
-      {
-        icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-        iconAlt: "cat icon",
-        title: "Cat and Critter Care",
-        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-      },
-      {
-        icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-        iconAlt: "cat icon",
-        title: "Cat and Critter Care",
-        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-      },
-      {
-        icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-        iconAlt: "cat icon",
-        title: "Cat and Critter Care",
-        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-      },
-      {
-        icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-        iconAlt: "cat icon",
-        title: "Cat and Critter Care",
-        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-      },
-      {
-        icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-        iconAlt: "cat icon",
-        title: "Cat and Critter Care",
-        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-      },
-      {
-        icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-        iconAlt: "cat icon",
-        title: "Cat and Critter Care",
-        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-      },
-      ]}
-    />
+    <ServicesCards servicesCards={servicesCardsData} />
  
   </section>
-</div>
-  <!-- <Cards
-    cards={[
-      {
-        title: "Here are my guiding philosophies for life",
-        gradientFrom: "#818cf8",
-        gradientTo: "#d8b4fe",
-        to: "/philosophies",
-      },
-      {
-        title: "A summary of my work history",
-        gradientFrom: "#fde68a",
-        gradientTo: "#fca5a5",
-        to: "/work-summary",
-      },
-      {
-        title: "What I do beyond technology",
-        gradientFrom: "#6ee7b7",
-        gradientTo: "#9333ea",
-        to: "/beyond-tech",
-      },
-    ]}
-  /> -->
+  </div>
+  <section id="contact-section">
+    <div class="contact-container">
+      <div class="contact-left">
+
+        <ContactForm />
+      </div>
+      <div class="contact-right">
+        <h2>Get In Touch</h2>
+        <ContactInfo contactInfo={contactInfoData} />
+      </div>
+    </div>
+  </section>
+  
 </Main>
 
 <style>
-  .profile {
+
+
+  .contact-container {
     display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    padding: 1rem 0 3rem 0;
+    flex-direction: column;
+    align-items: center;
+    height: 900px;
+    margin: 75px 0;
   }
 
-  .profile__details {
-    flex: 1 0 300px;
+  .contact-left {
+    order: 2;
+    width: 100%;
   }
 
-  .profile__details > h1 {
-    margin-top: 0;
+  .contact-right {
+    order: 1;
+    width: 100%;
   }
 
-  .profile__picture {
-    border-radius: 50%;
-    margin: 0 2rem 1rem 0;
-  }
-
-  .featured-blogs {
-    margin: 0;
-    padding: 3rem 0 0 0;
-  }
-  .featured-blogs__title {
-    font-size: 2rem;
-    color: var(--gray-900);
-  }
-
-  .featured-blogs__description {
-    margin-top: -1.2rem;
-  }
-
-  .blogs {
-    font-size: 1rem;
-    font-weight: 500;
-  }
-
-  .blogs__list {
-    border-bottom: 1px solid;
-    border-color: var(--gray-200);
-  }
-
-  .blog__link {
-    opacity: 1;
-    height: 100%;
-    display: block;
-    padding: 1rem 0;
-    color: var(--gray-200);
-    text-decoration: none;
-    transition: opacity 0.2s ease-in-out;
-  }
-
-  .blog__link:hover {
-    opacity: 0.7;
-  }
 </style>
+

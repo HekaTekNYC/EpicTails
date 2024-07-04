@@ -1,0 +1,45 @@
+---
+import { string } from 'astro/zod';
+
+const { icon, title, desc } = Astro.props;
+
+export type Props = {
+
+  icon: string;
+  title: string;
+  desc: string;
+};
+---
+
+<div class="contact-list">
+  <div class="contact-icon">
+    <i class={icon} style="#444548"></i>
+  </div>
+  <div class="contact-details">
+    <h4>{title}</h4>
+    <p>{desc}</p>
+  </div>
+</div>
+
+<style>
+    .contact-list {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+    }
+
+    .contact-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 40px;
+      height: 40px;
+      width: 40px;
+      margin-right: 10px;
+      background: var(--accent-dark);
+    }
+
+    .contact-details p {
+      margin: 0;
+    }
+</style>
