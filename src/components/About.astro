@@ -5,6 +5,9 @@ import Button from "./Button.astro";
 
 
 <section id="about-section">
+    <!-- control your container height through the about contrainer and take off the left and right side heights -->
+    <!-- <div class="about-container">  -->
+    <div class="about-container">
         <div class="about-left-side">
             <div class="about-img-container">
                 <img class="about-img" src='https://res.cloudinary.com/daecnx7ih/image/upload/v1719690697/dog-kisses_neo4lv.webp' alt="Woman kissing her golden retriever"  width=420>
@@ -28,7 +31,7 @@ import Button from "./Button.astro";
             </ul>
             <Button href="#" size="lg" style="secondary" >Read More</Button>
         </div>
-  
+    </div>
 </section>
 
 <style>
@@ -42,7 +45,7 @@ import Button from "./Button.astro";
 
     /* about left side */
     .about-left-side {
-        position: relative;
+        /* position: relative; */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -61,6 +64,7 @@ import Button from "./Button.astro";
         z-index: 2;
     }
     .about-img {
+        position: absolute;
         width: 330px;  
         height: auto; 
        
