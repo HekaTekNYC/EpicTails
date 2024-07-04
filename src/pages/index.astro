@@ -1,6 +1,7 @@
 ---
 // import Cards from "../components/BlogCards.astro";
 import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
 import Main from "../layouts/Main.astro";
 import ServicesCards from "../components/ServicesCards.astro";
 import ContactForm from "../components/ContactForm.astro";
@@ -83,6 +84,7 @@ const servicesCardsData = [
 
 <Main title="Epic Tails">
   <Hero />
+  <About/>
   <div class="blue-section">
   <section id="services-section">
     <ServicesCards servicesCards={servicesCardsData} />

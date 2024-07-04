@@ -7,6 +7,7 @@ html {
   --background: #ffffff;
   --white: #ffffff;
   
+  
   /* Greys */
   --dark-gray: #444548;
   --medium-gray: #808386;
@@ -178,7 +179,8 @@ li {
 }
 
 .focus-font {
-  color: var(--secondary-darkest)
+  color: var(--secondary-darkest);
+  white-space: nowrap;
 }
 
 .content-wrapper {
