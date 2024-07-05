@@ -3,19 +3,24 @@ import Button from "./Button.astro";
 
 ---
 
-
 <section id="about-section">
+    <!-- control your container height through the about contrainer and take off the left and right side heights -->
+    <!-- <div class="about-container">  -->
         <div class="about-left-side">
+            <!-- about image is relative to all the children within it -->
             <div class="about-img-container">
+                <!-- img absolute -->
                 <img class="about-img" src='https://res.cloudinary.com/daecnx7ih/image/upload/v1719690697/dog-kisses_neo4lv.webp' alt="Woman kissing her golden retriever"  width=420>
+                <!-- yrs exp absolute -->
                 <div class="yrs-exp-circle">
                     <p class="yrs-text">
                     <span class="about-bold-yrs">10 +</span> 
                     Years of Experience 
                 </p>
                 </div>
+                <!-- img absolute -->
+                <img class="about-blob" src='images/about-blob.svg'  alt="pink blob behind woman kissing dog image" width=420/>
             </div>
-            <img class="about-blob" src='images/about-blob.svg'  alt="pink blob behind woman kissing dog image" width=420/>
         </div>
         <div class="about-right-side">
             <h3>About Us</h3>
@@ -28,7 +33,7 @@ import Button from "./Button.astro";
             </ul>
             <Button href="#" size="lg" style="secondary" >Read More</Button>
         </div>
-  
+    <!-- </div> -->
 </section>
 
 <style>
@@ -37,7 +42,7 @@ import Button from "./Button.astro";
         flex-direction: column;
         align-items: center;
         height: auto;
-        margin-bottom: 1000px;
+       
     }
 
     /* about left side */
@@ -146,7 +151,8 @@ import Button from "./Button.astro";
     }
     .about-left-side {
         width: 50%;
-        height: 451px;
+        /* height: 451px; */
+        height: 100%;
         margin-right: 20px;
     }
     .about-right-side {

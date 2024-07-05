@@ -11,7 +11,8 @@ html {
   /* Greys */
   --dark-gray: #444548;
   --medium-gray: #808386;
-  --light-gray: #f1f1f2;
+  --light-gray: #a1a3a6;
+  --lighter-gray: #f1f1f2;
 
 /* Primary */
 --primary-darkest: #2452a7;
@@ -161,6 +162,7 @@ main {
 
 p {
   font-family: var(--bryant);
+  font-size: 1.1rem;
   font-weight: 400;
   font-style: normal;
   line-height: 1.5;
@@ -189,42 +191,57 @@ li {
 
 }
 
-#hero-section, #about-section, #contact-section  {
-  padding: 0 20px;
+#hero-section  {
+  padding: 0 30px 40px;
+}
+
+#about-section, #contact-section {
+  padding: 60px 30px;
 }
 
 #services-section{
-  padding: 80px 20px;
+  padding: 80px 30px;
   background-color: var(--primary-lightest);
 }
 
 /* X-Small devices (None specified, assumed to be default styles) */
 /* Small devices (sm) - 576px and above */
 @media (min-width: 576px) {
-  #hero-section, #about-section, #services-section, #contact-section {
-    
+  /* #hero-section, #about-section, #services-section, #contact-section {
     padding: 0 40px;
-  }
+  } */
 }
 
 /* Medium devices (md) - 768px and above */
 @media (min-width: 768px) {
-  #hero-section, #about-section, #services-section, #contact-section {
+  #hero-section {
     padding: 0 40px;
+  }
+
+  #about-section, #services-section, #contact-section {
+    padding: 60px 40px;
   }
 }
 
 /* Large devices (lg) - 992px and above */
-@media (min-width: 992px) {
-  #hero-section, #about-section, #services-section, #contact-section {
+@media (min-width: 1024px) {
+        
+  #hero-section {
     padding: 0 60px;
+  }
+  #about-section, #services-section, #contact-section {
+    padding: 60px;
   }
 }
 
+
 /* Extra large devices (xl) - 1200px and above */
 @media (min-width: 1200px) {
-  #hero-section, #about-section, #services-section, #contact-section {
+  #hero-section {
     padding: 0 100px;
+  }
+  #about-section, #services-section, #contact-section {
+    padding: 60px 100px;
   }
 }
 

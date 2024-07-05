@@ -59,7 +59,7 @@ const servicesCardsData = [
     icon: "fa-solid fa-location-dot",
     iconDesc: "locaion pin icon",
     title: "Location",
-    desc: "777 Pacific St Brooklyn, NY 11111",
+    desc: "888 Pacific St, Brooklyn, NY 11238",
   },
   {
     icon: "fa-regular fa-clock",
@@ -71,7 +71,7 @@ const servicesCardsData = [
     icon: "fa-solid fa-phone-volume",
     iconDesc: "telephone icon",
     title: "Telephone",
-    desc: "917-555-4444",
+    desc: "917-666-4444",
   },
   {
     icon: "fa-regular fa-envelope",
@@ -84,7 +84,7 @@ const servicesCardsData = [
 
 <Main title="Epic Tails">
   <Hero />
-  <About/>
+  <!-- <About/> -->
   <div class="blue-section">
   <section id="services-section">
     <ServicesCards servicesCards={servicesCardsData} />
@@ -94,11 +94,11 @@ const servicesCardsData = [
   <section id="contact-section">
     <div class="contact-container">
       <div class="contact-left">
-
         <ContactForm />
       </div>
       <div class="contact-right">
-        <h2>Get In Touch</h2>
+        <h2>Get In Touch!</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi ipsum consectetur aperiam enim perspiciatis aut placeat aliquam sapiente minus laboriosam!</p>
         <ContactInfo contactInfo={contactInfoData} />
       </div>
     </div>
@@ -113,8 +113,7 @@ const servicesCardsData = [
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 900px;
-    margin: 75px 0;
+    height: auto;
   }
 
   .contact-left {
@@ -126,6 +125,33 @@ const servicesCardsData = [
     order: 1;
     width: 100%;
   }
+
+  .contact-right p {
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: 1024px) {
+    .contact-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+    }
+
+    .contact-left {
+      order: 1;
+      width: 50%;
+   
+    }
+
+    .contact-right {
+      order: 2;
+      width: 50%;
+      margin-left: 40px;
+    }
+  }
+
 
 </style>
 
