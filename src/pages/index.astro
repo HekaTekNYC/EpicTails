@@ -4,20 +4,22 @@ import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
 import Main from "../layouts/Main.astro";
 import ServicesCards from "../components/ServicesCards.astro";
+import WhyUs from "../components/WhyUs.astro";
 
 const profilePicture = "https://i.imgur.com/JPGFE75.jpg";
 
 // Astro.glob
-const blogs = await Astro.glob<{
-  poster: string;
-  title: string;
-  subtitle: string;
-}>("../pages/blogs/*.md");
+// const blogs = await Astro.glob<{
+//   poster: string;
+//   title: string;
+//   subtitle: string;
+// }>("../pages/blogs/*.md");
 ---
 
 <Main title="Epic Tails">
   <Hero />
   <About/>
+
   <div class="blue-section">
   <section id="services-section">
   <ServicesCards  
@@ -60,88 +62,13 @@ const blogs = await Astro.glob<{
       },
       ]}
     />
- 
+   
   </section>
+  <WhyUs />
 </div>
-  <!-- <Cards
-    cards={[
-      {
-        title: "Here are my guiding philosophies for life",
-        gradientFrom: "#818cf8",
-        gradientTo: "#d8b4fe",
-        to: "/philosophies",
-      },
-      {
-        title: "A summary of my work history",
-        gradientFrom: "#fde68a",
-        gradientTo: "#fca5a5",
-        to: "/work-summary",
-      },
-      {
-        title: "What I do beyond technology",
-        gradientFrom: "#6ee7b7",
-        gradientTo: "#9333ea",
-        to: "/beyond-tech",
-      },
-    ]}
-  /> -->
+
 </Main>
 
 <style>
-  .profile {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    padding: 1rem 0 3rem 0;
-  }
 
-  .profile__details {
-    flex: 1 0 300px;
-  }
-
-  .profile__details > h1 {
-    margin-top: 0;
-  }
-
-  .profile__picture {
-    border-radius: 50%;
-    margin: 0 2rem 1rem 0;
-  }
-
-  .featured-blogs {
-    margin: 0;
-    padding: 3rem 0 0 0;
-  }
-  .featured-blogs__title {
-    font-size: 2rem;
-    color: var(--gray-900);
-  }
-
-  .featured-blogs__description {
-    margin-top: -1.2rem;
-  }
-
-  .blogs {
-    font-size: 1rem;
-    font-weight: 500;
-  }
-
-  .blogs__list {
-    border-bottom: 1px solid;
-    border-color: var(--gray-200);
-  }
-
-  .blog__link {
-    opacity: 1;
-    height: 100%;
-    display: block;
-    padding: 1rem 0;
-    color: var(--gray-200);
-    text-decoration: none;
-    transition: opacity 0.2s ease-in-out;
-  }
-
-  .blog__link:hover {
-    opacity: 0.7;
-  }
 </style>
