@@ -1,40 +1,93 @@
 ---
 import Button from "./Button.astro"
+import HeroCards from "./HeroCards.astro"
+
+
 ---
 
-<section class="hero-section">
-    <div class="hero-left">
-        <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719590265/paw-prints-celeste_z4rpmx.png" alt="celeste blue colored paw prints">
-        <div class="hero-img-group">
+<section id="hero-section">
+    <div class="hero">
+        <div class="hero-left">
+            <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719590265/paw-prints-celeste_z4rpmx.png" alt="celeste blue colored paw prints" class="hero-paws" height=100>
             <div class="blob-left">
-                <img src="/images/blob-1.svg" alt="pastel pink blob">
+                <img src="/images/hero-blob-1.svg" alt="pastel pink blob" height=300>
             </div>
-            <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719512239/russian-blue_ycnauo.webp" alt="russian blue cat with green eyes sitting">
+            <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719691223/russian-blue-w_hsq8mj.webp" alt="russian blue cat with green eyes sitting" height="300">
+        </div>
+        <div class="hero-header">
+            <h3>Pet Sitting & Dog Walking</h3>
+            <h1>Caring for <span class="focus-font">Your Pets</span> Like They're Our Own</h1>
+            <p class="hero-p"> Providing compassionate and attentive pet sitting services that prioritize your pet's comfort and well-being, because we treat them like family.</p>
+            <Button href="#" size="lg" style="primary" class="booking-btn">Book Now</Button>
+        </div>
+        <div class="hero-right">
+            <div class="blob-right">
+                <img src="/images/hero-blob-2.svg" alt="light blue blob" height=300>
+            </div>
+            <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719691438/golden-lab-w_dzvlhr.webp" alt="golden labrador retriever sitting looking happy" height=400>
         </div>
     </div>
-    <div class="hero-header">
-        <h1>Caring for Your Pets Like They're Our Own</h1>
-        <h2> Providing compassionate and attentive pet sitting services that prioritize your pet's comfort and well-being, because e treat them like family.</h2>
-        <Button href="#" size="lg" style="primary" class="booking-btn">Book Now</Button>
-    </div>
-    <div class="hero-right">
-        <div class="blob-right">
-            <img src="/images/blob-2.svg" alt="light blue blob">
-        </div>
-        <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719513045/golden-lab_yojrju.webp" alt="golden labrador retriever sitting looking happy">
+    <div class="hero-points">
+        <HeroCards
+            heroCards={[
+            {
+                icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1719943945/pet-clock_oelilr.svg",
+                iconDesc: "icon of",
+                title: 'Professional Certification',
+            },
+            {
+                icon: 'https://res.cloudinary.com/daecnx7ih/image/upload/v1719943945/pet-clock_oelilr.svg',
+                iconDesc: "icon of clock with paw print",
+                title: 'Flexible Scheduling',
+            },
+            {
+                icon: 'https://res.cloudinary.com/daecnx7ih/image/upload/v1719943945/pet-clock_oelilr.svg',
+                iconDesc: "icon of",
+                title: 'Personalized Care',
+            },
+            ]}
+        />
     </div>
 </section>
 
 <style>
-    .hero-left {
-        display: none;
+    #hero-section {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        margin: 60px 0 40px 0;
+      
+    }
+    .hero {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+  
     }
 
-    .hero.header {
+
+    .hero h3 {
+        text-align: center;
+    }
+    .hero-left {
+        display: none;
+  
+    }
+
+    .hero-header {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        height: 100%;
+  
+    }
+
+    .hero-p {
+        font-size: 1.4rem;
+        text-align: center;
     }
 
     .hero-header h1 {
@@ -44,6 +97,90 @@ import Button from "./Button.astro"
 
     .hero-right {
         display: none
+ 
     }
+    .hero-points {
+        margin: 50px 0;
+        display: flex;
+       justify-content: center;
+     
+    }
+
+
+/* Large devices (lg) - 1024px and above */
+@media (min-width: 1024px) {
+    #hero-section {
+        /* height: calc(100vh - 128px); */
+        /* height: 90vh; */
+        max-height: 900px;
+    }
+    .hero {
+        height: 50vh;
+    }
+
+    
+    /* middle section */
+    .hero-header {
+       flex: 2;
+    }
+    /* right section */
+    .hero-right {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        align-items: flex-end;
+        flex: 1;
+        height: 100%;
+        width: auto;
+        /* margin-bottom: 300px; */
+      
+    }
+
+    .blob-right {
+        position: absolute;
+        z-index: -1;   
+    }
+ 
+
+}
+
+
+/* Extra large devices (xl) - 1200px and above */
+@media (min-width: 1200px) {
+/* left section */
+    .hero-left {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex: 1;
+        height: 100%;
+        width: auto;
+        margin-bottom: 80px;
+    }
+
+    .hero-paws {
+        position: absolute;
+        z-index: -1;
+        top: 30px;
+        left: 0;
+        width: 80px;
+        height: auto;
+        transform: scaleX(-1);
+    }
+
+    .blob-left {
+        position: absolute;
+        transform: scaleX(-1);
+        z-index: -1;   
+    }
+}
+
+/* Extra extra large devices (xxl) - 1400px and above */
+@media (min-width: 1400px) {
+  /* Your styles for extra extra large devices */
+}
+
 
 </style>

@@ -44,7 +44,9 @@ const styles = {
 
   .btn-lg {
     padding: 0.8rem 2rem;
-    font-size: 1rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    min-width: 150px;
     
   }
 
@@ -58,14 +60,15 @@ const styles = {
   
   /* Primary blue button */
     .btn-primary {
-      background-color: var(--celtic-blue);
+      background-color: var(--primary-darker);
       color: var(--white);
       border: 2px solid transparent;
-      border-radius: 20px;
+      border-radius: 40px;
+
     }
 
     .btn-primary:hover {
-        background-color: var(--cornflower-blue);
+        background-color: var(--primary-dark);
         color: var(--white);
     }
     .btn-primary a:hover, .btn-primary a:focus, .btn-primary a:active {
@@ -74,26 +77,26 @@ const styles = {
 
     .btn-outline {
         background-color: var(--white);
-        border: 2px solid var(--celtic-blue);
-        color: var(--celtic-blue);
+        border: 2px solid var(--primary-darker);
+        color: var(--primary-darker);
     }
 
     .btn-outline:hover {
-        background-color: var(-cornflower-blue);
+        background-color: var(--primary-dark);
     }
     
  /* Secondary pink button */
     .btn-secondary {
-      background-color: var(--light-red);
+      background-color: var(--secondary-darkest);
       color: var(--white);
 
       border: 2px solid transparent;
     }
 
     .btn-secondary:hover {
-        background-color: var(--snow);
-        color: var(--light-red);
-        border: 2px solid var(--light-red);
+        background-color: var(--secondary-lightest);
+        color: var(--secondary-darkest);
+        border: 2px solid var(--secondary-darkest);
  
     }
 
@@ -101,28 +104,9 @@ const styles = {
     width: 100%;
   }
 
-  .btn-primary.booking-btn {
-      font-size: 1.6rem !important;
-  }
 
 /* Large devices (lg) - 992px and above */
-@media (min-width: 992px) {
-  /* Your styles for large devices */
-  .btn-primary.booking-btn {
-    padding: 0.8rem 1rem;
-    font-size: 1.2rem !important;  
-  }
-}
 
-/* Extra large devices (xl) - 1200px and above */
-@media (min-width: 1200px) {
-  /* Your styles for extra large devices */
-}
-
-/* Extra extra large devices (xxl) - 1400px and above */
-@media (min-width: 1400px) {
-  /* Your styles for extra extra large devices */
-}
 
 </style>
 

@@ -1,0 +1,65 @@
+---
+import { string } from 'astro/zod';
+
+const { icon, iconDesc, title } = Astro.props;
+
+export type Props = {
+  icon: string;
+  iconDesc: string;
+  title: string;
+};
+---
+<div class="hero-card-container">
+  <div class="hero-icon-container">
+    <img src={icon} alt={iconDesc}>
+  </div>
+  <h4>{title}</h4>
+</div>
+
+
+
+<style >
+  .hero-card-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    height: 115px;
+    border: 2px solid var(--primary-dark);
+    border-radius: 10px;
+    margin-top: 50px;
+
+  }
+
+  .hero-card-container h4 {
+    white-space: nowrap;
+  }
+
+  .hero-icon-container {
+    position: absolute;
+    top: -40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    border: 1px solid var(--primary-lighter);
+    border-radius: 50%;
+    background-color: var(--accent-medium);
+  }
+
+  .hero-icon-container img {
+    width: 50px;
+    height: 50px;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-card-container {
+      width: 275px;
+    }
+  }
+
+</style>

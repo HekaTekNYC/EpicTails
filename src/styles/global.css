@@ -1,22 +1,52 @@
+:root {
+  --gelica: "gelica", sans-serif;
+  --bryant: "bryant-web", sans-serif;
+}
+
 html {
   --background: #ffffff;
   --white: #ffffff;
+  
+  
   /* Greys */
-  --outer-space: #282828;
-  --gray: #808386;
-  --antiflash-white: #f1f1f2;
-  /* Greens */
-  --robin-egg-blue: #58d3d1;
-  --ice-blue: #98eceb;
-  --celeste: #bffaf9;
-  /* Blues */
+  --dark-gray: #444548;
+  --medium-gray: #808386;
+  --light-gray: #f1f1f2;
+
+/* Primary */
+--primary-darkest: #2452a7;
+--primary-darker: #4c76c4;
+--primary-dark: #7099e4;
+--primary-medium: #a4c1f7;
+--primary-light: #cbddfb;
+--primary-lighter: #E0EAFF;
+--primary-lightest: #f4f6ff;
+
+/* Secondary */
+--secondary-darkest: #f67c79;
+--secondary-darker: #f89290;
+--secondary-dark: #f9a8a7;
+--secondary-medium: #ffbfbf;
+--secondary-light: #ffcfcf;
+--secondary-lighter: #ffdfdf;
+--secondary-lightest: #fff7f7;
+
+/* Accent */
+--accent-darker: #58d3d1;
+--accent-dark: #98eceb;
+--accent-medium: #bffaf9;
+--accent-light: #e5ffff;
+
+  /* Primary */
   --sapphire: #2452a7;
   --celtic-blue: #4c76c4;
   --cornflower-blue: #7099e4;
   --jordy-blue: #a4c1f7;
   --periwinkle: #cbddfb;
+  --lavendar: #E0EAFF;
   --ghost-white: #f4f6ff;
-  /* Pinks */
+
+  /* Seconday */
   --light-red: #f67c79;
   --light-coral: #f89290;
   --melon: #f9a8a7;
@@ -24,13 +54,24 @@ html {
   --tea-rose: #ffcfcf;
   --misty-rose: #ffdfdf;
   --snow: #fff7f7;
+
+  /* Color pop */
+  --robin-egg-blue: #58d3d1;
+  --ice-blue: #98eceb;
+  --celeste: #bffaf9;
+  --light-mint: #e5ffff;
+
 }
 
 body {
-  font-family: "Questrial", sans-serif;
+  font-family: var(--bryant);
+  font-weight: 400;
+  font-style: normal;
   margin: 0;
   padding: 0;
-  color: var(--outer-space);
+  height: 100%;
+  width: 100%;
+  color: var(--dark-gray);
   background: var(--background);
 }
 
@@ -41,7 +82,7 @@ body {
 }
 
 a {
-  color: var(--outer-space);
+  color: var(--dark-gray);
   text-decoration: none;
   cursor: pointer;
 }
@@ -52,54 +93,139 @@ ul {
   padding: 0;
 }
 
+/* hero */
 h1 {
-  font-family: "Quicksand", sans-serif;
-  font-size: 2rem;
+  font-family: var(--gelica);
+  font-weight: 900;
+  font-size: 2.6rem;
   line-height: 1;
+  color: var(--dark-gray);
+  margin: 0;
 }
 
-h1 + h2 {
+/* all header sections */
+h2 {
+  font-family: var(--gelica);
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.9rem;
+  line-height: 1.2;
+  color: var(--dark-gray);
+  margin: 0;
+}
+
+/* above the h2 and h1 */
+h3 {
+  font-family: var(--bryant);
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 2.2rem;
+  text-transform: uppercase;
+  color: var(--primary-dark);
+  margin: 0;
+}
+
+/* Card headers and employee names and section internal header */
+h4 {
+  font-family: var(--bryant);
+  font-size: 1.375rem;
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--dark-gray);
+  margin: 0;
+}
+
+h5 {
+  font-family: var(--bryant);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--secondary-darkest)
+  margin: 0;
+}
+
+
+/* mini subheaders */
+h6 {
+  font-family: var(--bryant);
   font-size: 1.1rem;
-  margin-top: -1.4rem;
-  opacity: 0.9;
-  font-weight: 400;
+  font-weight: 600;
+  color: var(--dark-gray);
+  margin: 0;
 }
 
 main {
-  max-width: 100%;
+  width: 100%;
   margin: auto;
+ 
 }
 
-p,
+p {
+  font-family: var(--bryant);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
+/* p,
 li {
   font-size: 1rem;
   color: var(--gray-400);
   opacity: 0.8;
-}
+} */
 
 li {
   margin: 1rem 0;
 }
 
+.focus-font {
+  color: var(--secondary-darkest);
+  white-space: nowrap;
+}
+
+.content-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+
+}
+
+#hero-section, #about-section {
+  padding: 0 20px;
+}
+
+#services-section {
+  padding: 80px 20px;
+  background-color: var(--primary-lightest);
+}
+
 /* X-Small devices (None specified, assumed to be default styles) */
 /* Small devices (sm) - 576px and above */
 @media (min-width: 576px) {
-  /* Your styles for small devices */
+  #hero-section, #about-section, #services-section {
+    
+    padding: 0 40px;
+  }
 }
 
 /* Medium devices (md) - 768px and above */
 @media (min-width: 768px) {
-  /* Your styles for medium devices */
+  #hero-section, #about-section, #services-section {
+    padding: 0 40px;
+  }
 }
 
 /* Large devices (lg) - 992px and above */
 @media (min-width: 992px) {
-  /* Your styles for large devices */
+  #hero-section, #about-section, #services-section {
+    padding: 0 60px;
+  }
 }
 
 /* Extra large devices (xl) - 1200px and above */
 @media (min-width: 1200px) {
-  /* Your styles for extra large devices */
+  #hero-section, #about-section, #services-section {
+    padding: 0 100px;
+  }
 }
 
 /* Extra extra large devices (xxl) - 1400px and above */
