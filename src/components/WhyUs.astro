@@ -2,35 +2,153 @@
 
 ---
 
-<section>
-    <div class="why-left-side">
-        <h4></h4>
-        <h2>Lorem ipsum dolor sit amet<span> consectetur adipisic </span>ing elit</h2>
-        <p></p>
-        <div class="why-points">
-            <div class="why-point-container">
-                <img/>
-                <div class="about-info-column">
-                    <h5></h5>
-                    <p></p>
+    <section id="why-us">
+        <div class="why-us-container">
+            <div class="why-us-left">
+                <h3>Why Choose Us</h3>
+                <h2>We Take Care of<span class="focus-font"> Your Pets </span> and Keep Them Happy Time</h2>
+                <p class="why-spacer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt maxime dolores soluta ducimus voluptates illo.</p>
+                
+                <div class="why-points-container">
+                    <div class="why-point-container">    
+                        <div class="why-icon">
+                            <img src="./icons/walking-dog.svg" alt="icon of persons walking a dog" height="45px" width="45px"/>
+                        </div>
+                        <div class="why-info-column">
+                            <h5>Certified Sitters</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.  </p>
+                        </div>
+                    </div>
+                    <div class="why-point-container">    
+                        <div class="why-icon">
+                        <img src="./icons/pet-dog-icon.svg" alt="icon of persons hand petting dog" height="45px" width="45px"/>
+                        </div>
+                        <div class="why-info-column">
+                            <h5>Flexible Care Schedules</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet. </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="why-point-container">
-                <img/>
-                <div class="about-info-column">
-                    <h5></h5>
-                    <p></p>
+            <div class="why-right-side">
+                <div class="why-blob">
+                    <img src="./images/blob-1.svg" alt="pink background blob"/>
+                </div>
+                <div class="why-img">
+                    <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1720116088/blob-2-hugging-dog_ye796z.webp" alt="woman hugging dog"/>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="why-right-side">
-        <div class="about-img">
+    </section>
+    
 
-        </div>
-        <div class="about-blob">
-            
-        </div>
-    </div>
-</section>
+<style>
+    .why-us-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: auto;
+    }
 
+    .why-us-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .why-spacer {
+        padding-bottom: 20px;
+    }
+
+    .why-points-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        line-height: .9rem;
+    }
+
+    .why-point-container {
+        display: flex;
+        align-items: flex-start;
+    
+    }
+
+    .why-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border: 2px solid var(--primary-darker);
+        border-radius: 50%;
+    }
+
+    /* .why-icon img {
+        height: 60px; 
+        width: 60px; 
+    } */
+ 
+    .why-info-column {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+    }
+
+    .why-right-side {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 370px;
+        overflow: hidden;
+    }
+    .why-img {
+        z-index: 1;
+    }
+    .why-img img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    .why-blob {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 95%;
+        height: 95%;
+        z-index: 0;
+        transform: rotate(359deg);
+    }
+    .why-blob img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    @media (max-width: 576px) {
+        .why-right-side {
+            display: none;
+        }
+    }
+    @media (min-width: 768px) {
+        
+        .why-us-container {
+            flex-direction: row;
+        }
+        
+        .why-us-left {
+            width: 50%;
+        }
+
+        .why-right-side {
+            display: flex;
+            width: 50%;
+            height: 100%; 
+        }
+    }
+
+</style>
