@@ -1,0 +1,28 @@
+---
+import ContactDetails from "./ContactDetails.astro";
+
+import type { Props as ContactDetailsProps } from "./ContactDetails.astro";
+
+type Props = {
+  contactInfo: ContactDetailsProps[];
+};
+
+// Extract the props
+const { contactInfo } = Astro.props;
+---
+
+<div class="contact-info-list">
+  {contactInfo.map(info => (
+    <ContactDetails {...info} />
+  ))}
+</div>
+
+<style>
+  .contact-info-list {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 10px;
+  }
+
+</style>

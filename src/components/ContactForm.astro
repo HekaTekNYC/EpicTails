@@ -1,0 +1,114 @@
+---
+import Button from "./Button.astro"
+---
+
+<div class="contact-form">
+    
+        <form>
+            <h4>Lorem ipsum dolor, sit amet consectetur!</h4>
+            <div class="form-row">
+                <!-- <label for="name">Name</label> -->
+                <input type="text" id="name" name="user_name" placeholder="First and Last Name"/>
+            </div>
+            <div class="form-row">
+                <!-- <label for="mail">Email</label> -->
+                <input type="email" id="mail" name="user_email" placeholder="Email Address"/>
+            </div>
+            <div class="form-row">
+                <!-- <label for="msg">Message</label> -->
+                <input type="text" id="msg" name="user_subject" placeholder="Subject"></input>
+            </div>
+            <div class="form-row form-message">
+                <!-- <label for="msg">Message</label> -->
+                <textarea id="msg" name="user_message" placeholder="Write Your Message"></textarea>
+            </div>
+            <div class="form-btn">
+                <Button href="#" size="lg" style="secondary" class="booking-btn" type="submit">Send Message</Button>
+            </div>
+            
+        </form>
+</div>
+
+<style>
+    form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    height: 100%;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 15px;
+    background: var(--primary-darker);
+    }
+
+    form h4, form label {
+        color: var(--white) !important;
+    }
+
+    form h4 {
+        margin-bottom: 20px;
+    }
+
+    input, textarea {
+        font-size:1.05rem;
+        color: var(--dark-gray)
+    }
+
+    .form-row {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-around;
+        width: 100%;
+        height: 100%;
+    }
+    .form-message textarea, .form-row input {
+        border: none;
+        padding: 8px;
+        border-radius: 9px;
+        width: 100%;
+        margin: 5px 0 18px;
+        
+    }
+
+    .form-row input {
+        height: 50px;
+           }
+
+    .form-row input::placeholder,
+    .form-row textarea::placeholder {
+        font-family: var(--bryant);
+        font-size: 1rem;
+        color: var(--light-gray);
+    }
+
+   .form-row input:focus {
+        outline-color: var(--accent-darker);
+    }
+
+    .form-message textarea::placeholder {
+        line-height: 20px;
+    
+    }
+    .form-message textarea {
+        height: 100px;
+    }
+
+    .form-row textarea:focus {
+        outline-color: var(--accent-darker);
+    }
+
+    .form-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;  
+    }
+
+    @media (min-width: 1024px) {
+      .contact-form {
+        max-width: 500px;
+      } 
+    }
+</style>
