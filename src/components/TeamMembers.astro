@@ -1,0 +1,30 @@
+---
+import Button from './Button.astro'
+import TeamMember from './TeamMember.astro';
+
+import type { Props as TeamMemberProp } from "./TeamMember.astro";
+
+type Props = {
+  teamMember: TeamMemberProp[]; 
+};
+const { teamMember } = Astro.props;
+---
+
+<div class="team-members-container">
+  </div>
+    <h4>PET CARE TEAM</h4>
+    <h1>Welcome To Our Family</h1>
+    <div class="team-container">
+      {teamMember.map((team) => <TeamMember {...team} />)}
+    </div>
+    <Button href="#" class="team-button"  size="lg" style="secondary">Our Team</Button>
+</div>
+<style>
+  .team-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+</style>
