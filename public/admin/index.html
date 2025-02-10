@@ -17,17 +17,22 @@
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         if (window.netlifyIdentity) {
+          console.log("✅ Netlify Identity detected on /admin!")
           window.netlifyIdentity.init()
 
           window.netlifyIdentity.on("login", () => {
-            console.log("Login successful, redirecting to /admin/index.html...")
+            console.log(
+              "✅ Login successful, redirecting to /admin/index.html..."
+            )
             window.location.href = "/admin/index.html"
           })
 
           window.netlifyIdentity.on("logout", () => {
-            console.log("User logged out, redirecting to homepage...")
+            console.log("✅ User logged out, redirecting to homepage...")
             window.location.href = "/"
           })
+        } else {
+          console.error("❌ Netlify Identity not detected on /admin!")
         }
       })
     </script>

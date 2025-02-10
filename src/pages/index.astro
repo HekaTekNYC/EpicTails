@@ -1,96 +1,33 @@
----
-import Cards from "../components/BlogCards.astro";
-import Hero from "../components/Hero.astro";
-import About from "../components/About.astro";
-import Main from "../layouts/Main.astro";
-import ServicesCards from "../components/ServicesCards.astro";
-import WhyUs from "../components/WhyUs.astro";
-
-import MeetOurTeam from "./meet-our-team.astro";
-const profilePicture = "https://i.imgur.com/JPGFE75.jpg";
-
-// Astro.glob
-// const blogs = await Astro.glob<{
-//   poster: string;
-//   title: string;
-//   subtitle: string;
-// }>("../pages/blogs/*.md");
----
-
 <Main title="Epic Tails">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
   <script is:inline>
     document.addEventListener("DOMContentLoaded", () => {
       if (window.netlifyIdentity) {
-        window.netlifyIdentity.init(); // Ensure Netlify Identity is initialized
+        console.log("✅ Netlify Identity detected, initializing...");
+        window.netlifyIdentity.init();
 
+        // Auto-redirect if logged in
         window.netlifyIdentity.on("init", (user) => {
           if (user) {
-            console.log("User already logged in. Redirecting to /admin/index.html...");
-            window.location.href = "/admin/index.html"; // Correct redirect path
+            console.log("✅ User already logged in. Redirecting to /admin/index.html...");
+            window.location.href = "/admin/index.html";
           }
         });
 
+        // Redirect after login
         window.netlifyIdentity.on("login", (user) => {
-          console.log("Login successful! Redirecting to /admin/index.html...");
-          window.location.href = "/admin/index.html";
+          console.log("✅ Login successful! Redirecting...");
+          setTimeout(() => {
+            window.location.href = "/admin/index.html";
+          }, 500);
         });
+      } else {
+        console.error("❌ Netlify Identity not detected!");
       }
     });
   </script>
+
   <Hero />
-  <About/>
-
-  <div class="blue-section">
-  <section id="services-section">
-  <ServicesCards  
-    servicesCards={[
-      {
-        icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-        iconAlt: "cat icon",
-        title: "Cat and Critter Care",
-        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-      },
-      {
-        icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-        iconAlt: "cat icon",
-        title: "Cat and Critter Care",
-        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-      },
-      {
-        icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-        iconAlt: "cat icon",
-        title: "Cat and Critter Care",
-        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-      },
-      {
-        icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-        iconAlt: "cat icon",
-        title: "Cat and Critter Care",
-        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-      },
-      {
-        icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-        iconAlt: "cat icon",
-        title: "Cat and Critter Care",
-        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-      },
-      {
-        icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-        iconAlt: "cat icon",
-        title: "Cat and Critter Care",
-        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-      },
-      ]}
-    />
-   
-  </section>
-  <WhyUs />
-</div>
-
+  <About />
 </Main>
-
-<style>
-
-</style>
