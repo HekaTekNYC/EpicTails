@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/check": "^0.7.0",
     "astro": "^4.10.3",
+    "decap-cms-app": "^3.6.1",
     "title-case": "^4.3.1",
     "typescript": "^5.4.5"
   }

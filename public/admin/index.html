@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
+    <title>Content Manager</title>
+  </head>
+  <body>
+    <!-- Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
+
+    <!-- Netlify Identity -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.init()
+
+          window.netlifyIdentity.on("login", () => {
+            console.log("Login successful, redirecting to /admin/index.html...")
+            window.location.href = "/admin/index.html"
+          })
+
+          window.netlifyIdentity.on("logout", () => {
+            console.log("User logged out, redirecting to homepage...")
+            window.location.href = "/"
+          })
+        }
+      })
+    </script>
+  </body>
+</html>

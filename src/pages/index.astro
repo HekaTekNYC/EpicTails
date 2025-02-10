@@ -18,6 +18,27 @@ const profilePicture = "https://i.imgur.com/JPGFE75.jpg";
 ---
 
 <Main title="Epic Tails">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.init(); // Ensure Netlify Identity is initialized
+
+        window.netlifyIdentity.on("init", (user) => {
+          if (user) {
+            console.log("User already logged in. Redirecting to /admin/index.html...");
+            window.location.href = "/admin/index.html"; // Correct redirect path
+          }
+        });
+
+        window.netlifyIdentity.on("login", (user) => {
+          console.log("Login successful! Redirecting to /admin/index.html...");
+          window.location.href = "/admin/index.html";
+        });
+      }
+    });
+  </script>
   <Hero />
   <About/>
 

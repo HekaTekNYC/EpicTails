@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main # Change this if your default branch is "master" or "dev"
+
+media_folder: "public/images/uploads" # Where uploaded media is stored in your repo
+public_folder: "/images/uploads" # Public URL path for uploaded images
+
+collections:
+  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+    label: "Blog" # Displayed in the UI
+    folder: "src/content/blog" # Path where markdown files are stored
+    create: true # Allow users to create new posts
+    fields: # Define the fields for each blog post
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
