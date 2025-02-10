@@ -6,7 +6,7 @@
 
 # Icons
 
-- Services - Animals, People (expert traine icon)
+- Services - Animals, People (expert trainer icon)
 - Socials
 - Contact: Phone, Email, Communication
 
