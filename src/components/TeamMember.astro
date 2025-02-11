@@ -1,0 +1,83 @@
+---
+const { name, role, image, color } = Astro.props;
+
+export type Props = {
+  name: string;
+  role: string;
+  color: string;
+  image: string;
+};
+---
+<div class="team-member-container">
+  <div class="team-member">
+      <div class="team-circle" style={`background-color: ${color}`}>
+        <img src={image} alt={name} class="team-member-image" />
+      </div>
+  </div>  
+  <h4>{name}</h4>
+  <p>{role}</p>
+  <div class="social-icons">
+    <a href="https://www.facebook.com" aria-label="Facebook Icon"><img src="../assets/icons/facebook.svg" alt="Facebook Icon" /></a>
+    <a href="https://www.instagram.com" aria-label="Instagram Icon"><img src="../assets/icons/instagram.svg" alt="Instagram Icon" /></a>
+    <a href="https://www.x.com" aria-label="X Icon"><img src="../assets/icons/x.svg" alt="X Icon" /></a>
+  </div>
+</div>
+
+<style>
+.team-member-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  text-align: center;
+  width: 100%;
+  max-width: 200px;
+}
+
+.team-member {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.team-circle {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 184px;
+  height: 184px;
+  border-radius: 50%;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  z-index:1;
+
+}
+
+.team-member-image {
+  position: absolute;
+  width: 89%;
+  height: auto;
+  z-index: 2;
+}
+.team-member p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #777;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.social-icons a {
+  color: #555;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+.social-icons img {
+  width: 24px;
+  height: 24px;
+}
+</style>
