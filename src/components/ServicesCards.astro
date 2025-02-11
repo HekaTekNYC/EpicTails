@@ -1,0 +1,36 @@
+---
+import ServicesCard from "./ServicesCard.astro";
+// Import the Card Props type
+import type { Props as ServicesCardProp } from "./ServicesCard.astro";
+
+// defined the Props for this component
+type Props = {
+  servicesCards: ServicesCardProp[]; // accepts an array of CardProps
+};
+
+const { servicesCards } = Astro.props;
+---
+
+<div class="services-cards">
+  {/** Dynamically render multiple Card components */}
+  {servicesCards.map((card) => <ServicesCard {...card} />)}
+</div>
+
+<style>
+  .services-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    height: auto;
+    width: 100%;
+  }
+
+  /* Since this is standard CSS, we can have media queries here */
+  @media screen and (min-width: 1024px) {
+    .services-cards {
+      gap: 2rem;
+    }
+  }
+</style>

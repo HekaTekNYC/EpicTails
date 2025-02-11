@@ -1,0 +1,38 @@
+---
+type Image = {
+  src: string;
+  alt: string;
+};
+
+type Props = {
+  images: Image[];
+};
+
+const { images } = Astro.props;
+---
+
+<style>
+  .masonry {
+    column-count: 3; /* Number of columns */
+    column-gap: 1em; /* Gap between columns */
+    
+  }
+
+  .masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1em;
+  }
+
+  .masonry img {
+    width: 100%;
+    display: block;
+  }
+</style>
+
+<div class="masonry">
+  {images.map((image) => (
+    <div class="masonry-item">
+      <img src={image.src} alt={image.alt} />
+    </div>
+  ))}
+</div>

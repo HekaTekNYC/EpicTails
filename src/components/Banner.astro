@@ -1,0 +1,117 @@
+ <!-- top banner -->
+ <div class="info-banner">
+    <!-- contact info -->
+    <div class="contact-nav">
+        <div class="contact-email">
+            <!-- <img src="/icons/email.svg" alt="email icon" width="25"> -->
+            <i class="fa-regular fa-envelope" style="color: #ffffff;"></i>
+            <p>info@epictails.com</p>
+        </div>
+        <div class="contact-phone">
+            <!-- <img src="/icons/phone.svg" alt="phone icon" width="25"> -->
+            <i class="fa-solid fa-phone-volume" style="color: #ffffff;"></i>
+            <p>917-555-4444</p>
+        </div>
+        <div class="contact-hours">
+            <!-- <img src="/icons/clock.svg" alt="clock icon" width="25"> -->
+            <i class="fa-regular fa-clock" style="color: #ffffff;"></i>
+
+            <p>Sun - Fri (8AM - 8PM)</p>
+        </div>
+    </div>
+    <!-- social icons -->
+    <ul class="social-nav">
+        <li class="banner-fb">
+            <a href="#" aria-label="Facebook Link">
+                <img src="../assets/icons/facebook.svg" alt="facebook icon" height="25">
+            </a>
+        </li>
+        <li class="banner-x">
+            <a href="#" aria-label="Twitter Link">
+                <img src="../assets/icons/x.svg" alt="twitter icon" height="25">
+            </a>
+        </li>
+        <li class="banner-insta">
+            <a href="#" aria-label="Instagram Link">
+                <img src="../assets/icons/instagram.svg" alt="instagram icon" height="25">
+            </a>
+        </li>
+    </ul>
+  
+  </div>
+
+  <style>
+    .info-banner {
+        display: none;
+        height: 36px;
+    }
+
+
+    /* Large devices (lg) - 992px and above */
+    @media (min-width: 992px) {
+        .info-banner {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        background-color: var(--primary-darker);
+        padding: 0 60px;
+        }
+
+        .info-banner .contact-nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--white)
+        }
+        .info-banner .socials-nav{
+        display: flex;
+        }
+
+        .contact-email, .contact-phone, .contact-hours {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fa-envelope,
+        .contact-phone img,
+        .contact-hours img {
+        margin: 3px 3px 0 10px;
+        }
+
+        .social-nav {
+        display: flex;
+        list-style-type: none; 
+        margin: 0;
+        padding: 0;
+        }
+
+        .social-nav li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px; 
+        }
+
+        .social-nav a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .banner-x img,
+        .banner-fb img,
+        .banner-insta img {
+            border: 1px solid var(--white);
+            border-radius: 40px;
+            padding: 4px;
+            margin: 0 2px;
+            cursor: pointer;
+        }
+
+        
+    }
+
+    
+  </style>

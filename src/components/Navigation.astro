@@ -1,0 +1,175 @@
+---
+import Button from "./Button.astro";
+---
+
+<nav class="nav-bar" aria-label="Primary navigation">
+  <a href="/" class="logo" aria-label="Home">
+    <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719536256/epic-logo_ga6k5l.png" alt="Epic Tails logo" height="50">
+  </a>
+
+  <button aria-label="Toggle navigation" class="hamburger">
+    <img src="icons/hamburger-menu.svg" alt="hamburger icon" height="35"/>
+  </button>
+  
+  <!-- Navigation menu -->
+  <div class="nav-links">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/services">Services</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+    <Button href="#" size="lg" style="secondary" class="booking-btn"> Book Now</Button>
+  </div>
+</nav>
+
+<style>
+  nav {
+    position: sticky;
+    top: 0;
+    background-color: var(--white);
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 30px;
+    height: 90px;
+    width: 100%;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    z-index: 1000; 
+  }
+  
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .hamburger {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    height: 85vh;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    background-color: var(--white);
+  }
+
+  .nav-links a {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  .nav-links a:hover {
+    font-weight: 700;
+  }
+  .nav-links > ul > li > a:hover {
+    color: var(--primary-darkest);
+  }
+
+  .nav-links ul {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 60%;
+    margin-bottom: 30px;
+  }
+
+
+  @media (min-width: 768px) {
+    nav {
+      padding: 5px 40px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    nav {
+      padding: 5px 60px;
+      height: 92px;
+    }
+
+    .hamburger {
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+      position: static;
+      height: auto;
+      padding: 0;
+      background: var(--white); 
+    }
+
+    .nav-links ul {
+      flex-direction: row;
+      justify-content: flex-end;
+      margin: 0 10px 0 0;
+    }
+
+    .nav-links li {
+      margin: 0 10px;
+    }
+
+    .nav-links a {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    /* Extra large devices styles */
+  }
+
+  @media (min-width: 1400px) {
+    /* Extra extra large devices styles */
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const dropdownNav = document.querySelector('.nav-links');
+    const mediaQuery = window.matchMedia('(min-width: 992px)');
+
+    if (hamburger && dropdownNav) {
+      // Event listener for the hamburger menu click
+      hamburger.addEventListener('click', () => {
+        dropdownNav.classList.toggle('active');
+      });
+
+      mediaQuery.addEventListener('change', (e) => {
+        if (e.matches) {
+          // Remove active class if the viewport is 992px or wider
+          dropdownNav.classList.remove('active');
+        }
+      });
+
+      // Initial check for viewport width
+      if (mediaQuery.matches) {
+        dropdownNav.classList.remove('active');
+      }
+    }
+  });
+</script>
