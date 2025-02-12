@@ -1,6 +1,5 @@
 import {defineConfig} from "astro/config"
 
-// https://astro.build/config
-export default defineConfig({})
-
-// defining project specific configuration
+export default defineConfig({
+  //   output: "static", // Enables Static Site Generation (SSG)
+})
