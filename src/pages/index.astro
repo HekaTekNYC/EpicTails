@@ -5,13 +5,13 @@
 import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
 import Main from "../layouts/Main.astro";
-import ServicesCards from "../components/ServicesCards.astro";
-import ContactForm from "../components/ContactForm.astro";
-import ContactInfo from "../components/ContactInfo.astro";
-import WhyUs from "../components/WhyUs.astro";
+// import ServicesCards from "../components/ServicesCards.astro";
+// import ContactForm from "../components/ContactForm.astro";
+// import ContactInfo from "../components/ContactInfo.astro";
+// import WhyUs from "../components/WhyUs.astro";
 
 
-import MeetOurTeam from "./meet-our-team.astro";
+// import MeetOurTeam from "./meet-our-team.astro";
 const profilePicture = "https://i.imgur.com/JPGFE75.jpg";
 
 
@@ -99,13 +99,13 @@ const servicesCardsData = [
   <About/>
 
 
-  <section id="services-section">
+  <!-- <section id="services-section">
     <ServicesCards servicesCards={servicesCardsData} />
   </section>
-  <WhyUs />
-  <section id="meet-team">
+  <WhyUs /> -->
+  <!-- <section id="meet-team">
     <MeetTeam teamMember={teamMembersData} />
-  </section>
+  </section> -->
 
   <section id="contact-section">
     <div class="contact-container">
@@ -117,27 +117,27 @@ const servicesCardsData = [
     </div>
   </section>
 
-  <section id="gallery-section">
+  <!-- <section id="gallery-section">
     <h2>Photo Gallery</h2>
-    <Gallery images={images} />
-  </section>
+    <!-- <Gallery images={images} /> -->
+  <!-- </section> --> 
 
   <div class="blue-section">
   <section id="services-section">
-    <ServicesCards servicesCards={servicesCardsData} />
+    <!-- <ServicesCards servicesCards={servicesCardsData} /> -->
  
   </section>
-  <WhyUs />
+  <!-- <WhyUs /> -->
   </div>
   <section id="contact-section">
     <div class="contact-container">
       <div class="contact-left">
-        <ContactForm />
+        <!-- <ContactForm /> -->
       </div>
       <div class="contact-right">
         <h2>Get In Touch!</h2>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi ipsum consectetur aperiam enim perspiciatis aut placeat aliquam sapiente minus laboriosam!</p>
-        <ContactInfo contactInfo={contactInfoData} />
+        <!-- <ContactInfo contactInfo={contactInfoData} /> -->
       </div>
     </div>
   </section>
@@ -181,7 +181,7 @@ const servicesCardsData = [
       width: 50%;
     }
 
-
+  }
   .contact-container {
     display: flex;
     flex-direction: column;
