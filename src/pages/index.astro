@@ -1,5 +1,7 @@
 ---
+
 // import Cards from "../components/BlogCards.astro";
+
 import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
 import Main from "../layouts/Main.astro";
@@ -8,6 +10,9 @@ import ContactForm from "../components/ContactForm.astro";
 import ContactInfo from "../components/ContactInfo.astro";
 import WhyUs from "../components/WhyUs.astro";
 
+
+import MeetOurTeam from "./meet-our-team.astro";
+const profilePicture = "https://i.imgur.com/JPGFE75.jpg";
 
 
 // Astro.glob
@@ -92,6 +97,31 @@ const servicesCardsData = [
 	</div>
   <Hero />
   <About/>
+
+
+  <section id="services-section">
+    <ServicesCards servicesCards={servicesCardsData} />
+  </section>
+  <WhyUs />
+  <section id="meet-team">
+    <MeetTeam teamMember={teamMembersData} />
+  </section>
+
+  <section id="contact-section">
+    <div class="contact-container">
+      <div class="contact-left"></div>
+      <div class="contact-right">
+        <h2>Get In Touch!</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi ipsum consectetur aperiam enim perspiciatis aut placeat aliquam sapiente minus laboriosam!</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery-section">
+    <h2>Photo Gallery</h2>
+    <Gallery images={images} />
+  </section>
+
   <div class="blue-section">
   <section id="services-section">
     <ServicesCards servicesCards={servicesCardsData} />
@@ -111,10 +141,45 @@ const servicesCardsData = [
       </div>
     </div>
   </section>
-  
+
 </Main>
 
 <style>
+  
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .contact-left {
+    order: 2;
+    width: 100%;
+  }
+
+  .contact-right {
+    order: 1;
+    width: 100%;
+  }
+
+  .contact-right p {
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: 1024px) {
+    .contact-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+    }
+
+    .contact-left {
+      order: 1;
+      width: 50%;
+    }
 
 
   .contact-container {
@@ -153,6 +218,7 @@ const servicesCardsData = [
    
     }
 
+
     .contact-right {
       order: 2;
       width: 50%;
@@ -160,78 +226,8 @@ const servicesCardsData = [
     }
   }
 
-
 </style>
 
-<!-- ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
----
 
-<!DOCTYPE html>
-<html lang="en-us">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project. Add a blog RSS feed with <a
-					href="https://docs.astro.build/en/guides/rss/"
-					>@astrojs/rss
-				</a>.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
 
-		<script>
-			declare global {
-				interface Window {
-					netlifyIdentity: any;
-				}
-			}
 
-			if (window.netlifyIdentity) {
-			  window.netlifyIdentity.on("init", ((user: any) => {
-				if (!user) {
-				  window.netlifyIdentity.on("login", () => {
-					document.location.href = "/admin/";
-				  });
-				}
-			  }));
-			}
-		  </script>
-	</body>
-</html> -->
