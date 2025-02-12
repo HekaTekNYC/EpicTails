@@ -5,52 +5,15 @@
 import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
 import Main from "../layouts/Main.astro";
-import ServicesCards from "../components/ServicesCards.astro";
-import ContactForm from "../components/ContactForm.astro";
-import ContactInfo from "../components/ContactInfo.astro";
-import WhyUs from "../components/WhyUs.astro";
-import MeetTeam from '../components/TeamMembers.astro';
-import Gallery from '../components/Gallery.astro';
+// import ServicesCards from "../components/ServicesCards.astro";
+// import ContactForm from "../components/ContactForm.astro";
+// import ContactInfo from "../components/ContactInfo.astro";
+// import WhyUs from "../components/WhyUs.astro";
 
 
-const servicesCardsData = [
-  {
-    icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-    iconAlt: "cat icon",
-    title: "Cat and Critter Care",
-    desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-  },
+// import MeetOurTeam from "./meet-our-team.astro";
+const profilePicture = "https://i.imgur.com/JPGFE75.jpg";
 
-];
-
-const teamMembersData = [
-  {
-    image: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720205296/blue-guy-circle_ofawd6.png",
-    imageAlt: "Jenna Jameson",
-    name: "Jenna Jameson",
-    role: "President & CEO",
-    color: "#7099E4",
-  },
-
-];
-
-const images = [
-  { src: 'https://res.cloudinary.com/daecnx7ih/image/upload/v1718906392/cld-sample.jpg', alt: 'photo 1' },
-  { src: 'https://res.cloudinary.com/daecnx7ih/image/upload/v1719844384/dogs-woman-adobe_pmdl1m.jpg', alt: 'photo 1' },
-  { src: 'https://res.cloudinary.com/daecnx7ih/image/upload/v1719430068/cat-playing_av3jlj.jpg', alt: 'photo 2' },
-  { src: 'https://res.cloudinary.com/daecnx7ih/image/upload/v1719429629/jamie-street-UtrE5DcgEyg-unsplash_twbssn.jpg', alt: 'photo 4' },
-  { src: 'https://res.cloudinary.com/daecnx7ih/image/upload/v1719844443/hugging-dog-adobe_rzbxe5.jpg', alt: 'photo 3' },
-  { src: 'https://res.cloudinary.com/daecnx7ih/image/upload/v1719432754/sunset-dog_ecjb1s.jpg', alt: 'photo 4' },
-  { src: 'https://res.cloudinary.com/daecnx7ih/image/upload/v1719432558/woman-dog_ybhzr4.jpg', alt: 'photo 4' },
-  { src: 'https://res.cloudinary.com/daecnx7ih/image/upload/v1719429997/alvan-nee-1VgfQdCuX-4-unsplash_kxkodu.jpg', alt: 'photo 4' },
-  { src: 'https://res.cloudinary.com/daecnx7ih/image/upload/v1719432609/cat-hug_sf2g3g.jpg', alt: 'photo 4' },
-  { src: 'https://res.cloudinary.com/daecnx7ih/image/upload/v1719432537/golden-with-mom_cxh1b5.jpg', alt: 'photo 4' },
-  { src: 'https://res.cloudinary.com/daecnx7ih/image/upload/v1719432419/cat-playing_hu5t9z.jpg', alt: 'photo 4' },
-  { src: 'https://res.cloudinary.com/daecnx7ih/image/upload/v1719430068/cat-playing_av3jlj.jpg', alt: 'photo 4' },
-  { src: 'https://res.cloudinary.com/daecnx7ih/image/upload/v1719432309/dogs-stick_rwdn8v.jpg', alt: 'photo 4' },
-  { src: 'https://res.cloudinary.com/daecnx7ih/image/upload/v1719432253/dog-playing_uw3vyl.jpg', alt: 'photo 4' },
-  { src: 'https://res.cloudinary.com/daecnx7ih/image/upload/v1719432331/dog-photoshoot_h1vwyb.jpg', alt: 'photo 4' },
-  { src: 'https://res.cloudinary.com/daecnx7ih/image/upload/v1719432253/dog-playing_uw3vyl.jpg', alt: 'photo 4' },
 
 // Astro.glob
 // const blogs = await Astro.glob<{
@@ -127,17 +90,22 @@ const servicesCardsData = [
 ---
 
 <Main title="Epic Tails">
+  <div class="flex flex-col text-blue-600">
+		<a href="/admin">CMS</a>
+		<a href="/admin/config.yml">CMS Config</a>
+		<!-- <a href="/blog/seed">Seed Post</a> -->
+	</div>
   <Hero />
   <About/>
 
 
-  <section id="services-section">
+  <!-- <section id="services-section">
     <ServicesCards servicesCards={servicesCardsData} />
   </section>
-  <WhyUs />
-  <section id="meet-team">
+  <WhyUs /> -->
+  <!-- <section id="meet-team">
     <MeetTeam teamMember={teamMembersData} />
-  </section>
+  </section> -->
 
   <section id="contact-section">
     <div class="contact-container">
@@ -149,27 +117,27 @@ const servicesCardsData = [
     </div>
   </section>
 
-  <section id="gallery-section">
+  <!-- <section id="gallery-section">
     <h2>Photo Gallery</h2>
-    <Gallery images={images} />
-  </section>
+    <!-- <Gallery images={images} /> -->
+  <!-- </section> --> 
 
   <div class="blue-section">
   <section id="services-section">
-    <ServicesCards servicesCards={servicesCardsData} />
+    <!-- <ServicesCards servicesCards={servicesCardsData} /> -->
  
   </section>
-  <WhyUs />
+  <!-- <WhyUs /> -->
   </div>
   <section id="contact-section">
     <div class="contact-container">
       <div class="contact-left">
-        <ContactForm />
+        <!-- <ContactForm /> -->
       </div>
       <div class="contact-right">
         <h2>Get In Touch!</h2>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi ipsum consectetur aperiam enim perspiciatis aut placeat aliquam sapiente minus laboriosam!</p>
-        <ContactInfo contactInfo={contactInfoData} />
+        <!-- <ContactInfo contactInfo={contactInfoData} /> -->
       </div>
     </div>
   </section>
@@ -213,7 +181,7 @@ const servicesCardsData = [
       width: 50%;
     }
 
-
+  }
   .contact-container {
     display: flex;
     flex-direction: column;
@@ -261,6 +229,5 @@ const servicesCardsData = [
 </style>
 
 
-</style>
 
 
