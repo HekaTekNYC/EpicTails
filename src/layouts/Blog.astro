@@ -1,56 +1,80 @@
 ---
-// type utility for markdown layout props
-import type { MarkdownLayoutProps } from "astro";
 import Main from "./Main.astro";
+import PostLayout from 'PostLa'
 
-
-// this is where we pull in the props from our .md files
-type Props = MarkdownLayoutProps<{
-  // Define frontmatter props here
-  title: string;
-  poster: string;
-  subtitle: string;
-}>;
-
-// get properties from the markdown frontmatter
-const { poster, title, subtitle } = Astro.props.frontmatter;
+const { title, subtitle, ogImage, date } = Astro.props;
 ---
 
-<Main title="Frau Katarina | Blog">
-  <figure class="figure">
-    <img
-      src={poster}
-      alt=""
-      width="100%"
-      height="480px"
-      class="figure__image"
-    />
-    <figcaption class="figure__caption">
-      Poster image for {title.toLowerCase()}
-    </figcaption>
-  </figure>
+<Main title={title}>
 
-  <h1>{title}</h1>
-  <h2>{subtitle}</h2>
+  <!-- Hero Image -->
+  {ogImage && (
+    <figure class="figure">
+      <img
+        src={ogImage}
+        alt={title}
+        class="figure__image"
+      />
+    </figure>
+  )}
 
-  <slot />
+  <!-- Blog Header -->
+  <header class="blog-header">
+    <h1>{title}</h1>
+    <p class="blog-date">{new Date(date).toDateString()}</p>
+    <h2>{subtitle}</h2>
+  </header>
+
+  <!-- Blog Content -->
+  <article class="blog-content">
+    <slot />
+  </article>
 </Main>
 
 <style>
-  h1 + h2 {
-    margin-bottom: 3rem;
+  main {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
   }
 
   .figure {
-    margin: 0;
+    margin: 0 auto 20px;
+    text-align: center;
   }
 
   .figure__image {
-    max-width: 100%;
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
     border-radius: 10px;
   }
 
-  .figure__caption {
-    font-size: 0.9rem;
+  .blog-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    color: #333;
+  }
+
+  .blog-date {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 2rem;
+  }
+
+  .blog-content {
+    line-height: 1.8;
+    font-size: 18px;
+    color: #333;
   }
 </style>

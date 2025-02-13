@@ -1,5 +1,6 @@
 ---
 import Button from "./Button.astro";
+
 ---
 
 <nav class="nav-bar" aria-label="Primary navigation">
@@ -13,13 +14,20 @@ import Button from "./Button.astro";
   
   <!-- Navigation menu -->
   <div class="nav-links">
-    <ul>
+    <!-- <li><a href="{Astro.url('/')}">Home</a></li>
+<li><a href="{Astro.url('/about')}">About</a></li>
+<li><a href="{Astro.url('/services')}">Services</a></li>
+<li><a href="{Astro.url('/contact')}">Contact</a></li>
+<li><a href="{Astro.url('/blog/')}">Blog</a></li> -->
+
+ <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/about">About</a></li>
       <li><a href="/services">Services</a></li>
       <li><a href="/contact">Contact</a></li>
-      <li><a href="/blog">Blog</a></li>
-    </ul>
+      <li><a href="/blog/">Blog</a></li>
+    </ul> 
+
     <Button href="#" size="lg" style="secondary" class="booking-btn"> Book Now</Button>
   </div>
 </nav>
