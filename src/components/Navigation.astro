@@ -1,11 +1,10 @@
 ---
 import Button from "./Button.astro";
-
 ---
 
 <nav class="nav-bar" aria-label="Primary navigation">
   <a href="/" class="logo" aria-label="Home">
-    <img src="https://res.cloudinary.com/daecnx7ih/image/upload/v1719536256/epic-logo_ga6k5l.png" alt="Epic Tails logo" height="50">
+    <img src="/images/epic-logo.png" alt="Epic Tails logo" height="50">
   </a>
 
   <button aria-label="Toggle navigation" class="hamburger">
@@ -14,20 +13,13 @@ import Button from "./Button.astro";
   
   <!-- Navigation menu -->
   <div class="nav-links">
-    <!-- <li><a href="{Astro.url('/')}">Home</a></li>
-<li><a href="{Astro.url('/about')}">About</a></li>
-<li><a href="{Astro.url('/services')}">Services</a></li>
-<li><a href="{Astro.url('/contact')}">Contact</a></li>
-<li><a href="{Astro.url('/blog/')}">Blog</a></li> -->
-
- <ul>
+    <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/about">About</a></li>
       <li><a href="/services">Services</a></li>
       <li><a href="/contact">Contact</a></li>
-      <li><a href="/blog/">Blog</a></li>
-    </ul> 
-
+      <li><a href="/blog">Blog</a></li>
+    </ul>
     <Button href="#" size="lg" style="secondary" class="booking-btn"> Book Now</Button>
   </div>
 </nav>
