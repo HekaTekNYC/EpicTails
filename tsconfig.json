@@ -1,5 +1,6 @@
 {
-  "extends": "astro/tsconfigs/strict"
+  "extends": "astro/tsconfigs/strict",
+  "exclude": ["node_modules"]
 }
 
 // CMD Click will take you to the TS file.
