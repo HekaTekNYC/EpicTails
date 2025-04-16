@@ -50,3 +50,17 @@
 - Poppins and Work Sans
 - Quicksand & Lato
 - Gilda and Alegreya Sans
+
+
+
+Commitments needs jujing
+Pricing card on pet friendly section on hero
+reviews need touch up 
+footer on smaller screens
+shop needs the products placed on pricing cards
+
+
+
+Mockup 
+Informational
+Statistical 
