@@ -1,19 +1,12 @@
 ---
-
-// import Cards from "../components/BlogCards.astro";
-
+import Cards from "../components/BlogCards.astro";
 import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
 import Main from "../layouts/Main.astro";
-// import ServicesCards from "../components/ServicesCards.astro";
-// import ContactForm from "../components/ContactForm.astro";
-// import ContactInfo from "../components/ContactInfo.astro";
-// import WhyUs from "../components/WhyUs.astro";
+import ServicesCards from "../components/ServicesCards.astro";
+import WhyUs from "../components/WhyUs.astro";
 
-
-// import MeetOurTeam from "./meet-our-team.astro";
 const profilePicture = "https://i.imgur.com/JPGFE75.jpg";
-
 
 // Astro.glob
 // const blogs = await Astro.glob<{
@@ -21,212 +14,61 @@ const profilePicture = "https://i.imgur.com/JPGFE75.jpg";
 //   title: string;
 //   subtitle: string;
 // }>("../pages/blogs/*.md");
-
-const servicesCardsData = [
-    {
-      icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-      iconAlt: "cat icon",
-      title: "Cat and Critter Care",
-      desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-    },
-    {
-      icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-      iconAlt: "cat icon",
-      title: "Cat and Critter Care",
-      desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-    },
-    {
-      icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-      iconAlt: "cat icon",
-      title: "Cat and Critter Care",
-      desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-    },
-    {
-      icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-      iconAlt: "cat icon",
-      title: "Cat and Critter Care",
-      desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-    },
-    {
-      icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-      iconAlt: "cat icon",
-      title: "Cat and Critter Care",
-      desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-    },
-    {
-      icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-      iconAlt: "cat icon",
-      title: "Cat and Critter Care",
-      desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-    },
-  ]
-
-  const contactInfoData = [
-  {
-    icon: "fa-solid fa-location-dot",
-    iconDesc: "locaion pin icon",
-    title: "Location",
-    desc: "888 Pacific St, Brooklyn, NY 11238",
-  },
-  {
-    icon: "fa-regular fa-clock",
-    iconDesc: "clock icon",
-    title: "Hours",
-    desc: "Mon - Fri 8:00am - 8:00pm",
-  },
-  {
-    icon: "fa-solid fa-phone-volume",
-    iconDesc: "telephone icon",
-    title: "Telephone",
-    desc: "917-666-4444",
-  },
-  {
-    icon: "fa-regular fa-envelope",
-    iconDesc: "email icon",
-    title: "Email",
-    desc: "info@epictails.com",
-  },
-];
 ---
 
 <Main title="Epic Tails">
-  <div >
-		<a href="/admin">CMS</a>
-		<a href="/admin/config.yml">CMS Config</a>
-	</div>
   <Hero />
   <About/>
 
-
-  <!-- <section id="services-section">
-    <ServicesCards servicesCards={servicesCardsData} />
-  </section>
-  <WhyUs /> -->
-  <!-- <section id="meet-team">
-    <MeetTeam teamMember={teamMembersData} />
-  </section> -->
-
-  <section id="contact-section">
-    <div class="contact-container">
-      <div class="contact-left"></div>
-      <div class="contact-right">
-        <h2>Get In Touch!</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi ipsum consectetur aperiam enim perspiciatis aut placeat aliquam sapiente minus laboriosam!</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- <section id="gallery-section">
-    <h2>Photo Gallery</h2>
-    <!-- <Gallery images={images} /> -->
-  <!-- </section> --> 
-
   <div class="blue-section">
   <section id="services-section">
-    <!-- <ServicesCards servicesCards={servicesCardsData} /> -->
- 
+  <ServicesCards  
+    servicesCards={[
+      {
+        icon: "/public/icons/cat.png",
+        iconAlt: "cat icon",
+        title: "Cat and Critter Care",
+        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
+      },
+      {
+        icon: "/public/icons/cat.png",
+        iconAlt: "cat icon",
+        title: "Cat and Critter Care",
+        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
+      },
+      {
+        icon: "/public/icons/cat.png",
+        iconAlt: "cat icon",
+        title: "Cat and Critter Care",
+        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
+      },
+      {
+        icon: "/public/icons/cat.png",
+        iconAlt: "cat icon",
+        title: "Cat and Critter Care",
+        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
+      },
+      {
+        icon: "/public/icons/cat.png",
+        iconAlt: "cat icon",
+        title: "Cat and Critter Care",
+        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
+      },
+      {
+        icon: "/public/icons/cat.png",
+        iconAlt: "cat icon",
+        title: "Cat and Critter Care",
+        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
+      },
+      ]}
+    />
+   
   </section>
-  <!-- <WhyUs /> -->
-  </div>
-  <section id="contact-section">
-    <div class="contact-container">
-      <div class="contact-left">
-        <!-- <ContactForm /> -->
-      </div>
-      <div class="contact-right">
-        <h2>Get In Touch!</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi ipsum consectetur aperiam enim perspiciatis aut placeat aliquam sapiente minus laboriosam!</p>
-        <!-- <ContactInfo contactInfo={contactInfoData} /> -->
-      </div>
-    </div>
-  </section>
+  <WhyUs />
+</div>
 
 </Main>
 
 <style>
-  
-  .contact-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-  }
-
-  .contact-left {
-    order: 2;
-    width: 100%;
-  }
-
-  .contact-right {
-    order: 1;
-    width: 100%;
-  }
-
-  .contact-right p {
-    margin-bottom: 40px;
-  }
-
-  @media (min-width: 1024px) {
-    .contact-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      height: auto;
-    }
-
-    .contact-left {
-      order: 1;
-      width: 50%;
-    }
-
-  }
-  .contact-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-  }
-
-  .contact-left {
-    order: 2;
-    width: 100%;
-  }
-
-  .contact-right {
-    order: 1;
-    width: 100%;
-  }
-
-  .contact-right p {
-    margin-bottom: 40px;
-  }
-
-  @media (min-width: 1024px) {
-    .contact-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      height: auto;
-    }
-
-    .contact-left {
-      order: 1;
-      width: 50%;
-   
-    }
-
-
-    .contact-right {
-      order: 2;
-      width: 50%;
-      margin-left: 40px;
-    }
-  }
 
 </style>
-
-
-
-

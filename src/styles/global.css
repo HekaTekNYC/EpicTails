@@ -10,8 +10,7 @@ html {
   /* Greys */
   --dark-gray: #444548;
   --medium-gray: #808386;
-  --light-gray: #a1a3a6;
-  --lighter-gray: #f1f1f2;
+  --light-gray: #f1f1f2;
 
   /* Primary */
   --primary-darkest: #2452a7;
@@ -19,7 +18,7 @@ html {
   --primary-dark: #7099e4;
   --primary-medium: #a4c1f7;
   --primary-light: #cbddfb;
-  --primary-lighter: #e8f1ff;
+  --primary-lighter: #e0eaff;
   --primary-lightest: #f4f6ff;
 
   /* Secondary */
