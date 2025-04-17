@@ -36,7 +36,7 @@ html {
   --accent-dark: #34c5b8;
   --accent-medium: #9ae2dc;
   --accent-light: #cdf1ee;
-  --accent-lightest: ##e6f8f7;
+  --accent-lightest: #e6f8f7;
 
   /* Primary */
   --sapphire: #2452a7;
@@ -73,7 +73,21 @@ body {
   width: 100%;
   color: var(--dark-gray);
   background: var(--background);
+  overflow-x: hidden;
 }
+
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+  display: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* html {
+  overflow: none;
+} */
 
 *,
 *::before,

@@ -3,6 +3,7 @@ import Button from "./Button.astro";
 ---
 
 <nav class="nav-bar" aria-label="Primary navigation">
+  <div class="nav-bar-container">
   <a href="/" class="logo" aria-label="Home">
     <img src="/images/epic-logo.png" alt="Epic Tails logo" height="50">
   </a>
@@ -20,8 +21,9 @@ import Button from "./Button.astro";
       <li><a href="/contact">Contact</a></li>
       <li><a href="/blog">Blog</a></li>
     </ul>
-    <Button href="#" size="lg" style="secondary" class="booking-btn"> Book Now</Button>
+    <Button href="#" size="md" style="secondary" class="nav-btn"> Book Now</Button>
   </div>
+</div>
 </nav>
 
 <style>
@@ -30,13 +32,22 @@ import Button from "./Button.astro";
     top: 0;
     background-color: var(--white);
     display: flex; 
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 5px 30px;
+    padding: 0px 30px;
     height: 90px;
     width: 100%;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
     z-index: 1000; 
+  }
+
+  .nav-bar-container {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
   }
   
   .logo {
@@ -73,8 +84,8 @@ import Button from "./Button.astro";
   }
 
   .nav-links a {
-    font-size: 1.6rem;
-    font-weight: 700;
+    font-size: 1.3rem;
+    font-weight: 500;
   }
 
   .nav-links a:hover {
@@ -85,26 +96,24 @@ import Button from "./Button.astro";
   }
 
   .nav-links ul {
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     height: 60%;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
 
 
   @media (min-width: 768px) {
     nav {
-      padding: 5px 40px;
+      padding: 0px 40px;
     }
   }
 
   @media (min-width: 992px) {
     nav {
-      padding: 5px 60px;
-      height: 92px;
+      padding: 0px 60px;
     }
 
     .hamburger {
@@ -131,20 +140,22 @@ import Button from "./Button.astro";
     .nav-links li {
       margin: 0 10px;
     }
-
     .nav-links a {
       font-size: 1.2rem;
-      font-weight: 500;
+    }
+
+    .nav-btn {
+      font-size: 1.1rem !important;
     }
   }
 
   @media (min-width: 1200px) {
-    /* Extra large devices styles */
+    nav {
+      padding: 0px 100px;
+    }
   }
 
-  @media (min-width: 1400px) {
-    /* Extra extra large devices styles */
-  }
+
 </style>
 
 <script>
