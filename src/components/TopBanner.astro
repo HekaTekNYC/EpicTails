@@ -1,21 +1,18 @@
  <!-- top banner -->
  <div class="info-banner">
+    <div class="top-banner-container"> 
     <!-- contact info -->
     <div class="contact-nav">
         <div class="contact-email">
-            <!-- <img src="/icons/email.svg" alt="email icon" width="25"> -->
             <i class="fa-regular fa-envelope" style="color: #ffffff;"></i>
             <p>info@epictails.com</p>
         </div>
         <div class="contact-phone">
-            <!-- <img src="/icons/phone.svg" alt="phone icon" width="25"> -->
             <i class="fa-solid fa-phone-volume" style="color: #ffffff;"></i>
             <p>917-555-4444</p>
         </div>
         <div class="contact-hours">
-            <!-- <img src="/icons/clock.svg" alt="clock icon" width="25"> -->
             <i class="fa-regular fa-clock" style="color: #ffffff;"></i>
-
             <p>Sun - Fri (8AM - 8PM)</p>
         </div>
     </div>
@@ -37,67 +34,96 @@
             </a>
         </li>
     </ul>
-  
+</div> 
   </div>
 
   <style>
+   
+
     .info-banner {
-        display: none;
-        height: 36px;
-    }
-
-
-    /* Large devices (lg) - 992px and above */
-    @media (min-width: 992px) {
-        .info-banner {
         display: flex;
-        flex-direction: row;
+        align-items: center;
         justify-content: space-between;
         width: 100%;
         background-color: var(--primary-darker);
-        padding: 0 60px;
-        }
+        padding: 0 25px;
+        height: 35px;
+    }
 
-        .info-banner .contact-nav{
+    .top-banner-container   {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 1400px;
+    }
+
+    .contact-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .contact-nav .contact-email {
+        display: none;
+    }
+
+    .info-banner .social-nav {
+        display: none;
+    }
+
+    .contact-email, .contact-phone, .contact-hours {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    .contact-phone p, .contact-hours p, .contact-email p {
+        font-size: .875rem;
+        padding-left: 8px;
         color: var(--white)
+    }
+
+    @media (min-width: 430px) {
+        .info-banner {
+            padding: 0 35px;
         }
-        .info-banner .socials-nav{
-        display: flex;
+      
+    }
+    @media (min-width: 576px) {
+        .info-banner {
+            padding: 0 40px;
+        }
+      
+    }
+
+    @media (min-width: 768px) {
+
+        .info-banner {
+            height: 40px;
         }
 
-        .contact-email, .contact-phone, .contact-hours {
+        .contact-nav {
+            width: 70%;
+        }
+        .contact-nav .contact-email {
             display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
-        .fa-envelope,
-        .contact-phone img,
-        .contact-hours img {
-        margin: 3px 3px 0 10px;
-        }
 
-        .social-nav {
-        display: flex;
-        list-style-type: none; 
-        margin: 0;
-        padding: 0;
-        }
-
-        .social-nav li {
+        .info-banner .social-nav {
             display: flex;
+            justify-content: end;
             align-items: center;
-            justify-content: center;
-            margin: 0 5px; 
+            padding-left: 20px;
+            width: 30%;
         }
 
         .social-nav a {
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 0 5px; 
         }
 
         .banner-x img,
@@ -109,9 +135,24 @@
             margin: 0 2px;
             cursor: pointer;
         }
-
-        
+      
     }
+
+
+    /* Medium Screens (≥992px) */
+    @media screen and (min-width: 992px) {
+
+        .info-banner {
+            padding: 0 80px;
+        }
+
+
+
+    }
+
+ 
+    
+
 
     
   </style>
