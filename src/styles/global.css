@@ -203,7 +203,6 @@ li {
   background-color: var(--primary-lightest);
 }
 
-/* X-Small devices (None specified, assumed to be default styles) */
 /* Small devices (sm) - 576px and above */
 @media (min-width: 576px) {
   /* #hero-section, #about-section, #services-section, #contact-section {
@@ -241,13 +240,13 @@ li {
 /* Extra large devices (xl) - 1200px and above */
 @media (min-width: 1200px) {
   #hero-section {
-    padding: 0 100px;
+    padding: 0 80px;
   }
   #about-section,
   #services-section,
   #contact-section,
   #why-us {
-    padding: 60px 100px;
+    padding: 60px 80px;
   }
 }
 
