@@ -85,10 +85,6 @@ html::-webkit-scrollbar {
   scrollbar-width: none;
 }
 
-/* html {
-  overflow: none;
-} */
-
 *,
 *::before,
 *::after {
