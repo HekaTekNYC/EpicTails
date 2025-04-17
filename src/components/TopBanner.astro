@@ -1,0 +1,184 @@
+ <!-- top banner -->
+ <div class="top-banner">
+    <div class="top-banner-container"> 
+    <!-- contact info -->
+    <div class="contact-nav">
+        <div class="contact-email">
+            <i class="fa-regular fa-envelope" style="color: #ffffff;"></i>
+            <p>info@epictails.com</p>
+        </div>
+        <div class="contact-phone">
+            <i class="fa-solid fa-phone-volume" style="color: #ffffff;"></i>
+            <p>917-555-4444</p>
+        </div>
+        <div class="contact-hours">
+            <i class="fa-regular fa-clock" style="color: #ffffff;"></i>
+            <p>Sun - Fri (8AM - 8PM)</p>
+        </div>
+    </div>
+    <!-- social icons -->
+    <ul class="social-nav">
+        <li class="banner-fb">
+            <a href="#" aria-label="Facebook Link">
+                <img src="/icons/facebook.svg" alt="facebook icon" height="25">
+            </a>
+        </li>
+        <li class="banner-x">
+            <a href="#" aria-label="Twitter Link">
+                <img src="/icons/x.svg" alt="twitter icon" height="25">
+            </a>
+        </li>
+        <li class="banner-insta">
+            <a href="#" aria-label="Instagram Link">
+                <img src="/icons/instagram.svg" alt="instagram icon" height="25">
+            </a>
+        </li>
+    </ul>
+</div> 
+  </div>
+
+  <style>
+   
+
+    .top-banner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: var(--primary-darker);
+        padding: 0 25px;
+        height: 35px;
+    }
+
+    .top-banner-container   {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1300px;
+    }
+
+    .contact-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .contact-nav .contact-email {
+        display: none;
+    }
+
+    .top-banner .social-nav {
+        display: none;
+    }
+
+    .contact-email, .contact-phone, .contact-hours {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .contact-phone p, .contact-hours p, .contact-email p {
+        font-size: .875rem;
+        padding-left: 8px;
+        color: var(--white)
+    }
+
+    @media (min-width: 430px) {
+        .top-banner {
+            padding: 0 35px;
+        }
+      
+    }
+    @media (min-width: 576px) {
+        .top-banner {
+            padding: 0 40px;
+        }
+      
+    }
+
+    @media (min-width: 768px) {
+
+        .top-banner {
+            height: 40px;
+        }
+
+        .contact-nav {
+            width: 70%;
+        }
+        .contact-nav .contact-email {
+            display: flex;
+        }
+
+
+        .top-banner .social-nav {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            padding-left: 20px;
+            width: 30%;
+        }
+
+        .social-nav a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px; 
+        }
+
+        .banner-x img,
+        .banner-fb img,
+        .banner-insta img {
+            border: 1px solid var(--white);
+            border-radius: 40px;
+            padding: 4px;
+            margin: 0 2px;
+            cursor: pointer;
+        }
+      
+    }
+
+
+    /* Medium Screens (≥992px) */
+    @media screen and (min-width: 992px) {
+        .top-banner {
+            padding: 0 80px;
+        }
+        .contact-nav {
+            width: 60%;
+        }
+
+        .top-banner .social-nav {
+            width: 40%;
+        }
+    }
+
+    /* Medium Screens (≥1200px) */
+    @media screen and (min-width: 1200px) {
+
+        .contact-nav {
+            width: 45%;
+        }
+
+        .top-banner .social-nav {
+            width: 55%;
+        }
+    }
+    /* Medium Screens (≥1400px) */
+    @media screen and (min-width: 1400px) {
+    
+        .contact-nav {
+            width: 40%;
+        }
+
+        .top-banner .social-nav {
+            width: 60%;
+        }
+    }
+
+ 
+    
+
+
+    
+  </style>
