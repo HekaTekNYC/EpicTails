@@ -5,6 +5,7 @@ import Button from "./Button.astro";
 
 
 <section id="about-section">
+    <div class="about-container">
         <div class="about-left-side">
             <div class="about-img-container">
                 <img class="about-img" src='/images/dog-kisses.webp' alt="Woman kissing her golden retriever"  width=420>
@@ -13,9 +14,9 @@ import Button from "./Button.astro";
                     <span class="about-bold-yrs">10 +</span> 
                     Years of Experience 
                 </p>
-                </div>
             </div>
             <img class="about-blob" src='./images/about-blob.svg'  alt="pink blob behind woman kissing dog image" width=420/>
+            </div>
         </div>
         <div class="about-right-side">
             <h3>About Us</h3>
@@ -28,6 +29,7 @@ import Button from "./Button.astro";
             </ul>
             <Button href="#" size="lg" style="secondary" >Read More</Button>
         </div>
+        </div>
   
 </section>
 
@@ -38,7 +40,14 @@ import Button from "./Button.astro";
         align-items: center;
         height: auto;
     }
-
+.about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+}
     /* about left side */
     .about-left-side {
         position: relative;
@@ -60,15 +69,14 @@ import Button from "./Button.astro";
         z-index: 2;
     }
     .about-img {
-        width: 330px;  
-        height: auto; 
-       
+        width: 400px;  
+        height: auto;   
     }
     .about-blob {
         position: absolute;
-        top: 20px;
-        right: 12px;
-        width: 330px;  
+        top: 40px;
+        right: 42px;
+        width:280px;  
         height: auto; 
         transform: rotate(20deg);
         z-index: -1;
@@ -153,6 +161,49 @@ import Button from "./Button.astro";
     }
 
     .about-img-container {
+        height: 350px;
+        left: 35px;
+        top: 0;
+    }
+    .about-img{
+       height: 317px;
+       width: auto;
+    }
+    .about-blob {
+        height: 317px;
+        top: 48px;
+        left: 0;
+        transform: rotate(23deg);
+    }
+   
+   .yrs-exp-circle {
+        margin: 0;
+        top: 225px;
+        left: -13px; 
+        height: 110px;
+        width: 110px;
+    }
+    .yrs-exp-circle .about-bold-yrs {
+        font-size: 1.3rem;
+    }
+
+}  
+/* Medium devices (md) - 820px and above */
+@media (min-width: 820px) {
+    #about-section {
+        display: flex;
+        flex-direction: row;
+    }
+    .about-left-side {
+        width: 50%;
+        height: 451px;
+        margin-right: 20px;
+    }
+    .about-right-side {
+        width: 50%;
+    }
+
+    .about-img-container {
         height: 450px;
     }
     .about-img{
@@ -162,7 +213,7 @@ import Button from "./Button.astro";
     .about-blob {
         height: 317px;
         top: 48px;
-        left: 29px;
+        left: 0;
         transform: rotate(23deg);
     }
    
@@ -217,8 +268,8 @@ import Button from "./Button.astro";
         height: 374px;
     }
     .yrs-exp-circle {
-    top:121px;
-    left: -8;
+    top: 250px;
+    left: -25px;
     height: 120px;
     width: 120px;
 }
@@ -227,11 +278,12 @@ import Button from "./Button.astro";
 /* Extra large devices (xl) - 1200px and above */
 @media (min-width: 1100px) {
     .about-left-side {
-        height: 451px;
+        height: 351px;
     }
     .about-blob {
 
     }
+
     .about-img {
         height: 393px;
     }
@@ -273,6 +325,42 @@ import Button from "./Button.astro";
         justify-content: center;
         align-items:center;
     }
+    .about-left-side {
+        height: 451px;
+    }
+    .about-blob {
+
+    }
+    .about-img-container {
+  justify-content: flex-start; /* Pushes image left instead of right */
+  padding-left: 40px; /* optional: adjust how far left */
+}
+
+    .about-img {
+        height: 393px;
+        top: 0;
+        right: 100px;
+    }
+    .about-blob {
+        left: 68px;
+        top: 25px;
+        height: 393px;
+        transform: rotate(19deg)
+    }
+    .yrs-exp-circle {
+        top: 135px;
+        left: -7px;
+        height: 135px;
+        width: 135px;
+    }
+    .about-bold-yrs {
+        font-size: 1.5rem;
+    }
+
+    .yrs-text {
+        font-size: 1.1rem;
+
+    }
 }
 
 
@@ -281,9 +369,5 @@ import Button from "./Button.astro";
 
  
 
-<!-- 
-reduce the size of yrs font
-ipad mini landscape yrs text circle yuck
-  -->
 
 
