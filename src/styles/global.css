@@ -174,7 +174,7 @@ li {
 }
 
 #services-section {
-  background-color: var(--primary-lightest);
+  background-color: var(--primary-darker);
   display: flex;
   align-items: center;
   justify-content: center;
