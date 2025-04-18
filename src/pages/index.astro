@@ -1,74 +1,72 @@
 ---
-import Cards from "../components/BlogCards.astro";
+
 import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
 import Main from "../layouts/Main.astro";
-import ServicesCards from "../components/ServicesCards.astro";
+import ServicesCard from "../components/ServicesCard.astro";
 import WhyUs from "../components/WhyUs.astro";
+import { servicesData } from "../data/ServicesData.ts";
 
 const profilePicture = "https://i.imgur.com/JPGFE75.jpg";
 
-// Astro.glob
-// const blogs = await Astro.glob<{
-//   poster: string;
-//   title: string;
-//   subtitle: string;
-// }>("../pages/blogs/*.md");
 ---
 
 <Main title="Epic Tails">
   <Hero />
   <About/>
-
-  <div class="blue-section">
   <section id="services-section">
-  <ServicesCards  
-    servicesCards={[
-      {
-        icon: "/public/icons/cat.png",
-        iconAlt: "cat icon",
-        title: "Cat and Critter Care",
-        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-      },
-      {
-        icon: "/public/icons/cat.png",
-        iconAlt: "cat icon",
-        title: "Cat and Critter Care",
-        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-      },
-      {
-        icon: "/public/icons/cat.png",
-        iconAlt: "cat icon",
-        title: "Cat and Critter Care",
-        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-      },
-      {
-        icon: "/public/icons/cat.png",
-        iconAlt: "cat icon",
-        title: "Cat and Critter Care",
-        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-      },
-      {
-        icon: "/public/icons/cat.png",
-        iconAlt: "cat icon",
-        title: "Cat and Critter Care",
-        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-      },
-      {
-        icon: "/public/icons/cat.png",
-        iconAlt: "cat icon",
-        title: "Cat and Critter Care",
-        desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-      },
-      ]}
-    />
+    <div class="services-container">
+    {servicesData.map((card) => (
+      <div class="services-cards">
+      <ServicesCard {...card} />
+    </div>
+    ))}
+    </div>
    
   </section>
   <WhyUs />
-</div>
+
 
 </Main>
 
 <style>
+  
+  /* Services */
+  .services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    padding: 60px 30px;
+    max-width: 1300px;
+  }
 
+
+
+  /* Media Queries*/
+
+  /* Services */
+
+  @media (min-width: 768px) {
+    .services-container {
+      padding: 60px 40px;
+      grid-template-columns: repeat(2, 1fr); 
+    }
+  }
+
+  @media (min-width: 992px) {
+    .services-container {
+      padding: 60px;
+      grid-template-columns: repeat(3, 1fr); 
+    }
+    
+  }
+  @media (min-width: 1200px) {
+  .services-container {
+    padding: 60px 80px;
+    gap: 2rem;
+  }
+}
+
+  
 </style>
