@@ -1,154 +1,152 @@
 ---
 
 ---
-
 <section id="why-us">
     <div class="why-us-container">
+      <div class="why-visual-wrap">
+        <img class="why-blob" src="./images/blob-1.svg" alt="pink background blob" />
+        <img class="why-img" src="/images/blob-2-hugging-dog.webp" alt="woman hugging dog" />
+      </div>
         <div class="why-us-left">
-            <h3>Why Choose Us</h3>
-            <h2>We Take Care of<span class="focus-font"> Your Pets </span> and Keep Them Happy Time</h2>
-            <p class="why-spacer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt maxime dolores soluta ducimus voluptates illo.</p>
-            
-            <div class="why-points-container">
-                <div class="why-point-container">    
-                    <div class="why-icon">
-                        <img src="./icons/walking-dog.svg" alt="icon of persons walking a dog" height="45px" width="45px"/>
-                    </div>
-                    <div class="why-info-column">
-                        <h5>Certified Sitters</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.  </p>
-                    </div>
-                </div>
-                <div class="why-point-container">    
-                    <div class="why-icon">
-                    <img src="./icons/pet-dog-icon.svg" alt="icon of persons hand petting dog" height="45px" width="45px"/>
-                    </div>
-                    <div class="why-info-column">
-                        <h5>Flexible Care Schedules</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet. </p>
-                    </div>
-                </div>
+        <h3>Why Choose Us</h3>
+        <h2>We Take Care of<span class="focus-font"> Your Pets </span> and Keep Them Happy Time</h2>
+        <p class="why-spacer">
+          At Epic Tails, we treat your pets like family. Our trusted sitters and flexible scheduling options ensure your pets get the attention, love, and care they deserve—whether you're working late, traveling, or just need a helping hand.
+        </p>
+  
+        <div class="why-points-container">
+          <div class="why-point-container">
+            <div class="why-icon-container">
+              <div class="why-icon">
+                <img src="./icons/walking-dog.svg" alt="icon of persons walking a dog" />
+              </div>
             </div>
+            <div class="why-info-column">
+              <h5>Certified Sitters</h5>
+              <p>Our team is professionally trained and certified in pet first aid and behavior—so you can rest easy knowing your furry companion is in expert hands.</p>
+            </div>
+          </div>
+  
+          <div class="why-point-container">
+            <div class="why-icon-container">
+              <div class="why-icon">
+                <img src="./icons/pet-dog-icon.svg" alt="icon of hand petting a dog" />
+              </div>
+            </div>
+            <div class="why-info-column">
+              <h5>Flexible Care Schedules</h5>
+              <p>Whether it's daily walks, weekend check-ins, or overnight stays, we tailor our care to fit your lifestyle and your pet's needs.</p>
+            </div>
+          </div>
         </div>
-        <div class="why-right-side">
-            <div class="why-blob">
-                <img src="./images/blob-1.svg" alt="pink background blob"/>
-            </div>
-            <div class="why-img">
-                <img src="/images/blob-2-hugging-dog.webp" alt="woman hugging dog"/>
-            </div>
-        </div>
+      </div>
+  
     </div>
-</section>
+  </section>
+  
+  
+  <style>
+    .why-us-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 1rem;
+}
 
+.why-visual-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 2rem;
+}
 
-<style>
-.why-us-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: auto;
+.why-blob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 0;
+  transform: rotate(359deg);
+}
+
+.why-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
 }
 
 .why-us-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+  max-width: 900px;
+  width: 100%;
 }
+
 .why-spacer {
-    padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 .why-points-container {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    width: 100%;
-    line-height: .9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
 }
 
 .why-point-container {
-    display: flex;
-    align-items: flex-start;
+  display: flex;
+  align-items: flex-start;
+}
 
+.why-icon-container {
+  flex-shrink: 0;
+  margin-right: 12px;
 }
 
 .why-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    border: 2px solid var(--primary-darker);
-    border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border: 2px solid var(--primary-darker);
+  border-radius: 50%;
 }
 
-/* .why-icon img {
-    height: 60px; 
-    width: 60px; 
-} */
+.why-icon img {
+  width: 45px;
+  height: 45px;
+}
 
 .why-info-column {
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
+  flex: 1;
 }
 
-.why-right-side {
-    position: relative;
-    display: flex;
+@media (min-width: 1024px) {
+  .why-us-container {
+    flex-direction: row-reverse;
+    align-items: flex-start;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 370px;
-    overflow: hidden;
-}
-.why-img {
-    z-index: 1;
-}
-.why-img img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-.why-blob {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 95%;
-    height: 95%;
-    z-index: 0;
-    transform: rotate(359deg);
-}
-.why-blob img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-@media (max-width: 576px) {
-    .why-right-side {
-        display: none;
-    }
-}
-@media (min-width: 768px) {
-    
-    .why-us-container {
-        flex-direction: row;
-    }
-    
-    .why-us-left {
-        width: 50%;
-    }
+    gap: 4rem;
+  }
 
-    .why-right-side {
-        display: flex;
-        width: 50%;
-        height: 100%; 
-    }
+  .why-visual-wrap {
+    max-width: 500px;
+    flex: 1 1 50%;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 0;
+  }
+
+  .why-us-left {
+    flex: 1 1 50%;
+    max-width: 600px;
+  }
 }
 
-</style>
+
+  </style> 
