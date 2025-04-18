@@ -1,14 +1,7 @@
 ---
-import { string } from 'astro/zod';
+import type { ServiceData } from '../data/ServicesData';
 
-const { icon, iconAlt, title, desc} = Astro.props;
-
-export type Props = {
-  icon: string;
-  iconAlt: string;
-  title: string;
-  desc: string;
-};
+const props = Astro.props as ServiceData;
 ---
 <div class="service-card-container">
   <div class="service-blobs">
@@ -18,11 +11,11 @@ export type Props = {
   <div class="service-info">
     <div class="service-icon-container">   
       <div class="service-icon">
-       <img src={icon} alt={iconAlt}  height="50"/>
+       <img src={props.icon} alt={props.iconAlt}  height="50"/>
       </div> 
     </div>
-    <h4>{title}</h4>
-    <p>{desc}</p>
+    <h4>{props.title}</h4>
+    <p>{props.desc}</p>
     <div class="service-read-more">
       <div class="service-circle">  
         <i class="fa-solid fa-arrow-right" style="color: #ffffff;"></i>
@@ -41,13 +34,13 @@ export type Props = {
   .service-card-container {
     position: relative;
     display: flex;
+    flex: 1;
     justify-content: center;
     align-items: center;
     height: 100%;
-    max-height: 360px;
     width: 100%;
     max-width: 516px;
-    padding: 30px;
+    padding: 25px;
     background: var(--white);
     border-radius: 20px;
     overflow: hidden;
@@ -86,12 +79,9 @@ export type Props = {
  .service-info h4 {
    margin-top: 15px;
    z-index: 10;
+
  }
 
- .service-info p {
-   font-size: 1.2rem;
-   z-index: 10;
- }
 
  .service-icon-container {
     display: flex;
@@ -121,6 +111,10 @@ export type Props = {
   align-items: center;
  }
 
+ .service-read-more h6 {
+  color: var(--primary-darker)
+ }
+
  .service-circle {
   display: flex;
   align-items: center;
@@ -143,14 +137,6 @@ export type Props = {
   .service-paws img {
     transform: rotate(-40deg);
   }
-
-  @media (min-width: 824px) {
-    .service-card-container {
-      width: auto;
-      max-width: 360px;
-
-    }
-}
 
 
 
