@@ -13,7 +13,7 @@ html {
   --light-gray: #f1f1f2;
 
   /* Primary */
-  --primary-darkest: #2452a7;
+  --primary-darkest: #285bb9;
   --primary-darker: #4c76c4;
   --primary-dark: #7099e4;
   --primary-medium: #a4c1f7;
@@ -74,10 +74,21 @@ a {
   cursor: pointer;
 }
 
+menu:not(article menu),
+ol:not(article ol),
+ul:not(article ul) {
+  list-style: none;
+}
+
+menu,
+ol,
 ul {
-  list-style-type: none;
+  padding-left: 0;
   margin: 0;
-  padding: 0;
+}
+
+p {
+  margin: 0;
 }
 
 /* hero */
@@ -169,8 +180,12 @@ li {
 #about-section,
 #contact-section,
 #why-us {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 60px 30px;
   width: 100%;
+  overflow: hidden;
 }
 
 #services-section {
@@ -218,7 +233,7 @@ li {
   #about-section,
   #contact-section,
   #why-us {
-    padding: 60px 80px;
+    padding: 80px;
   }
 }
 

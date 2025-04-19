@@ -27,28 +27,21 @@ import Button from "./Button.astro";
                 <li><img src="icons/checkmark.svg" height="20px"><p>Interactive Play: Engaging activities to keep pets entertained.</p></li>
                 <li><img src="icons/checkmark.svg" height="20px"/><p><span class="bold-li">Regular Updates:</span> Photos and updates to give you peace of mind.</p></li>
             </ul>
-            <Button href="#" size="lg" style="secondary" >Read More</Button>
+            <Button href="#" size="lg" style="secondary" class="about-btn">Read More</Button>
         </div>
         </div>
   
 </section>
 
 <style>
-    #about-section {
+    .about-container {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
-        height: auto;
-    }
-.about-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 1400px;
-}
-    /* about left side */
+        width: 100%;
+        max-width: 1400px;
+    }   
     .about-left-side {
         display: flex;
         justify-content: center;
@@ -57,52 +50,52 @@ import Button from "./Button.astro";
         width: 100%;
     }
 
-/* About Image Container */
+    /* About Image Container */
     .about-img-container {
         position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center; 
-        height: 350px;
         width: 100%;
-        max-width: 325px;
+        height: 100%;
+        max-width: 500px;
+        margin-bottom: 30px;
+        aspect-ratio: 1 / 1;
         z-index: 2;
     }
     .about-img {
         position: absolute;
-        top:20px;
-        left:20px;
-        width: 275px;  
-        height: auto;  
+        top:0;
+        left:0;
+        right: 0;
+        width: 100%;  
+        height: 100%;  
         z-index: 3; 
     }
     .about-blob {
         position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 300px;  
-        height: auto; 
-        transform: rotate(-25deg);
-        z-index: 1;
+        top: 0;
+        right: 0;
+        width: 100%;  
+        height:100%; 
+        transform: scale(1.2) rotate(40deg);
+        z-index: 2;
     }
 
     /* Years Exp Circle */
     .yrs-exp-circle {
         position: absolute;
         bottom: 40px;
-        left: -10px; 
+        left: -15px; 
         display: flex;
         flex-direction: column;
-        justify-content: start;
+        justify-content: center;
         align-items: center;
         padding: 20px;
         text-align: center;
         color: var(--white);
-        background-color: var(--primary-darker);
+        background-color: var(--primary-darkest);
         border-radius: 50%;
         border: 5px solid var(--white);
-        width: 110px;
-        height: 110px;
+        width: 105px;
+        height: 105px;
         z-index: 4;
     }
     .yrs-text {
@@ -111,7 +104,7 @@ import Button from "./Button.astro";
         justify-content: center;
         align-items: center;
         margin: 0;
-        font-size: .9rem;    
+        font-size: .75rem;    
         font-weight: 600;
         line-height: 1.1;   
     }
@@ -119,7 +112,7 @@ import Button from "./Button.astro";
         display: flex;
         white-space: nowrap;
         font-weight: 800;
-        font-size: 1.6rem !important;
+        font-size: 1.3rem !important;
         line-height: 1;       
     }
 
@@ -128,77 +121,74 @@ import Button from "./Button.astro";
     .about-right-side  {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: start;
         height: 100%;
+    }
+
+    .about-list {
+        padding-bottom: 10px;
     }
 
     .about-list li {
         display: flex;
         align-items: center;
+        justify-content: start;
         margin: 0;
+        padding-left: 20px;
 
     }
     .about-list  li img {
-        margin-right: 20px;
+        margin-right: 15px;
     }
 
 
 
-/* Medium devices (md) - 768px and above */
-@media (min-width: 768px) {
-    .about-container {
-        flex-direction: row;
-    }
-    .about-left-side {
-        width: 50%;
-    }
-    .about-right-side {
-        width: 50%;
+/* Small devices (sm) - 576px and above */
+@media (min-width: 576px) {
+
+
+    .yrs-exp-circle {
+        bottom: 50px;
+        left: -15px; 
+        width: 130px;
+        height: 130px;
+  
     }
 
-    .about-img-container {
-        height: 350px;
-        width: 100%;
-        max-width: 300px;
+    .yrs-text {
+        font-size: 1rem !important;    
+        font-weight: 600;
+        line-height: 1.1;   
+    }
+    .about-bold-yrs {
+        display: flex;
+        white-space: nowrap;
+        font-weight: 800;
+        font-size: 1.5rem !important;
+        line-height: 1.1;       
     }
 
-}  
-/* Medium devices (md) - 820px and above */
-@media (min-width: 820px) {
-    .about-left-side {
-        width: 50%;
-    }
-
-}  
+    
+}
+ 
 /* Large devices (lg) - 992px and above */
 @media (min-width: 992px) {   
-    .about-img-container {
-        height: 375px;
-        width: 100%;
-        max-width: 400px;
+    .about-container { 
+        flex-direction: row;
+        gap: 4rem;
     }
 
-    .about-img {
-        top:20px;
-        left:20px;
-        width: 350px;  
-        height: auto;  
-
+    .about-left-side {
+        flex: 1 1 50%;
     }
-    .about-blob {
-        top: 20px;
-        right: 50px;
-        width: 370px;  
-        height: auto; 
-        transform: rotate(-25deg);
-
+    .about-right-side {
+        flex: 1 1 50%;
+    }
+    .about-img-container { 
+    
+        margin-bottom: 0;
     }
 
-    /* Years Exp Circle */
-    .yrs-exp-circle {
-        bottom: 20px;
-        left: -20px; 
-    }
 }
 
 
