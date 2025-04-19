@@ -13,7 +13,7 @@ html {
   --light-gray: #f1f1f2;
 
   /* Primary */
-  --primary-darkest: #285bb9;
+  --primary-darkest: #3563ba;
   --primary-darker: #4c76c4;
   --primary-dark: #7099e4;
   --primary-medium: #a4c1f7;
@@ -89,13 +89,14 @@ ul {
 
 p {
   margin: 0;
+  font-size: 1rem;
 }
 
 /* hero */
 h1 {
   font-family: var(--gelica);
   font-weight: 900;
-  font-size: 2.6rem;
+  font-size: 2.3rem;
   line-height: 1;
   color: var(--dark-gray);
   margin: 0;
@@ -117,7 +118,7 @@ h3 {
   font-family: var(--bryant);
   font-size: 1.2rem;
   font-weight: 600;
-  line-height: 2.2rem;
+  line-height: 2rem;
   text-transform: uppercase;
   color: var(--primary-dark);
   margin: 0;
@@ -173,7 +174,7 @@ li {
 }
 
 #hero-section {
-  padding: 0 30px 40px;
+  padding: 60px 30px 40px;
   width: 100%;
 }
 

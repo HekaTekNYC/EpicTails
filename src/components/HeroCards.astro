@@ -22,12 +22,21 @@ const { heroCards } = Astro.props;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: .5rem;
     height: auto;
+
     width: 100%;
   }
 
-  /* Since this is standard CSS, we can have media queries here */
+
+  @media screen and (min-width: 768px) {
+    .hero-cards {
+      flex-direction: row;
+      gap: 1rem;
+      max-width: 500px;
+    }
+
+  }
   @media screen and (min-width: 1024px) {
     .hero-cards {
       flex-direction: row;

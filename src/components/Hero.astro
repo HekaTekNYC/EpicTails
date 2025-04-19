@@ -6,19 +6,46 @@ import HeroCards from "./HeroCards.astro"
 ---
 
 <section id="hero-section">
-    <div class="hero">
+    <div class="hero-container">
         <div class="hero-left">
-            <img src="/images/paw-prints-celeste.png" alt="celeste blue colored paw prints" class="hero-paws" height=100>
+            <img src="/icons/paw-prints-4.svg" alt="celeste blue colored paw prints" class="hero-paws" height=100>
             <div class="blob-left">
                 <img src="/images/hero-blob-1.svg" alt="pastel pink blob" height=300>
             </div>
-            <img src="/images/russian-blue.png" alt="russian blue cat with green eyes sitting" height="300">
+            <div class="blob-mobile">
+                <img src="/images/hero-blob-2.svg" alt="light blue blob" height=250>
+            </div>
+            <img src="/images/russian-blue.png" alt="russian blue cat with green eyes sitting" height="300" class="hero-cat">
+            <img src="/images/golden-lab.webp" alt="golden labrador retriever sitting looking happy" height=400 class="mobile-lab">
         </div>
-        <div class="hero-header">
-            <h3>Pet Sitting & Dog Walking</h3>
-            <h1>Caring for <span class="focus-font">Your Pets</span> Like They're Our Own</h1>
-            <p class="hero-p"> Providing compassionate and attentive pet sitting services that prioritize your pet's comfort and well-being, because we treat them like family.</p>
-            <Button href="#" size="lg" style="primary" class="booking-btn">Book Now</Button>
+        <div class="hero-center">
+            <div class="hero-header">
+                <h3>Pet Sitting & Dog Walking</h3>
+                <h1>Caring for <span class="focus-font">Your Pets</span> Like They're Our Own</h1>
+                <p class="hero-p"> Providing compassionate and attentive pet sitting services that prioritize your pet's comfort and well-being, because we treat them like family.</p>
+                <Button href="#" size="lg" style="secondary" class="booking-btn">Book Now</Button>
+            </div>
+            <div class="hero-points">
+                <HeroCards
+                    heroCards={[
+                    {
+                        icon: "/icons/ribbon.svg",
+                        iconDesc: "icon of",
+                        title: 'Fully Certified',
+                    },
+                    {
+                        icon: "/icons/clock.svg",
+                        iconDesc: "icon of clock with paw print",
+                        title: 'Flexible Hours',
+                    },
+                    {
+                        icon: "/icons/paw-1.svg",
+                        iconDesc: "icon of",
+                        title: 'Custom Care',
+                    },
+                    ]}
+                />
+            </div>
         </div>
         <div class="hero-right">
             <div class="blob-right">
@@ -27,41 +54,14 @@ import HeroCards from "./HeroCards.astro"
             <img src="/images/golden-lab.webp" alt="golden labrador retriever sitting looking happy" height=400>
         </div>
     </div>
-    <div class="hero-points">
-        <HeroCards
-            heroCards={[
-            {
-                icon: "/icons/pet-clock.svg",
-                iconDesc: "icon of",
-                title: 'Professional Certification',
-            },
-            {
-                icon: "/icons/pet-clock.svg",
-                iconDesc: "icon of clock with paw print",
-                title: 'Flexible Scheduling',
-            },
-            {
-                icon: "/icons/pet-clock.svg",
-                iconDesc: "icon of",
-                title: 'Personalized Care',
-            },
-            ]}
-        />
-    </div>
+   
 </section>
 
 <style>
-    #hero-section {
+
+    .hero-container {
         display: flex;
         flex-direction: column;
-        height: auto;
-        width: 100%;
-        margin: 60px 0 40px 0;
-      
-    }
-    .hero {
-        display: flex;
-        flex-direction: row;
         justify-content: center;
         align-items: center;
   
@@ -72,8 +72,42 @@ import HeroCards from "./HeroCards.astro"
         text-align: center;
     }
     .hero-left {
+        position: relative;
+        z-index: 2;
+        margin-bottom: 20px;
+    }
+
+    .blob-left {
         display: none;
+    }
+    .blob-mobile {
+        height: 250px;
+        z-index: 2;
   
+    }
+    .hero-paws {
+        position: absolute;
+        height: 110px;
+        top: -50px;
+        left: 15px;
+        transform: rotate(-100deg);
+        z-index: -1;
+    }
+
+    .hero-cat {
+        position: absolute;
+        height: 200px;
+        bottom: 0;
+        left: -20px;
+        z-index: 5;
+    }
+
+    .mobile-lab {
+        position: absolute;
+        height: 300px;
+        bottom: 0;
+        right: 0;
+        z-index: 4;
     }
 
     .hero-header {
@@ -86,34 +120,38 @@ import HeroCards from "./HeroCards.astro"
     }
 
     .hero-p {
-        font-size: 1.4rem;
         text-align: center;
+    }
+
+    .hero-header {
+        margin-bottom: 23px;
     }
 
     .hero-header h1 {
         text-align: center;
-        
+
     }
 
     .hero-right {
-        display: none
+       display: none;
  
     }
     .hero-points {
-        margin: 50px 0;
-        display: flex;
-       justify-content: center;
-     
+        display: flex; 
+    }
+
+    @media (min-width: 768px) {
+        .hero-points {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
 
 
 /* Large devices (lg) - 1024px and above */
 @media (min-width: 1024px) {
-    #hero-section {
-        /* height: calc(100vh - 128px); */
-        /* height: 90vh; */
-        max-height: 900px;
-    }
+ 
     .hero {
         height: 50vh;
     }
