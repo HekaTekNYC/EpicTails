@@ -74,10 +74,21 @@ a {
   cursor: pointer;
 }
 
+menu:not(article menu),
+ol:not(article ol),
+ul:not(article ul) {
+  list-style: none;
+}
+
+menu,
+ol,
 ul {
-  list-style-type: none;
+  padding-left: 0;
   margin: 0;
-  padding: 0;
+}
+
+p {
+  margin: 0;
 }
 
 /* hero */
@@ -174,6 +185,7 @@ li {
   justify-content: center;
   padding: 60px 30px;
   width: 100%;
+  overflow: hidden;
 }
 
 #services-section {
@@ -221,7 +233,7 @@ li {
   #about-section,
   #contact-section,
   #why-us {
-    padding: 60px 80px;
+    padding: 80px;
   }
 }
 
