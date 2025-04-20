@@ -25,27 +25,7 @@ import HeroCards from "./HeroCards.astro"
                 <p class="hero-p"> Providing compassionate and attentive pet sitting services that prioritize your pet's comfort and well-being, because we treat them like family.</p>
                 <Button href="#" size="lg" style="secondary" class="booking-btn">Book Now</Button>
             </div>
-            <div class="hero-points">
-                <HeroCards
-                    heroCards={[
-                    {
-                        icon: "/icons/ribbon.svg",
-                        iconDesc: "icon of",
-                        title: 'Fully Certified',
-                    },
-                    {
-                        icon: "/icons/clock.svg",
-                        iconDesc: "icon of clock with paw print",
-                        title: 'Flexible Hours',
-                    },
-                    {
-                        icon: "/icons/paw-1.svg",
-                        iconDesc: "icon of",
-                        title: 'Custom Care',
-                    },
-                    ]}
-                />
-            </div>
+           
         </div>
         <div class="hero-right">
             <div class="blob-right">
@@ -53,7 +33,10 @@ import HeroCards from "./HeroCards.astro"
             </div>
             <img src="/images/golden-lab.webp" alt="golden labrador retriever sitting looking happy" height=400>
         </div>
+
+      
     </div>
+
    
 </section>
 
@@ -75,6 +58,7 @@ import HeroCards from "./HeroCards.astro"
         position: relative;
         z-index: 2;
         margin-bottom: 20px;
+        order: 1;
     }
 
     .blob-left {
@@ -124,12 +108,16 @@ import HeroCards from "./HeroCards.astro"
     }
 
     .hero-header {
-        margin-bottom: 23px;
+        margin-bottom: 15px;
     }
 
     .hero-header h1 {
         text-align: center;
 
+    }
+
+    .hero-center {
+        order: 2;
     }
 
     .hero-right {
@@ -148,37 +136,25 @@ import HeroCards from "./HeroCards.astro"
         }
     }
 
+@media (min-width: 992px) {
 
-/* Large devices (lg) - 1024px and above */
-@media (min-width: 1024px) {
+    .hero-container {
+        flex-direction: row;
+    }
+
+
+.hero-left {
+    order: 2;
+
+}
+
+.hero-center {
+    order: 1;
+}
+ .hero-right {
+    display: none
+}
  
-    .hero {
-        height: 50vh;
-    }
-
-    
-    /* middle section */
-    .hero-header {
-       flex: 2;
-    }
-    /* right section */
-    .hero-right {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: end;
-        align-items: flex-end;
-        flex: 1;
-        height: 100%;
-        width: auto;
-        /* margin-bottom: 300px; */
-      
-    }
-
-    .blob-right {
-        position: absolute;
-        z-index: -1;   
-    }
  
 
 }

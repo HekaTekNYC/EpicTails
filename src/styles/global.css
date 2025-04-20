@@ -203,10 +203,7 @@ li {
 
 /* Medium devices (md) - 768px and above */
 @media (min-width: 768px) {
-  #hero-section {
-    padding: 0 40px;
-  }
-
+  #hero-section,
   #about-section,
   #contact-section,
   #why-us {
@@ -216,9 +213,7 @@ li {
 
 /* Large devices (lg) - 992px and above */
 @media (min-width: 992px) {
-  #hero-section {
-    padding: 0 60px;
-  }
+  #hero-section,
   #about-section,
   #contact-section,
   #why-us {

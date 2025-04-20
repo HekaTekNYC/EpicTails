@@ -1,6 +1,7 @@
 ---
 
 import Hero from "../components/Hero.astro";
+import HeroCards from "../components/HeroCards.astro";
 import About from "../components/About.astro";
 import Main from "../layouts/Main.astro";
 import ServicesCard from "../components/ServicesCard.astro";
@@ -13,6 +14,27 @@ const profilePicture = "https://i.imgur.com/JPGFE75.jpg";
 
 <Main title="Epic Tails">
   <Hero />
+  <div class="hero-points">
+    <HeroCards
+        heroCards={[
+        {
+            icon: "/icons/ribbon.svg",
+            iconDesc: "icon of",
+            title: 'Fully Certified',
+        },
+        {
+            icon: "/icons/clock.svg",
+            iconDesc: "icon of clock with paw print",
+            title: 'Flexible Hours',
+        },
+        {
+            icon: "/icons/paw-1.svg",
+            iconDesc: "icon of",
+            title: 'Custom Care',
+        },
+        ]}
+    />
+</div>
   <About/>
   <section id="services-section">
     <div class="services-container">
