@@ -1,0 +1,19 @@
+---
+import type { PricingData } from '../data/PricingData'
+import Button from './Button.astro'
+
+const props = Astro.props as PricingData
+---
+
+<div class="pricing-card">
+	<div class="pricing-card-container">
+		<h4>{props.title}</h4>
+		<div class="price-range">{props.priceRange}</div>
+		<ul>
+			{props.features.map((feature) => <li>{feature}</li>)}
+		</ul>
+		<Button href="#" size="lg" style="secondary" class="about-btn">
+			{props.buttonLabel}
+		</Button>
+	</div>
+</div>
