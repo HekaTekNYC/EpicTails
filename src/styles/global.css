@@ -11,7 +11,7 @@ html {
 	--dark-gray: #444548;
 	--medium-gray: #808386;
 	--light-gray: #f1f1f2;
-
+/* 
 	/* Primary */
 	--primary-darkest: #285bb9;
 	--primary-darker: #4c76c4;
@@ -36,7 +36,9 @@ html {
 	--accent-dark: #34c5b8;
 	--accent-medium: #9ae2dc;
 	--accent-light: #cdf1ee;
-	--accent-lightest: #e6f8f7;
+	--accent-lightest: #e6f8f7; */
+
+
 }
 
 body {
