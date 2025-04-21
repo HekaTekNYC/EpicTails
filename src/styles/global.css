@@ -92,11 +92,6 @@ li {
 	list-style: none;
 }
 
-p {
-	font-size: 1rem;
-	padding-bottom: 8px;
-}
-
 /* hero */
 h1 {
 	font-family: var(--gelica);
