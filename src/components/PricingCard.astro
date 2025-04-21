@@ -7,21 +7,25 @@ const props = Astro.props as PricingData
 
 <div class="pricing-card">
 	<div class="pricing-card-container">
-		<h4>{props.title}</h4>
-		<div class="price-range">{props.priceRange}</div>
+		<div class="pricing-header">
+			<h4>{props.title}</h4>
+			<div class="price-range">{props.priceRange}</div>
+		</div>
 		<ul class="feature-points">
 			{
 				props.features.map((feature) => (
 					<li>
-						<img src="icons/greencheck.svg" height="20px" />
-						{feature}
+						<img src="/icons/greencheck.svg" alt="green check mark" class="pricing-check" />
+						<div class="feature-point">{feature}</div>
 					</li>
 				))
 			}
 		</ul>
-		<Button href="#" size="lg" style="secondary" class="about-btn">
-			{props.buttonLabel}
-		</Button>
+		<div class="pricing-btn">
+			<Button href="#" size="lg" style="secondary">
+				{props.buttonLabel}
+			</Button>
+		</div>
 	</div>
 </div>
 
@@ -31,7 +35,7 @@ const props = Astro.props as PricingData
 		padding: 25px;
 		width: 100%;
 		height: 100%;
-		max-width: 300px;
+		max-width: 500px;
 		border-radius: 20px;
 		box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 	}
@@ -40,11 +44,17 @@ const props = Astro.props as PricingData
 		display: flex;
 		flex-direction: column;
 		align-items: start;
-		justify-content: center;
+		justify-content: space-between;
+		width: 100%;
+	}
+	.pricing-header {
+		width: 100%;
 	}
 
 	.pricing-card-container h4 {
-		padding-bottom: 5px;
+		padding-bottom: 10px;
+		font-size: 1.5rem;
+		text-align: center;
 	}
 
 	.price-range {
@@ -52,13 +62,18 @@ const props = Astro.props as PricingData
 		font-size: 1.2rem;
 		font-weight: 600;
 		padding: 15px 25px;
-		margin: 10px 0 10px -35px;
+		margin: 10px 0 10px -37px;
 		border-radius: 5px;
 		color: var(--white);
 	}
 
 	.feature-points {
 		padding: 10px 0 15px;
+	}
+
+	.pricing-check {
+		height: 25px;
+		width: 25px;
 	}
 
 	.feature-points li {
@@ -68,7 +83,14 @@ const props = Astro.props as PricingData
 		padding: 10px 0;
 	}
 
-	.feature-points li img {
-		padding-right: 10px;
+	.feature-point {
+		padding-left: 10px;
+	}
+
+	.pricing-btn {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		text-align: center;
 	}
 </style>

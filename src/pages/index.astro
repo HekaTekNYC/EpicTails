@@ -38,92 +38,147 @@ const profilePicture = 'https://i.imgur.com/JPGFE75.jpg'
 			]}
 		/>
 	</div> -->
+
 	<About />
+	<Gallery />
 	<section id="services-section">
 		<div class="services-container">
-			{
-				servicesData.map((card) => (
-					<div class="services-cards">
-						<ServicesCard {...card} />
-					</div>
-				))
-			}
+			<div class="services-header">
+				<h3>Services</h3>
+				<h2>Our <span class="focus-font">Pet Care</span> Services</h2>
+				<div class="header-underline"></div>
+			</div>
+			<div class="services-cards-container">
+				{
+					servicesData.map((card) => (
+						<div class="services-cards">
+							<ServicesCard {...card} />
+						</div>
+					))
+				}
+			</div>
 		</div>
 	</section>
 	<WhyUs />
-<!-- <PhotoGallery/> -->
 	<section id="pricing-section">
 		<div class="pricing-container">
-			{
-				pricingData.map((card) => (
-					<div class="pricing-cards">
-						<PricingCard {...card} />
-					</div>
-				))
-			}
+			<div class="pricing-header">
+				<h3>Pricing</h3>
+				<h2>Our <span class="focus-font">Pricing</span> Packages</h2>
+				<div class="header-underline"></div>
+			</div>
+			<div class="pricing-card-container">
+				{
+					pricingData.map((card) => (
+						<div class="pricing-cards">
+							<PricingCard {...card} />
+						</div>
+					))
+				}
+			</div>
 		</div>
 	</section>
-	<section>
-		<Gallery/>
+
+	<style>
+		.hero-points {
+			color()
+		}
+		/* Services */
+		.services-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			max-width: 1300px;
+		}
+
+		.services-header {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			text-align: center;
+		}
+
+		.services-header h3 {
+	
+		}
+
+		.services-header h2 {
+			/* color: var(--white); */
+			padding-bottom: 17px;
+		}
+		.services-cards-container {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 1.5rem;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+		}
+
+		.services-cards {
+			height: 100%;
+		}
+
+		/* Pricing Cards */
+
+		.pricing-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+			max-width: 1300px;
+		}
+		.pricing-header {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			text-align: center;
+		}
+		.pricing-card-container {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 1.5rem;
+			width: 100%;
+			height: 100%;
+		}
+
+		.pricing-header h2 {
+			padding-bottom: 17px;
+		}
+		/* Media Queries*/
+
+		/* Services */
+
+		@media (min-width: 768px) {
+			.services-cards-container {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+			}
+			.pricing-card-container {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 3rem;
+			}
+		}
+
+		@media (min-width: 992px) {
+			.services-cards-container {
+			
+				grid-template-columns: repeat(3, 1fr);
+				gap: 2rem;
+			}
+		}
+		@media (min-width: 1200px) {
 		
-	</section>
+			.pricing-card-container {
+				grid-template-columns: repeat(4, 1fr);
+				gap: 3rem;
+			}
+		}
+	</style>
 </Main>
-
-<style>
-	/* Services */
-	.services-container {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: 1.5rem;
-		width: 100%;
-		padding: 60px 30px;
-		max-width: 1300px;
-	}
-
-	/* Pricing Cards */
-	.pricing-container {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: 1.5rem;
-		width: 100%;
-		padding: 60px 30px;
-		max-width: 1300px;
-	}
-
-	/* Media Queries*/
-
-	/* Services */
-
-	@media (min-width: 768px) {
-		.services-container {
-			padding: 60px 40px;
-			grid-template-columns: repeat(2, 1fr);
-		}
-		.pricing-container {
-			padding: 60px 40px;
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-
-	@media (min-width: 992px) {
-		.services-container {
-			padding: 60px;
-			grid-template-columns: repeat(3, 1fr);
-		}
-		.pricing-container {
-			padding: 60px;
-			grid-template-columns: repeat(3, 1fr);
-		}
-	}
-	@media (min-width: 1200px) {
-		.services-container {
-			padding: 60px 80px;
-			gap: 2rem;
-		}
-		.pricing-container {
-			padding: 60px 80px;
-			gap: 2rem;
-		}
-	}
-
-</style>

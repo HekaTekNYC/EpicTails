@@ -21,15 +21,6 @@ html {
 	--primary-lighter: #dce0fc;
 	--primary-lightest: #f4f5ff;
 
-	/* Old Primary */
-	/* --primary-darkest: #5e74e3;
-	--primary-darker: #7687e8;
-	--primary-dark: #8f9aed;
-	--primary-medium: #aab1f2;
-	--primary-light: #c6caf7;
-	--primary-lighter: #dee2fb;
-	--primary-lightest: #f4f6ff; */
-
 	/* Secondary */
 	--secondary-darkest: #e35e74;
 	--secondary-darker: #e97588;
@@ -111,6 +102,7 @@ h2 {
 	line-height: 1.2;
 	color: var(--dark-gray);
 	margin: 0;
+	padding-bottom: 10px;
 }
 
 /* above the h2 and h1 */
@@ -151,6 +143,14 @@ h6 {
 	margin: 0;
 }
 
+.header-underline {
+	width: 60px;
+	height: 4px;
+	background: var(--primary-dark);
+	margin: 0.5rem auto 2rem;
+	border-radius: 3px;
+}
+
 main {
 	width: 100%;
 	margin: auto;
@@ -167,15 +167,25 @@ p {
 	color: var(--secondary-darkest);
 	white-space: nowrap;
 }
+.focus-font-lt {
+	color: var(--secondary-medium);
+	white-space: nowrap;
+}
 
 #hero-section {
-	padding: 60px 30px 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 80px 30px 40px;
 	width: 100%;
+	height: 100%;
 }
 
 #about-section,
 #contact-section,
-#why-us {
+#why-us,
+#pricing-section,
+#gallery-section {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -185,10 +195,11 @@ p {
 }
 
 #services-section {
-	background-color: var(--primary-darker);
+	background-color: var(--primary-lightest);
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	padding: 60px 30px;
 	width: 100%;
 }
 
@@ -198,37 +209,50 @@ p {
 
 /* Medium devices (md) - 768px and above */
 @media (min-width: 768px) {
-	#hero-section,
+	#hero-section {
+		padding: 80px 40px 40px;
+	}
 	#about-section,
 	#contact-section,
-	#why-us {
+	#services-section,
+	#why-us,
+	#gallery-section {
 		padding: 60px 40px;
+	}
+	#pricing-section {
+		padding: 60px 40px 80px;
 	}
 }
 
 /* Large devices (lg) - 992px and above */
 @media (min-width: 992px) {
-	#hero-section,
+	#hero-section {
+		padding: 100px 60px 40px;
+	}
 	#about-section,
 	#contact-section,
-	#why-us {
+	#services-section,
+	#why-us,
+	#gallery-section {
 		padding: 60px;
+	}
+
+	#pricing-section {
+		padding: 60px 60px 80px;
 	}
 }
 
 /* Extra large devices (xl) - 1200px and above */
 @media (min-width: 1200px) {
-	#hero-section {
-		padding: 0 80px;
-	}
 	#about-section,
 	#contact-section,
-	#why-us {
-		padding: 80px;
+	#services-section,
+	#why-us,
+	#gallery-section {
+		padding: 60px 80px;
 	}
-}
 
-/* Extra extra large devices (xxl) - 1400px and above */
-@media (min-width: 1400px) {
-	/* Your styles for extra extra large devices */
+	#pricing-section {
+		padding: 60px 80px 80px;
+	}
 }

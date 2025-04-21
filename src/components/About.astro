@@ -1,202 +1,217 @@
 ---
-import Button from "./Button.astro";
-
+import Button from './Button.astro'
 ---
 
-
 <section id="about-section">
-    <div class="about-container">
-        <div class="about-left-side">
-            <div class="about-img-container">
-                <img class="about-img" src='/images/dog-kisses_neo4lv.webp' alt="Woman kissing her golden retriever"  width=420>
-                <div class="yrs-exp-circle">
-                    <p class="yrs-text">
-                    <span class="about-bold-yrs">10 +</span> 
-                    Years of Experience 
-                    </p>
-                </div>
-                <img class="about-blob" src='./images/about-blob.svg'  alt="pink blob behind woman kissing dog image" width=420/>
-            </div>
-        </div>
-        <div class="about-right-side">
-            <h3>About Us</h3>
-            <h2>We Are the Best For Your <span class="focus-font" >Pet Care</span> Services</h2>
-            <p class="about-text">At Epic Tales, we provide exceptional pet sitting services that ensure your pets are happy and comfortable while you're away. Our trained sitters are passionate about animals and committed to offering the best care possible.</p>
-            <ul class="about-list">
-                <li><img src="icons/checkmark.svg" height="20px" > <p>Customized Sitting Plans: Tailored to your pet's needs and routines.</p></li>
-                <li><img src="icons/checkmark.svg" height="20px"><p>Interactive Play: Engaging activities to keep pets entertained.</p></li>
-                <li><img src="icons/checkmark.svg" height="20px"/><p><span class="bold-li">Regular Updates:</span> Photos and updates to give you peace of mind.</p></li>
-            </ul>
-            <Button href="#" size="lg" style="secondary" class="about-btn">Read More</Button>
-        </div>
-        </div>
-  
+	<div class="about-container">
+		<div class="about-left-side">
+			<div class="about-img-container">
+				<img
+					class="about-img"
+					src="/images/dog-kisses_neo4lv.webp"
+					alt="Woman kissing her golden retriever"
+					width="420"
+				/>
+				<div class="yrs-exp-circle">
+					<p class="yrs-text">
+						<span class="about-bold-yrs">10 +</span>
+						Years of Experience
+					</p>
+				</div>
+				<img
+					class="about-blob"
+					src="./images/about-blob.svg"
+					alt="pink blob behind woman kissing dog image"
+					width="420/"
+				/>
+			</div>
+		</div>
+		<div class="about-right-side">
+			<h3>About Us</h3>
+			<h2>We Are the Best For Your <span class="focus-font">Pet Care</span> Services</h2>
+			<p class="about-text">
+				At Epic Tales, we provide exceptional pet sitting services that ensure your pets are happy
+				and comfortable while you're away. Our trained sitters are passionate about animals and
+				committed to offering the best care possible.
+			</p>
+			<ul class="about-list">
+				<li>
+					<img src="icons/checkmark.svg" height="20px" />
+					<p>Customized Sitting Plans: Tailored to your pet's needs and routines.</p>
+				</li>
+				<li>
+					<img src="icons/checkmark.svg" height="20px" /><p>
+						Interactive Play: Engaging activities to keep pets entertained.
+					</p>
+				</li>
+				<li>
+					<img src="icons/checkmark.svg" height="20px" /><p>
+						<span class="bold-li">Regular Updates:</span> Photos and updates to give you peace of mind.
+					</p>
+				</li>
+			</ul>
+			<p class="about-text">
+				Whether it’s belly rubs, playtime in the yard, or sticking to their daily routines, we go
+				the extra mile to make sure your pet feels safe, loved, and completely at home—even when
+				you’re not.
+			</p>
+			<Button href="#" size="lg" style="secondary" class="about-btn">Read More</Button>
+		</div>
+	</div>
 </section>
 
 <style>
-    .about-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        max-width: 1300px;
-    }   
-    .about-left-side {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        width: 100%;
-    }
+	.about-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		max-width: 1300px;
+	}
+	.about-left-side {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		aspect-ratio: 1 / 1;
+		max-width: 500px;
+		height: 100%;
+		width: 100%;
+	}
 
-    /* About Image Container */
-    .about-img-container {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        max-width: 500px;
-        margin-bottom: 30px;
-        aspect-ratio: 1 / 1;
-        z-index: 2;
-    }
-    .about-img {
-        position: absolute;
-        top:0;
-        left:0;
-        right: 0;
-        width: 100%;  
-        height: 100%;  
-        z-index: 3; 
-    }
-    .about-blob {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 100%;  
-        height:100%; 
-        transform: scale(1.2) rotate(40deg);
-        z-index: 2;
-    }
+	/* About Image Container */
+	.about-img-container {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		margin-bottom: 30px;
+		z-index: 2;
+	}
+	.about-img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 3;
+	}
+	.about-blob {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		transform: scale(1.2) rotate(40deg);
+		z-index: 2;
+	}
 
-    /* Years Exp Circle */
-    .yrs-exp-circle {
-        position: absolute;
-        bottom: 40px;
-        left: -15px; 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        text-align: center;
-        color: var(--white);
-        background-color: var(--primary-darker);
-        border-radius: 50%;
-        border: 5px solid var(--white);
-        width: 105px;
-        height: 105px;
-        z-index: 4;
-    }
-    .yrs-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-        font-size: .75rem;    
-        font-weight: 600;
-        line-height: 1.1;   
-    }
-    .about-bold-yrs {
-        display: flex;
-        white-space: nowrap;
-        font-weight: 800;
-        font-size: 1.3rem !important;
-        line-height: 1;       
-    }
+	/* Years Exp Circle */
+	.yrs-exp-circle {
+		position: absolute;
+		bottom: 40px;
+		left: -15px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 20px;
+		text-align: center;
+		color: var(--white);
+		background-color: var(--primary-darkest);
+		border-radius: 50%;
+		border: 5px solid var(--white);
+		width: 105px;
+		height: 105px;
+		z-index: 4;
+	}
+	.yrs-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
+		font-size: 0.75rem;
+		font-weight: 600;
+		line-height: 1.1;
+	}
+	.about-bold-yrs {
+		display: flex;
+		white-space: nowrap;
+		font-weight: 800;
+		font-size: 1.3rem !important;
+		line-height: 1;
+	}
 
+	/* About Right Container */
+	.about-right-side {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		height: 100%;
+	}
 
-    /* About Right Container */
-    .about-right-side  {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        height: 100%;
-    }
+	.about-right-side p {
+		padding-bottom: 10px;
+	}
 
-    .about-list {
-        padding-bottom: 10px;
-    }
+	.about-list {
+		padding-bottom: 10px;
+	}
 
-    .about-list li {
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        margin: 0;
-        padding-left: 20px;
+	.about-list li {
+		display: flex;
+		align-items: center;
+		justify-content: start;
+		margin: 0;
+		padding-left: 20px;
+	}
 
-    }
-    .about-list  li img {
-        margin-right: 15px;
-    }
+	.about-list li p {
+		padding: 5px 0;
+	}
+	.about-list li img {
+		margin-right: 15px;
+	}
 
+	/* Small devices (sm) - 576px and above */
+	@media (min-width: 576px) {
+		.yrs-exp-circle {
+			bottom: 50px;
+			left: -15px;
+			width: 130px;
+			height: 130px;
+		}
 
+		.yrs-text {
+			font-size: 1rem !important;
+			font-weight: 600;
+			line-height: 1.1;
+		}
+		.about-bold-yrs {
+			display: flex;
+			white-space: nowrap;
+			font-weight: 800;
+			font-size: 1.5rem !important;
+			line-height: 1.1;
+		}
+	}
 
-/* Small devices (sm) - 576px and above */
-@media (min-width: 576px) {
+	/* Large devices (lg) - 992px and above */
+	@media (min-width: 992px) {
+		.about-container {
+			flex-direction: row;
+			gap: 4rem;
+		}
 
-
-    .yrs-exp-circle {
-        bottom: 50px;
-        left: -15px; 
-        width: 130px;
-        height: 130px;
-  
-    }
-
-    .yrs-text {
-        font-size: 1rem !important;    
-        font-weight: 600;
-        line-height: 1.1;   
-    }
-    .about-bold-yrs {
-        display: flex;
-        white-space: nowrap;
-        font-weight: 800;
-        font-size: 1.5rem !important;
-        line-height: 1.1;       
-    }
-
-    
-}
- 
-/* Large devices (lg) - 992px and above */
-@media (min-width: 992px) {   
-    .about-container { 
-        flex-direction: row;
-        gap: 4rem;
-    }
-
-    .about-left-side {
-        flex: 1 1 50%;
-    }
-    .about-right-side {
-        flex: 1 1 50%;
-    }
-    .about-img-container { 
-    
-        margin-bottom: 0;
-    }
-
-}
-
-
-
+		.about-left-side {
+			flex: 1 1 50%;
+		}
+		.about-right-side {
+			flex: 1 1 50%;
+		}
+		.about-img-container {
+			margin-bottom: 0;
+		}
+	}
 </style>
-
-
- 
-
-
-
