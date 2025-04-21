@@ -53,7 +53,7 @@ export const pricingData: PricingData[] = [
 	{
 		id: 4,
 		title: 'Pet Taxi',
-		priceRange: '$25–$60 / trip',
+		priceRange: 'Starting at $25 / trip',
 		features: [
 			'Vet & groomer transport',
 			'Secure crate or seatbelt setup',

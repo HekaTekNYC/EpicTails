@@ -151,6 +151,14 @@ h6 {
 	margin: 0;
 }
 
+.header-underline {
+	width: 60px;
+	height: 4px;
+	background: var(--primary-dark);
+	margin: 0.5rem auto 2rem;
+	border-radius: 3px;
+}
+
 main {
 	width: 100%;
 	margin: auto;
@@ -179,7 +187,8 @@ p {
 
 #about-section,
 #contact-section,
-#why-us {
+#why-us,
+#pricing-section {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -210,6 +219,9 @@ p {
 	#why-us {
 		padding: 60px 40px;
 	}
+	#pricing-section {
+		padding: 60px 40px 80px;
+	}
 }
 
 /* Large devices (lg) - 992px and above */
@@ -222,6 +234,10 @@ p {
 	#why-us {
 		padding: 60px;
 	}
+
+	#pricing-section {
+		padding: 60px 60px 80px;
+	}
 }
 
 /* Extra large devices (xl) - 1200px and above */
@@ -229,7 +245,11 @@ p {
 	#about-section,
 	#contact-section,
 	#why-us {
-		padding: 80px;
+		padding: 60px 80px;
+	}
+
+	#pricing-section {
+		padding: 60px 80px 80px;
 	}
 }
 
