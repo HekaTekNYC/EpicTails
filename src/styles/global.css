@@ -14,12 +14,21 @@ html {
 
 	/* Primary */
 	--primary-darkest: #5e74e3;
+	--primary-darker: #7688e9;
+	--primary-dark: #8f9fef;
+	--primary-medium: #a9b5f4;
+	--primary-light: #c3cbf8;
+	--primary-lighter: #dce0fc;
+	--primary-lightest: #f4f5ff;
+
+	/* Old Primary */
+	/* --primary-darkest: #5e74e3;
 	--primary-darker: #7687e8;
 	--primary-dark: #8f9aed;
 	--primary-medium: #aab1f2;
 	--primary-light: #c6caf7;
 	--primary-lighter: #dee2fb;
-	--primary-lightest: #f4f6ff;
+	--primary-lightest: #f4f6ff; */
 
 	/* Secondary */
 	--secondary-darkest: #e35e74;
@@ -67,7 +76,6 @@ html::-webkit-scrollbar {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	/* outline: 1px solid var(--secondary-light); */
 }
 
 a {
