@@ -78,11 +78,19 @@ import Button from './Button.astro'
 			</div>
 		</div>
 	</div>
+	<div class="copyright">
+		<span>
+			Website Developed by
+			<a href="https://hekateknyc.com/" target="_blank" class="hekatek-link"> Hekatek </a>
+		</span>
+		<span class="copyright">© Copyright 2025</span>
+	</div>
 </footer>
 
 <style>
 	.footer {
 		display: flex;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		text-align: center;
@@ -150,6 +158,12 @@ import Button from './Button.astro'
 		padding: 4px;
 		margin: 0 6px;
 		cursor: pointer;
+	}
+
+	.copyright {
+		width: 70%;
+		font-size: 0.875rem;
+		color: var(--white);
 	}
 
 	@media (min-width: 567px) {
