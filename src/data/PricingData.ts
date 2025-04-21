@@ -4,6 +4,7 @@ export type PricingData = {
 	priceRange: string
 	features: string[]
 	buttonLabel: string
+	iconColor: string
 }
 
 export const pricingData: PricingData[] = [
@@ -18,7 +19,8 @@ export const pricingData: PricingData[] = [
 			'Daily photo updates',
 			'Litter cleanup & minor messes'
 		],
-		buttonLabel: 'Book Pet Sitting'
+		buttonLabel: 'Book Pet Sitting',
+		iconColor: 'var(--accent-dark)'
 	},
 	{
 		id: 2,
@@ -31,7 +33,8 @@ export const pricingData: PricingData[] = [
 			'Clean-up included',
 			'GPS walk tracking available'
 		],
-		buttonLabel: 'Book a Walk'
+		buttonLabel: 'Book a Walk',
+		iconColor: 'var(--accent-dark)'
 	},
 	{
 		id: 3,
@@ -44,7 +47,8 @@ export const pricingData: PricingData[] = [
 			'Full companionship overnight',
 			'Updates throughout the stay'
 		],
-		buttonLabel: 'Request Overnight'
+		buttonLabel: 'Request Overnight',
+		iconColor: 'var(--accent-dark)'
 	},
 	{
 		id: 4,
@@ -57,6 +61,7 @@ export const pricingData: PricingData[] = [
 			'Real-time updates',
 			'Wait-time & escort available'
 		],
-		buttonLabel: 'Book Pet Taxi'
+		buttonLabel: 'Book Pet Taxi',
+		iconColor: 'var(--accent-dark)'
 	}
 ]
