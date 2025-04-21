@@ -1,12 +1,208 @@
 ---
-
+import Button from './Button.astro'
 ---
-<footer>&copy; Frau Katerina</footer>
+
+<footer class="footer">
+	<div class="footer-container">
+		<div class="footer-column">
+			<div class="footer-mission">
+				<a href="/" class="logo" aria-label="Home">
+					<img src="/images/epic-white.png" alt="Epic Tails logo" height="50" />
+				</a>
+				<p>
+					Caring, reliable dog walking and pet sitting tailored to your pet’s needs — because they
+					deserve the best.
+				</p>
+			</div>
+
+			<ul class="footer-contact">
+				<li>
+					<i class="fa-solid fa-location-dot" style="color: #f67c79;"></i>
+					<p>42 Wythe Ave, Brooklyn, NY 11249</p>
+				</li>
+				<li>
+					<i class="fa-solid fa-phone-volume" style="color: #f67c79;"></i>
+					<p>917-555-4444</p>
+				</li>
+				<li>
+					<i class="fa-regular fa-envelope" style="color: #f67c79;"></i>
+					<p>hello@epictails.com</p>
+				</li>
+			</ul>
+		</div>
+		<div class="footer-column">
+			<h4>Quick Links</h4>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Services</a></li>
+				<li><a href="#">Contact</a></li>
+				<li><a href="#">Blog</a></li>
+			</ul>
+		</div>
+
+		<div class="footer-column">
+			<h4>Our Services</h4>
+			<ul>
+				<li><a href="#">Dog Walking</a></li>
+				<li><a href="#">Pet Sitting</a></li>
+				<li><a href="#">Cat & Critter Care</a></li>
+				<li><a href="#">Puppy Visits</a></li>
+				<li><a href="#">Overnight Stays</a></li>
+				<li><a href="#">Pet Transportation</a></li>
+			</ul>
+		</div>
+		<div class="footer-column">
+			<h4>Newsletter</h4>
+			<p>Subscribe to our newsletter for funsies.</p>
+			<input type="email" class="footer-input" placeholder="Email" />
+			<Button href="#" size="lg" style="secondary" class="about-btn">Sign Up</Button>
+			<div>
+				<ul class="footer-socials">
+					<li>
+						<a href="#" aria-label="Facebook">
+							<img src="/icons/facebook.svg" alt="Facebook icon" height="35" />
+						</a>
+					</li>
+					<li>
+						<a href="#" aria-label="Twitter">
+							<img src="/icons/x.svg" alt="Twitter icon" height="35" />
+						</a>
+					</li>
+					<li>
+						<a href="#" aria-label="Instagram">
+							<img src="/icons/instagram.svg" alt="Instagram icon" height="35" />
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
 
 <style>
-    footer {
-        padding: 3rem 0;
-        text-align: center;
-        font-size: 0.9rem; 
-    }
+	.footer {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		background-color: var(--primary-darker);
+		padding: 40px 30px;
+	}
+
+	.footer-container {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+		color: var(--white);
+		max-width: 1300px;
+	}
+
+	.footer-container h4 {
+		color: var(--secondary-darkest);
+		padding-bottom: 10px;
+	}
+
+	.footer-container li {
+		padding: 10px 0;
+	}
+
+	.footer-contact li {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.footer-contact li p {
+		padding-left: 5px;
+		margin: 0;
+	}
+
+	.footer-column {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding-bottom: 15px;
+	}
+
+	.footer-input {
+		padding: 0.75rem 0.9rem;
+		font-size: 1rem;
+		border: 1px solid #ccc;
+		border-radius: 8px;
+		width: 100%;
+		max-width: 300px;
+		margin: 15px 0 10px;
+	}
+
+	.footer-socials {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		margin: 0 5px;
+	}
+
+	.footer-socials img {
+		border: 1px solid var(--white);
+		border-radius: 50%;
+		padding: 4px;
+		margin: 0 6px;
+		cursor: pointer;
+	}
+
+	@media (min-width: 567px) {
+		.footer {
+			padding: 40px;
+		}
+	}
+	@media (min-width: 768px) {
+		.footer-container {
+			grid-template-columns: 1fr 1fr;
+			column-gap: 2rem;
+		}
+
+		.footer-column {
+			display: flex;
+			align-items: start;
+			justify-content: start;
+			text-align: start;
+		}
+
+		.footer-contact {
+			padding-top: 7px;
+		}
+
+		.footer-contact li {
+			justify-content: start;
+			padding: 0 0 7px;
+		}
+	}
+
+	@media (min-width: 996px) {
+		.footer {
+			padding: 40px 80px;
+		}
+
+		.footer-container {
+			grid-template-columns: 2fr 1fr 1fr 1fr;
+			column-gap: 1rem;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		.footer-container {
+			column-gap: 2rem;
+		}
+
+		.footer-contact {
+			padding-top: 7px;
+		}
+
+		.footer-contact li {
+			justify-content: start;
+			padding: 0 0 10px;
+		}
+	}
 </style>
