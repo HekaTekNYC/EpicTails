@@ -1,121 +1,103 @@
 ---
 interface Props {
-  href: string;
-  size?: "md" | "lg";
-  full?: boolean;
-  style?: "outline" | "primary" | "secondary";
-  class?: string;
-  [x: string]: any;
+	href: string
+	size?: 'md' | 'lg'
+	full?: boolean
+	style?: 'outline' | 'primary' | 'secondary'
+	class?: string
+	[x: string]: any
 }
 
-const {
-  href,
-  full,
-  size = "lg",
-  style = "primary",
-  class: className,
-  ...rest
-} = Astro.props;
+const { href, full, size = 'lg', style = 'primary', class: className, ...rest } = Astro.props
 
 const sizes = {
-  lg: "btn-lg",
-  md: "btn-md",
-};
+	lg: 'btn-lg',
+	md: 'btn-md'
+}
 
 const styles = {
-  outline: "btn-outline",
-  primary: "btn-primary",
-  secondary: "btn-secondary",
-};
+	outline: 'btn-outline',
+	primary: 'btn-primary',
+	secondary: 'btn-secondary'
+}
 ---
 
 <style>
-  
-  .btn {
-    border-radius: 40px;
-    text-align: center;
-    transition: all 0.3s ease;
-    display: inline-block;
-    cursor: pointer;
-    text-decoration: none;
-    padding: 0.5rem .8rem;
-    margin: 8px 0;
-  }
+	.btn {
+		border-radius: 40px;
+		text-align: center;
+		transition: all 0.3s ease;
+		display: inline-block;
+		cursor: pointer;
+		text-decoration: none;
+		padding: 0.5rem 0.8rem;
+		margin: 8px 0;
+	}
 
-  .btn-lg {
-    padding: 0.5rem 1.1rem;
-    font-size: 1;
-    font-weight: 500;
-    min-width: 150px;
-    
-  }
+	.btn-lg {
+		padding: 0.6rem 1rem;
+		font-size: 1.1rem;
+		font-weight: 500;
+		min-width: 150px;
+	}
 
-  .btn-md {
-    padding: 0.6rem 1.4rem;
-    font-size: 1rem;
-  }
-  
+	.btn-md {
+		padding: 0.6rem 1.4rem;
+		font-size: 1rem;
+	}
 
-  
-  /* Primary blue button */
-    .btn-primary {
-      background-color: var(--primary-darker);
-      color: var(--white);
-      border: 2px solid transparent;
-      border-radius: 40px;
+	/* Primary blue button */
+	.btn-primary {
+		background-color: var(--primary-darker);
+		color: var(--white);
+		border: 2px solid transparent;
+		border-radius: 40px;
+	}
 
-    }
+	.btn-primary:hover {
+		background-color: var(--primary-dark);
+		color: var(--white);
+	}
+	.btn-primary a:hover,
+	.btn-primary a:focus,
+	.btn-primary a:active {
+		color: var(--white);
+	}
 
-    .btn-primary:hover {
-        background-color: var(--primary-dark);
-        color: var(--white);
-    }
-    .btn-primary a:hover, .btn-primary a:focus, .btn-primary a:active {
-        color: var(--white);
-    } 
+	.btn-outline {
+		background-color: var(--white);
+		border: 2px solid var(--primary-darker);
+		color: var(--primary-darker);
+	}
 
-    .btn-outline {
-        background-color: var(--white);
-        border: 2px solid var(--primary-darker);
-        color: var(--primary-darker);
-    }
+	.btn-outline:hover {
+		background-color: var(--primary-dark);
+	}
 
-    .btn-outline:hover {
-        background-color: var(--primary-dark);
-    }
-    
- /* Secondary pink button */
-    .btn-secondary {
-      background-color: var(--secondary-darkest);
-      color: var(--white);
-      border: 2px solid transparent;
-    }
+	/* Secondary pink button */
+	.btn-secondary {
+		background-color: var(--secondary-darkest);
+		color: var(--white);
+		border: 2px solid transparent;
+	}
 
-    .btn-secondary:hover {
-        background-color: var(--secondary-lightest);
-        color: var(--secondary-darkest);
-        border: 2px solid var(--secondary-darkest);
- 
-    }
+	.btn-secondary:hover {
+		background-color: var(--secondary-lightest);
+		color: var(--secondary-darkest);
+		border: 2px solid var(--secondary-darkest);
+	}
 
-  .full {
-    width: 100%;
-  }
+	.full {
+		width: 100%;
+	}
 
-
-/* Large devices (lg) - 992px and above */
-
-
+	/* Large devices (lg) - 992px and above */
 </style>
 
 <a
-  href={href}
-  {...rest}
-  class={[
-    "btn",
-    full ? "full" : "",
-    sizes[size],
-    styles[style],
-    className,
-  ].filter(Boolean).join(' ')}
-><slot /></a>
+	href={href}
+	{...rest}
+	class={['btn', full ? 'full' : '', sizes[size], styles[style], className]
+		.filter(Boolean)
+		.join(' ')}><slot /></a
+>

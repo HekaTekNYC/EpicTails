@@ -2,17 +2,42 @@
 import Hero from '../components/Hero.astro'
 import About from '../components/About.astro'
 import Main from '../layouts/Main.astro'
+import HeroCards from '../components/HeroCards.astro'
 import ServicesCard from '../components/ServicesCard.astro'
+import Gallery from '../components/PhotoGallery.astro'
+// import PhotoGallery from '../components/PhotoGallery.astro'
 import WhyUs from '../components/WhyUs.astro'
 import PricingCard from '../components/PricingCard.astro'
 import { servicesData } from '../data/ServicesData.ts'
 import { pricingData } from '../data/PricingData.ts'
+import PhotoGallery from '../components/PhotoGallery.astro'
 
 const profilePicture = 'https://i.imgur.com/JPGFE75.jpg'
 ---
 
 <Main title="Epic Tails">
 	<Hero />
+	<!-- <div class="hero-points">
+		<HeroCards
+			heroCards={[
+				{
+					icon: '/icons/ribbon.svg',
+					iconDesc: 'icon of',
+					title: 'Fully Certified'
+				},
+				{
+					icon: '/icons/clock.svg',
+					iconDesc: 'icon of clock with paw print',
+					title: 'Flexible Hours'
+				},
+				{
+					icon: '/icons/paw-1.svg',
+					iconDesc: 'icon of',
+					title: 'Custom Care'
+				}
+			]}
+		/>
+	</div> -->
 	<About />
 	<section id="services-section">
 		<div class="services-container">
@@ -26,7 +51,7 @@ const profilePicture = 'https://i.imgur.com/JPGFE75.jpg'
 		</div>
 	</section>
 	<WhyUs />
-
+<!-- <PhotoGallery/> -->
 	<section id="pricing-section">
 		<div class="pricing-container">
 			{
@@ -37,6 +62,10 @@ const profilePicture = 'https://i.imgur.com/JPGFE75.jpg'
 				))
 			}
 		</div>
+	</section>
+	<section>
+		<Gallery/>
+		
 	</section>
 </Main>
 
@@ -96,4 +125,5 @@ const profilePicture = 'https://i.imgur.com/JPGFE75.jpg'
 			gap: 2rem;
 		}
 	}
+
 </style>

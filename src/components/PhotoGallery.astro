@@ -1,0 +1,134 @@
+---
+const galleryImages = [
+  // "/images/gallery-photos/curious-kitty.jpg",
+  // "/images/gallery-photos/dalmation-mug-shot.jpg",
+  "/images/gallery-photos/shepherd-park.jpg",
+  "/images/gallery-photos/dog-in-street.jpg",
+  "/images/gallery-photos/black-catititude.jpg",
+  "/images/gallery-photos/bengal-cat.jpg",
+  "/images/gallery-photos/dog-sitting-on-leash.jpg",
+  "/images/gallery-photos/man-and-dog-in-snow.jpg",
+  "/images/gallery-photos/black-cat.jpg",
+  "/images/gallery-photos/shepherd.jpg",
+  // "/images/gallery-photos/husky-puppy.jpg",
+  "/images/gallery-photos/orange-menace.jpg",
+  "/images/gallery-photos/dog-in-snow.jpg",
+  "/images/gallery-photos/smug-kitty.jpg",
+  "/images/gallery-photos/german-no-touch.jpg",
+];
+---
+
+<section class="gallery-section">
+  <div class="gallery-container">
+    <div class="gallery-heading">
+      <h4>Gallery</h4>
+      <h2>Our <span>Photo Gallery</span></h2>
+      <div class="gallery-underline"></div>
+    </div>
+
+    <div class="gallery-grid">
+      {galleryImages.map((src, i) => (
+        <div class="gallery-item" key={i}>
+          <img src={src} alt={`Gallery image ${i + 1}`} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.gallery-section {
+  width: 100%;
+  background-color: white; /* optional for contrast */
+}
+
+.gallery-container {
+  padding: 60px 30px;
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.gallery-heading h4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-dark);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.25rem;
+}
+
+.gallery-heading h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.gallery-heading h2 span {
+  color: var(--secondary-darkest);
+}
+
+.gallery-underline {
+  width: 60px;
+  height: 4px;
+  background: var(--primary-dark);
+  margin: 0.5rem auto 2rem;
+  border-radius: 3px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+}
+
+/* GALLERY ITEM + HOVER EFFECT */
+.gallery-item {
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Responsive Padding */
+@media (min-width: 768px) {
+  .gallery-container {
+    padding: 60px 40px;
+  }
+}
+
+@media (min-width: 992px) {
+  .gallery-container {
+    padding: 60px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .gallery-container {
+    padding: 60px 80px;
+  }
+}
+</style>
