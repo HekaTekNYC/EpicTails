@@ -169,8 +169,12 @@ p {
 }
 
 #hero-section {
-	padding: 60px 30px 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 80px 30px 40px;
 	width: 100%;
+	height: 100%;
 }
 
 #about-section,
@@ -198,7 +202,9 @@ p {
 
 /* Medium devices (md) - 768px and above */
 @media (min-width: 768px) {
-	#hero-section,
+	#hero-section {
+		padding: 80px 40px 40px;
+	}
 	#about-section,
 	#contact-section,
 	#why-us {
@@ -208,7 +214,9 @@ p {
 
 /* Large devices (lg) - 992px and above */
 @media (min-width: 992px) {
-	#hero-section,
+	#hero-section {
+		padding: 100px 60px 40px;
+	}
 	#about-section,
 	#contact-section,
 	#why-us {
@@ -218,9 +226,6 @@ p {
 
 /* Extra large devices (xl) - 1200px and above */
 @media (min-width: 1200px) {
-	#hero-section {
-		padding: 0 80px;
-	}
 	#about-section,
 	#contact-section,
 	#why-us {
