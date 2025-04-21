@@ -1,36 +1,23 @@
 ---
-const galleryImages = [
-	// "/images/gallery-photos/curious-kitty.jpg",
-	// "/images/gallery-photos/dalmation-mug-shot.jpg",
-	'/images/gallery-photos/shepherd-park.jpg',
-	'/images/gallery-photos/dog-in-street.jpg',
-	'/images/gallery-photos/black-catititude.jpg',
-	'/images/gallery-photos/bengal-cat.jpg',
-	'/images/gallery-photos/dog-sitting-on-leash.jpg',
-	'/images/gallery-photos/man-and-dog-in-snow.jpg',
-	'/images/gallery-photos/black-cat.jpg',
-	'/images/gallery-photos/shepherd.jpg',
-	// "/images/gallery-photos/husky-puppy.jpg",
-	'/images/gallery-photos/orange-menace.jpg',
-	'/images/gallery-photos/dog-in-snow.jpg',
-	'/images/gallery-photos/smug-kitty.jpg',
-	'/images/gallery-photos/german-no-touch.jpg'
-]
+import { galleryImageData } from '../data/GalleryData.ts'
 ---
 
-<section class="gallery-section">
+<section id="gallery-section">
 	<div class="gallery-container">
 		<div class="gallery-heading">
-			<h4>Gallery</h4>
+			<h3>Gallery</h3>
 			<h2>Our <span>Photo Gallery</span></h2>
 			<div class="header-underline"></div>
 		</div>
 
 		<div class="gallery-grid">
 			{
-				galleryImages.map((src, i) => (
+				galleryImageData.map(({ webp, png, alt }, i) => (
 					<div class="gallery-item">
-						<img src={src} alt={`Gallery image ${i + 1}`} />
+						<picture>
+							<source srcset={webp} type="image/webp" />
+							<img src={png} alt={alt || `Gallery image ${i + 1}`} loading="lazy" />
+						</picture>
 					</div>
 				))
 			}
@@ -39,35 +26,20 @@ const galleryImages = [
 </section>
 
 <style>
-	.gallery-section {
-		width: 100%;
-		background-color: white;
-	}
-
 	.gallery-container {
-		padding: 60px 30px;
 		max-width: 1300px;
-		margin: 0 auto;
 		width: 100%;
 	}
 
-	.gallery-heading h4 {
+	.gallery-heading {
 		display: flex;
-		align-items: center;
+		flex-direction: column;
 		justify-content: center;
-		color: var(--primary-dark);
-		text-transform: uppercase;
-		font-size: 0.9rem;
-		letter-spacing: 1px;
-		margin-bottom: 0.25rem;
+		align-items: center;
+		width: 100%;
 	}
 
 	.gallery-heading h2 {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-size: 2rem;
-		font-weight: 700;
 		margin-bottom: 1rem;
 	}
 
@@ -84,6 +56,8 @@ const galleryImages = [
 
 	/* GALLERY ITEM + HOVER EFFECT */
 	.gallery-item {
+		aspect-ratio: 1 / 1;
+		height: 100%;
 		overflow: hidden;
 		border-radius: 12px;
 		transition:
@@ -101,30 +75,20 @@ const galleryImages = [
 		height: 100%;
 		aspect-ratio: 1 / 1;
 		object-fit: cover;
-		display: block;
+
 		transition: transform 0.3s ease;
+	}
+	.gallery-grid .gallery-item:nth-child(n + 7) {
+		display: none;
 	}
 
 	.gallery-item:hover img {
 		transform: scale(1.05);
 	}
 
-	/* Responsive Padding */
-	@media (min-width: 768px) {
-		.gallery-container {
-			padding: 60px 40px;
-		}
-	}
-
-	@media (min-width: 992px) {
-		.gallery-container {
-			padding: 60px;
-		}
-	}
-
-	@media (min-width: 1200px) {
-		.gallery-container {
-			padding: 60px 80px;
+	@media (min-width: 1170px) {
+		.gallery-grid .gallery-item:nth-child(n + 7) {
+			display: block;
 		}
 	}
 </style>

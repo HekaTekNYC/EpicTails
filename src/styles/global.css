@@ -21,15 +21,6 @@ html {
 	--primary-lighter: #dce0fc;
 	--primary-lightest: #f4f5ff;
 
-	/* Old Primary */
-	/* --primary-darkest: #5e74e3;
-	--primary-darker: #7687e8;
-	--primary-dark: #8f9aed;
-	--primary-medium: #aab1f2;
-	--primary-light: #c6caf7;
-	--primary-lighter: #dee2fb;
-	--primary-lightest: #f4f6ff; */
-
 	/* Secondary */
 	--secondary-darkest: #e35e74;
 	--secondary-darker: #e97588;
@@ -175,6 +166,10 @@ p {
 	color: var(--secondary-darkest);
 	white-space: nowrap;
 }
+.focus-font-lt {
+	color: var(--secondary-medium);
+	white-space: nowrap;
+}
 
 #hero-section {
 	display: flex;
@@ -188,7 +183,8 @@ p {
 #about-section,
 #contact-section,
 #why-us,
-#pricing-section {
+#pricing-section,
+#gallery-section {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -202,6 +198,7 @@ p {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	padding: 60px 30px;
 	width: 100%;
 }
 
@@ -216,7 +213,9 @@ p {
 	}
 	#about-section,
 	#contact-section,
-	#why-us {
+	#services-section,
+	#why-us,
+	#gallery-section {
 		padding: 60px 40px;
 	}
 	#pricing-section {
@@ -231,7 +230,9 @@ p {
 	}
 	#about-section,
 	#contact-section,
-	#why-us {
+	#services-section,
+	#why-us,
+	#gallery-section {
 		padding: 60px;
 	}
 
@@ -244,7 +245,8 @@ p {
 @media (min-width: 1200px) {
 	#about-section,
 	#contact-section,
-	#why-us {
+	#why-us,
+	#gallery-section {
 		padding: 60px 80px;
 	}
 

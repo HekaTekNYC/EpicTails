@@ -1,50 +1,50 @@
 ---
-import HeroCard from "./HeroCard.astro";
-import ServicesCard from "./ServicesCard.astro";
+import HeroCard from './HeroCard.astro'
+import ServicesCard from './ServicesCard.astro'
 // Import the Card Props type
-import type { Props as HeroCardProp } from "./HeroCard.astro";
+import type { Props as HeroCardProp } from './HeroCard.astro'
 
 // defined the Props for this component
 type Props = {
-  heroCards: HeroCardProp[]; // accepts an array of CardProps
-};
+	heroCards: HeroCardProp[] // accepts an array of CardProps
+}
 
-const { heroCards } = Astro.props;
+const { heroCards } = Astro.props
 ---
-<div class="hero-cards-container">
-<div class="hero-cards">
 
-  {heroCards.map((card) => <div class="hero-card"><ServicesCard {...card} /></div> )}
-</div>
+<div class="hero-cards-container">
+	<div class="hero-cards">
+		{
+			heroCards.map((card) => (
+				<div class="hero-card">
+					<ServicesCard {...card} />
+				</div>
+			))
+		}
+	</div>
 </div>
 
 <style>
+	.hero-cards-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: var(--primary-light);
+		width: 100%;
+		padding: 20px;
+	}
+	.hero-cards {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 2rem;
+		height: 100%;
+		width: 100%;
+	}
 
-  .hero-cards-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--primary-light);
-    width: 100%;
-    padding: 20px;
-  }
-  .hero-cards {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    height: 100%;
-    width: 100%;
-
-  }
-
-
-  @media screen and (min-width: 768px) {
-
-
-  }
-  @media screen and (min-width: 1024px) {
-
-  }
+	@media screen and (min-width: 768px) {
+	}
+	@media screen and (min-width: 1024px) {
+	}
 </style>

@@ -1,78 +1,69 @@
 ---
-import { string } from 'astro/zod';
+import { string } from 'astro/zod'
 
-const { icon, iconDesc, title } = Astro.props;
+const { icon, iconDesc, title } = Astro.props
 
 export type Props = {
-  icon: string;
-  iconDesc: string;
-  title: string;
-};
+	icon: string
+	iconDesc: string
+	title: string
+}
 ---
+
 <div class="hero-card-container">
-  <div class="hero-icon-container">
-    <img src={icon} alt={iconDesc}>
-  </div>
-  <h4>{title}</h4>
+	<div class="hero-icon-container">
+		<img src={icon} alt={iconDesc} />
+	</div>
+	<h4>{title}</h4>
 </div>
 
+<style>
+	.hero-card-container {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 300px;
+		height: 300px;
+		border: 1px solid var(--dark-gray);
+		border-radius: 10px;
+		background-color: var(--primary-lightest);
+		margin-top: 37px;
+	}
 
+	.hero-card-container h4 {
+		white-space: nowrap;
+		color: var(--dark-gray) !important;
+		font-size: 1.2rem !important;
+	}
 
-<style >
-  .hero-card-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 300px;
-    height: 300px;
-    border: 1px solid var( --dark-gray);
-    border-radius: 10px;
-    background-color: var(--primary-lightest);
-    margin-top: 37px;
+	.hero-icon-container {
+		position: absolute;
+		top: -30px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 50px;
+		width: 50px;
+		border: 1px solid var(--white);
+		border-radius: 50%;
+		background-color: var(--primary-dark);
+	}
 
-  }
+	.hero-icon-container img {
+		width: 30px;
+		height: 30px;
+	}
 
-  .hero-card-container h4 {
-    white-space: nowrap;
-    color: var( --dark-gray) !important;
-    font-size: 1.2rem !important;
-  }
+	@media (min-width: 768px) {
+		.hero-card-container {
+			height: 70px;
 
-  .hero-icon-container {
-    position: absolute;
-    top: -30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 50px;
-    border: 1px solid var(--white);
-    border-radius: 50%;
-    background-color: var(--primary-dark);
-  }
+			margin-top: 37px;
+		}
+	}
 
-  .hero-icon-container img {
-    width: 30px;
-    height: 30px;
-  }
-
-
-  @media (min-width: 768px) {
-    .hero-card-container {
-
-
-    height: 70px;
-
-    margin-top: 37px;
-
-  }
-
-}
-
-  @media (min-width: 1024px) {
-  
-  }
-
+	@media (min-width: 1024px) {
+	}
 </style>
