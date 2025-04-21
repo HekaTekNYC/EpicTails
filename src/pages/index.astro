@@ -45,7 +45,7 @@ const profilePicture = 'https://i.imgur.com/JPGFE75.jpg'
 		<div class="services-container">
 			<div class="services-header">
 				<h3>Services</h3>
-				<h2>Our <span class="focus-font-lt">Pet Care</span> Services</h2>
+				<h2>Our <span class="focus-font">Pet Care</span> Services</h2>
 				<div class="header-underline"></div>
 			</div>
 			<div class="services-cards-container">
@@ -102,11 +102,11 @@ const profilePicture = 'https://i.imgur.com/JPGFE75.jpg'
 		}
 
 		.services-header h3 {
-			color: var(--white);
+	
 		}
 
 		.services-header h2 {
-			color: var(--white);
+			/* color: var(--white); */
 			padding-bottom: 17px;
 		}
 		.services-cards-container {
@@ -156,7 +156,8 @@ const profilePicture = 'https://i.imgur.com/JPGFE75.jpg'
 		/* Services */
 
 		@media (min-width: 768px) {
-			.services-container {
+			.services-cards-container {
+				display: grid;
 				grid-template-columns: repeat(2, 1fr);
 			}
 			.pricing-card-container {
@@ -166,18 +167,17 @@ const profilePicture = 'https://i.imgur.com/JPGFE75.jpg'
 		}
 
 		@media (min-width: 992px) {
-			.services-container {
+			.services-cards-container {
+			
 				grid-template-columns: repeat(3, 1fr);
+				gap: 2rem;
 			}
 		}
 		@media (min-width: 1200px) {
-			.services-container {
-				padding: 60px 80px;
-				gap: 2rem;
-			}
-
+		
 			.pricing-card-container {
 				grid-template-columns: repeat(4, 1fr);
+				gap: 3rem;
 			}
 		}
 	</style>
