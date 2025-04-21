@@ -1,12 +1,88 @@
 ---
-
+import Button from './Button.astro'
 ---
-<footer>&copy; Frau Katerina</footer>
+
+<footer class="footer">
+	<div class="footer-container">
+		<div class="footer-column">
+			<div class="footer-mission">
+				<a href="/" class="logo" aria-label="Home">
+					<img src="/images/epic-white.png" alt="Epic Tails logo" height="50" />
+				</a>
+				<p>
+					Caring, reliable dog walking and pet sitting tailored to your pet’s needs — because they
+					deserve the best.
+				</p>
+			</div>
+
+			<ul class="footer-contact">
+				<li>42 Wythe Ave, Brooklyn, NY 11249</li>
+				<li>(555) 867-5309</li>
+				<li>hello@epictails.com</li>
+			</ul>
+		</div>
+		<div class="footer-column">
+			<h4>Quick Links</h4>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Services</a></li>
+				<li><a href="#">Contact</a></li>
+				<li><a href="#">Blog</a></li>
+			</ul>
+		</div>
+
+		<div class="footer-column">
+			<h4>Our Services</h4>
+			<ul>
+				<li><a href="#">Dog Walking</a></li>
+				<li><a href="#">Pet Sitting</a></li>
+				<li><a href="#">Cat & Critter Care</a></li>
+				<li><a href="#">Puppy Visits</a></li>
+				<li><a href="#">Overnight Stays</a></li>
+				<li><a href="#">Pet Transportation</a></li>
+			</ul>
+		</div>
+		<div class="footer-column">
+			<h4>Newsletter</h4>
+			<p>Subscribe to our newsletter for funsies.</p>
+			<input type="text" class="footer-input" />
+			<Button href="#" size="lg" style="secondary" class="about-btn">Read More</Button>
+			<div class="footer-socials">
+				<ul>
+					<li>
+						<a href="#" aria-label="Facebook">
+							<img src="/icons/facebook.svg" alt="Facebook icon" height="25" />
+						</a>
+					</li>
+					<li>
+						<a href="#" aria-label="Twitter">
+							<img src="/icons/x.svg" alt="Twitter icon" height="25" />
+						</a>
+					</li>
+					<li>
+						<a href="#" aria-label="Instagram">
+							<img src="/icons/instagram.svg" alt="Instagram icon" height="25" />
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
 
 <style>
-    footer {
-        padding: 3rem 0;
-        text-align: center;
-        font-size: 0.9rem; 
-    }
+	.footer {
+		text-align: center;
+		background-color: var(--primary-dark);
+		padding: 40px 30px;
+	}
+
+	.footer-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		color: var(--white);
+	}
 </style>
