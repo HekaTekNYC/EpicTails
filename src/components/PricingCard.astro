@@ -9,11 +9,66 @@ const props = Astro.props as PricingData
 	<div class="pricing-card-container">
 		<h4>{props.title}</h4>
 		<div class="price-range">{props.priceRange}</div>
-		<ul>
-			{props.features.map((feature) => <li>{feature}</li>)}
+		<ul class="feature-points">
+			{
+				props.features.map((feature) => (
+					<li>
+						<img src="icons/greencheck.svg" height="20px" />
+						{feature}
+					</li>
+				))
+			}
 		</ul>
 		<Button href="#" size="lg" style="secondary" class="about-btn">
 			{props.buttonLabel}
 		</Button>
 	</div>
 </div>
+
+<style>
+	.pricing-card {
+		display: flex;
+		padding: 25px;
+		width: 100%;
+		height: 100%;
+		max-width: 300px;
+		border-radius: 20px;
+		box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	}
+
+	.pricing-card-container {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		justify-content: center;
+	}
+
+	.pricing-card-container h4 {
+		padding-bottom: 5px;
+	}
+
+	.price-range {
+		background-color: var(--primary-darkest);
+		font-size: 1.2rem;
+		font-weight: 600;
+		padding: 15px 25px;
+		margin: 10px 0 10px -35px;
+		border-radius: 5px;
+		color: var(--white);
+	}
+
+	.feature-points {
+		padding: 10px 0 15px;
+	}
+
+	.feature-points li {
+		display: flex;
+		align-items: center;
+		justify-content: start;
+		padding: 10px 0;
+	}
+
+	.feature-points li img {
+		padding-right: 10px;
+	}
+</style>
