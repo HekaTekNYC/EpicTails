@@ -16,9 +16,18 @@ import Button from './Button.astro'
 			</div>
 
 			<ul class="footer-contact">
-				<li>42 Wythe Ave, Brooklyn, NY 11249</li>
-				<li>(555) 867-5309</li>
-				<li>hello@epictails.com</li>
+				<li>
+					<i class="fa-solid fa-location-dot" style="color: #f67c79;"></i>
+					<p>42 Wythe Ave, Brooklyn, NY 11249</p>
+				</li>
+				<li>
+					<i class="fa-solid fa-phone-volume" style="color: #f67c79;"></i>
+					<p>917-555-4444</p>
+				</li>
+				<li>
+					<i class="fa-regular fa-envelope" style="color: #f67c79;"></i>
+					<p>hello@epictails.com</p>
+				</li>
 			</ul>
 		</div>
 		<div class="footer-column">
@@ -46,23 +55,23 @@ import Button from './Button.astro'
 		<div class="footer-column">
 			<h4>Newsletter</h4>
 			<p>Subscribe to our newsletter for funsies.</p>
-			<input type="text" class="footer-input" />
+			<input type="email" class="footer-input" placeholder="Email" />
 			<Button href="#" size="lg" style="secondary" class="about-btn">Read More</Button>
-			<div class="footer-socials">
-				<ul>
+			<div>
+				<ul class="footer-socials">
 					<li>
 						<a href="#" aria-label="Facebook">
-							<img src="/icons/facebook.svg" alt="Facebook icon" height="25" />
+							<img src="/icons/facebook.svg" alt="Facebook icon" height="35" />
 						</a>
 					</li>
 					<li>
 						<a href="#" aria-label="Twitter">
-							<img src="/icons/x.svg" alt="Twitter icon" height="25" />
+							<img src="/icons/x.svg" alt="Twitter icon" height="35" />
 						</a>
 					</li>
 					<li>
 						<a href="#" aria-label="Instagram">
-							<img src="/icons/instagram.svg" alt="Instagram icon" height="25" />
+							<img src="/icons/instagram.svg" alt="Instagram icon" height="35" />
 						</a>
 					</li>
 				</ul>
@@ -74,7 +83,7 @@ import Button from './Button.astro'
 <style>
 	.footer {
 		text-align: center;
-		background-color: var(--primary-dark);
+		background-color: var(--primary-darker);
 		padding: 40px 30px;
 	}
 
@@ -84,5 +93,59 @@ import Button from './Button.astro'
 		align-items: center;
 		justify-content: center;
 		color: var(--white);
+	}
+
+	.footer-container h4 {
+		color: var(--secondary-darkest);
+		padding-bottom: 10px;
+	}
+
+	.footer-container li {
+		padding: 10px 0;
+	}
+
+	.footer-contact li {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.footer-contact li p {
+		padding-left: 5px;
+		margin: 0;
+	}
+
+	.footer-column {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding-bottom: 15px;
+	}
+
+	.footer-input {
+		padding: 0.75rem 0.9rem;
+		font-size: 1rem;
+		border: 1px solid #ccc;
+		border-radius: 8px;
+		width: 100%;
+		max-width: 300px;
+		margin: 15px 0 10px;
+	}
+
+	.footer-socials {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		margin: 0 5px;
+	}
+
+	.footer-socials img {
+		border: 1px solid var(--white);
+		border-radius: 50%;
+		padding: 4px;
+		margin: 0 6px;
+		cursor: pointer;
 	}
 </style>
