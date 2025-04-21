@@ -4,10 +4,13 @@ import About from '../components/About.astro'
 import Main from '../layouts/Main.astro'
 import HeroCards from '../components/HeroCards.astro'
 import ServicesCard from '../components/ServicesCard.astro'
+import Gallery from '../components/PhotoGallery.astro'
+// import PhotoGallery from '../components/PhotoGallery.astro'
 import WhyUs from '../components/WhyUs.astro'
 import PricingCard from '../components/PricingCard.astro'
 import { servicesData } from '../data/ServicesData.ts'
 import { pricingData } from '../data/PricingData.ts'
+import PhotoGallery from '../components/PhotoGallery.astro'
 
 const profilePicture = 'https://i.imgur.com/JPGFE75.jpg'
 ---
@@ -48,7 +51,7 @@ const profilePicture = 'https://i.imgur.com/JPGFE75.jpg'
 		</div>
 	</section>
 	<WhyUs />
-
+<!-- <PhotoGallery/> -->
 	<section id="pricing-section">
 		<div class="pricing-container">
 			{
@@ -59,6 +62,10 @@ const profilePicture = 'https://i.imgur.com/JPGFE75.jpg'
 				))
 			}
 		</div>
+	</section>
+	<section>
+		<Gallery/>
+		
 	</section>
 </Main>
 
@@ -118,4 +125,5 @@ const profilePicture = 'https://i.imgur.com/JPGFE75.jpg'
 			gap: 2rem;
 		}
 	}
+
 </style>
