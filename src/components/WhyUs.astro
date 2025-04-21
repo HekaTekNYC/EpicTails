@@ -7,7 +7,7 @@
         <img class="why-blob" src="./images/blob-1.svg" alt="pink background blob" />
         <img class="why-img" src="/images/blob-2-hugging-dog.webp" alt="woman hugging dog" />
       </div>
-        <div class="why-us-left">
+      <div class="why-us-left">
         <h3>Why Choose Us</h3>
         <h2>We Take Care of<span class="focus-font"> Your Pets </span> and Keep Them Happy Time</h2>
         <p class="why-spacer">
@@ -18,7 +18,7 @@
           <div class="why-point-container">
             <div class="why-icon-container">
               <div class="why-icon">
-                <img src="./icons/walking-dog.svg" alt="icon of persons walking a dog" />
+                <img src="./icons/pet-certified.svg" alt="icon of persons walking a dog" />
               </div>
             </div>
             <div class="why-info-column">
@@ -30,7 +30,7 @@
           <div class="why-point-container">
             <div class="why-icon-container">
               <div class="why-icon">
-                <img src="./icons/pet-dog-icon.svg" alt="icon of hand petting a dog" />
+                <img src="./icons/pet-clock-why.svg" alt="icon of hand petting a dog" />
               </div>
             </div>
             <div class="why-info-column">
@@ -46,13 +46,12 @@
   
   
   <style>
-    .why-us-container {
+.why-us-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 2rem 1rem;
-  max-width: 1400px;
+  max-width: 1300px;
 }
 
 .why-visual-wrap {
@@ -115,13 +114,14 @@
   align-items: center;
   justify-content: center;
   padding: 5px;
-  border: 2px solid var(--primary-darker);
+  border: 2px solid var(--primary-dark);
   border-radius: 50%;
 }
 
 .why-icon img {
-  width: 45px;
-  height: 45px;
+  margin: 3px;
+  width: 35px;
+  height: 35px;
 }
 
 .why-info-column {
@@ -131,21 +131,18 @@
 @media (min-width: 1024px) {
   .why-us-container {
     flex-direction: row-reverse;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     gap: 4rem;
   }
 
   .why-visual-wrap {
-    max-width: 500px;
-    flex: 1 1 50%;
-    aspect-ratio: 1 / 1;
+    width: 50%;
     margin-bottom: 0;
   }
 
   .why-us-left {
-    flex: 1 1 50%;
-    max-width: 600px;
+    width: 50%;
   }
 }
 
