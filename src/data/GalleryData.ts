@@ -5,13 +5,15 @@ export const galleryImageData = [
 		alt: 'Shepherd in the park'
 	},
 	{
-		webp: '/images/gallery-photos/dog-in-street.webp',
-		png: '/images/gallery-photos/dog-in-street.png',
-		alt: 'Dog in the street'
+
+		webp: '/images/gallery-photos/dog-in-snow.webp',
+		png: '/images/gallery-photos/dog-in-snow.png',
+		alt: 'Dog in the snow'
 	},
 	{
-		webp: '/images/gallery-photos/black-catititude.webp',
-		png: '/images/gallery-photos/black-catititude.png',
+		webp: '/images/gallery-photos/black-catitude.webp',
+		png: '/images/gallery-photos/black-catitude.png',
+
 		alt: 'Black cat with attitude'
 	},
 	{
@@ -20,9 +22,11 @@ export const galleryImageData = [
 		alt: 'Bengal cat'
 	},
 	{
-		webp: '/images/gallery-photos/dog-sitting-on-leash.webp',
-		png: '/images/gallery-photos/dog-sitting-on-leash.png',
-		alt: 'Dog sitting on a leash'
+
+		webp: '/images/gallery-photos/smiling-queens-dog.webp',
+		png: '/images/gallery-photos/smiling-queens-dog.png',
+		alt: 'Smiling Corgi'
+
 	},
 	{
 		webp: '/images/gallery-photos/orange-menace.webp',
