@@ -1,17 +1,26 @@
 ---
 export interface Props {
+	id: number
 	icon: string
 	iconDesc: string
 	title: string
 	blurb: string
 }
 
-const { icon, iconDesc, title, blurb } = Astro.props
+const { id, icon, iconDesc, title, blurb } = Astro.props
 ---
 
 <div class="hero-card-container">
-	<img src="/images/hero-card-blob.svg" alt="light blue blob" class="hero-card-blob-1" />
-	<img src="/images/hero-card-blob-1.svg" alt="lighter blue blob" class="hero-card-blob-2" />
+	<img
+		src="/images/hero-card-blob.svg"
+		alt="light blue blob"
+		class={`hero-blob-inner hero-blob-inner-${id}`}
+	/>
+	<img
+		src="/images/hero-card-blob-1.svg"
+		alt="lighter blue blob"
+		class={`hero-blob-outer hero-blob-outer-${id}`}
+	/>
 
 	<div class="hero-icon-container">
 		<img src={icon} alt={iconDesc} />
@@ -31,7 +40,6 @@ const { icon, iconDesc, title, blurb } = Astro.props
 		justify-content: space-evenly;
 		width: 100%;
 		height: 100%;
-		/* max-width: 300px; */
 		max-height: 300px;
 		padding: 25px;
 		background: var(--white);
@@ -39,26 +47,61 @@ const { icon, iconDesc, title, blurb } = Astro.props
 		overflow: hidden;
 		aspect-ratio: 1/1;
 		z-index: 1;
+		box-shadow: rgba(26, 25, 41, 0.2) 0px 2px 8px 0px;
+	}
+	.hero-blob-inner,
+	.hero-blob-outer {
+		position: absolute;
+		z-index: 2;
 	}
 
-	.hero-card-blob-1,
-	.hero-card-blob-2 {
-		position: absolute;
-	}
-	.hero-card-blob-1 {
-		top: -100px;
-		right: -115px;
-		width: 300px;
-		transform: rotate(40deg);
+	.hero-blob-inner {
 		z-index: 3;
 	}
 
-	.hero-card-blob-2 {
-		top: -100px;
-		right: -115px;
+	.hero-blob-inner-1,
+	.hero-blob-outer-1 {
+		transform: rotate(10deg);
+	}
+
+	.hero-blob-inner-1 {
+		top: -120px;
+		left: -130px;
+		width: 250px;
+	}
+	.hero-blob-outer-1 {
+		top: -130px;
+		left: -140px;
+		width: 310px;
+	}
+
+	.hero-blob-inner-2,
+	.hero-blob-outer-2 {
+		right: 0;
+		transform: rotate(20deg);
+	}
+
+	.hero-blob-inner-2 {
+		top: -160px;
+		width: 270px;
+	}
+	.hero-blob-outer-2 {
+		top: -180px;
 		width: 340px;
+	}
+
+	.hero-blob-inner-3,
+	.hero-blob-outer-3 {
+		top: -140px;
+		right: -115px;
 		transform: rotate(40deg);
-		z-index: 2;
+	}
+
+	.hero-blob-inner-3 {
+		width: 280px;
+	}
+	.hero-blob-outer-3 {
+		width: 320px;
 	}
 
 	.hero-icon-container {
@@ -105,20 +148,25 @@ const { icon, iconDesc, title, blurb } = Astro.props
 			height: 50px;
 		}
 
-		.hero-card-blob-1 {
-			top: -100px;
-			right: -105px;
-			width: 200px;
-			transform: rotate(40deg);
-			z-index: 3;
+		.hero-blob-inner-1 {
+			left: -130px;
+		}
+		.hero-blob-outer-1 {
+			top: -150px;
+			left: -160px;
 		}
 
-		.hero-card-blob-2 {
-			top: -90px;
-			right: -85px;
-			width: 210px;
-			transform: rotate(40deg);
-			z-index: 2;
+		.hero-blob-inner-2 {
+			top: -180px;
+		}
+		.hero-blob-outer-2 {
+			top: -200px;
+		}
+
+		.hero-blob-inner-3,
+		.hero-blob-outer-3 {
+			top: -180px;
+			right: -125px;
 		}
 
 		.hero-card-text p {
