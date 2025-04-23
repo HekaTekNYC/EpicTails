@@ -189,6 +189,11 @@ p {
 	width: 100%;
 	overflow: hidden;
 }
+
+#hero-banner-section {
+	background-color: var(--primary-lightest);
+}
+#hero-banner-section,
 #contact-section,
 #why-us,
 #gallery-section {

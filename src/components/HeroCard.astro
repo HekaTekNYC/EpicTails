@@ -1,20 +1,25 @@
 ---
-import { string } from 'astro/zod'
-
-const { icon, iconDesc, title } = Astro.props
-
-export type Props = {
+export interface Props {
 	icon: string
 	iconDesc: string
 	title: string
+	blurb: string
 }
+
+const { icon, iconDesc, title, blurb } = Astro.props
 ---
 
 <div class="hero-card-container">
+	<img src="/images/hero-card-blob.svg" alt="light blue blob" class="hero-card-blob-1" />
+	<img src="/images/hero-card-blob-1.svg" alt="lighter blue blob" class="hero-card-blob-2" />
+
 	<div class="hero-icon-container">
 		<img src={icon} alt={iconDesc} />
 	</div>
-	<h4>{title}</h4>
+	<div class="hero-card-text">
+		<h4>{title}</h4>
+		<p>{blurb}</p>
+	</div>
 </div>
 
 <style>
@@ -23,47 +28,115 @@ export type Props = {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
-		width: 300px;
-		height: 300px;
-		border: 1px solid var(--dark-gray);
-		border-radius: 10px;
-		background-color: var(--primary-lightest);
-		margin-top: 37px;
+		justify-content: space-evenly;
+		width: 100%;
+		height: 100%;
+		/* max-width: 300px; */
+		max-height: 300px;
+		padding: 25px;
+		background: var(--white);
+		border-radius: 20px;
+		overflow: hidden;
+		aspect-ratio: 1/1;
+		z-index: 1;
 	}
 
-	.hero-card-container h4 {
-		white-space: nowrap;
-		color: var(--dark-gray) !important;
-		font-size: 1.2rem !important;
+	.hero-card-blob-1,
+	.hero-card-blob-2 {
+		position: absolute;
+	}
+	.hero-card-blob-1 {
+		top: -100px;
+		right: -115px;
+		width: 300px;
+		transform: rotate(40deg);
+		z-index: 3;
+	}
+
+	.hero-card-blob-2 {
+		top: -100px;
+		right: -115px;
+		width: 340px;
+		transform: rotate(40deg);
+		z-index: 2;
 	}
 
 	.hero-icon-container {
-		position: absolute;
-		top: -30px;
 		display: flex;
-		justify-content: center;
 		align-items: center;
-		height: 50px;
-		width: 50px;
-		border: 1px solid var(--white);
-		border-radius: 50%;
+		justify-content: center;
 		background-color: var(--primary-dark);
+		height: 100px;
+		width: 100px;
+		border-radius: 50%;
+		z-index: 4;
 	}
 
 	.hero-icon-container img {
-		width: 30px;
-		height: 30px;
+		width: 70px;
+		height: 70px;
+	}
+
+	.hero-card-text {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		z-index: 10;
+	}
+
+	.hero-card-text p {
+		padding-top: 10px;
+		text-align: center;
 	}
 
 	@media (min-width: 768px) {
 		.hero-card-container {
-			height: 70px;
+			padding: 10px;
+		}
 
-			margin-top: 37px;
+		.hero-icon-container {
+			height: 70px;
+			width: 70px;
+		}
+
+		.hero-icon-container img {
+			width: 50px;
+			height: 50px;
+		}
+
+		.hero-card-blob-1 {
+			top: -100px;
+			right: -105px;
+			width: 200px;
+			transform: rotate(40deg);
+			z-index: 3;
+		}
+
+		.hero-card-blob-2 {
+			top: -90px;
+			right: -85px;
+			width: 210px;
+			transform: rotate(40deg);
+			z-index: 2;
+		}
+
+		.hero-card-text p {
+			padding-top: 5px;
 		}
 	}
 
-	@media (min-width: 1024px) {
+	@media (min-width: 820px) {
+		.hero-icon-container {
+			height: 80px;
+			width: 80px;
+		}
+
+		.hero-icon-container img {
+			width: 60px;
+			height: 60px;
+		}
+	}
+	@media (min-width: 992px) {
 	}
 </style>
