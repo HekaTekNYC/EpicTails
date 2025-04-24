@@ -1,25 +1,25 @@
 ---
 import Button from './Button.astro'
-import HeroCards from './HeroCards.astro'
 ---
 
 <section id="hero-section">
 	<div class="hero-container">
 		<div class="hero-left">
 			<div class="hero-left-container">
-				<img
-					src="/icons/paw-prints-hero.svg"
-					alt="celeste blue colored paw prints"
-					class="hero-paws"
-					height="100"
-				/>
-				<div class="blob-left">
-					<img src="/images/hero-blob-1.svg" alt="pastel pink blob" height="300" />
+				<div class="hero-left-blobs">
+					<img
+						src="/icons/paw-prints-hero.svg"
+						alt="celeste blue colored paw prints"
+						class="hero-paws"
+						height="100"
+					/>
+					<div class="blob-left">
+						<img src="/images/hero-blob-1.svg" alt="pastel pink blob" />
+					</div>
+					<div class="blob-left-2">
+						<img src="/images/hero-blob-2.svg" alt="light blue blob" />
+					</div>
 				</div>
-				<div class="blob-mobile">
-					<img src="/images/hero-blob-2.svg" alt="light blue blob" height="250" />
-				</div>
-
 				<img
 					src="/images/russian-blue.png"
 					alt="russian blue cat with green eyes sitting"
@@ -30,7 +30,7 @@ import HeroCards from './HeroCards.astro'
 					src="/images/golden-lab.webp"
 					alt="golden labrador retriever sitting looking happy"
 					height="400"
-					class="mobile-lab"
+					class="hero-lab"
 				/>
 			</div>
 		</div>
@@ -80,47 +80,56 @@ import HeroCards from './HeroCards.astro'
 
 	.hero-left-container {
 		position: relative;
+		height: 100%;
 		width: min-content;
+	}
+	.hero-left-blobs {
+		position: relative;
+		height: 300px;
+		width: 100%;
+		aspect: 1/1;
+		z-index: 1;
 	}
 
 	.blob-left {
-		display: none;
+		position: absolute;
+		bottom: -20px;
+		right: -160px;
+		width: 285px;
+		transform: rotate(130deg);
+		z-index: 6;
 	}
-	.blob-mobile {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		aspect: 1/1;
-		width: min-content;
-		height: 285px;
-		z-index: 2;
-	}
-
-	.blob-mobile img {
+	.blob-left-2 {
+		position: absolute;
+		top: -200px;
+		left: -390px;
 		height: 100%;
+		width: 450px;
+		transform: scaleX(-1) rotate(40deg);
+		z-index: -1;
 	}
 	.hero-paws {
 		position: absolute;
-		height: 110px;
-		top: -50px;
-		left: 25px;
+		height: 140px;
+		top: -75px;
+		left: -150px;
 		transform: rotate(-100deg);
-		z-index: -1;
+		z-index: 3;
 	}
 
 	.hero-cat {
 		position: absolute;
 		height: 220px;
-		bottom: 0;
-		left: -3px;
+		bottom: -5px;
+		left: -150px;
 		z-index: 5;
 	}
 
-	.mobile-lab {
+	.hero-lab {
 		position: absolute;
 		height: 320px;
 		bottom: 0;
-		right: 5px;
+		right: -150px;
 		z-index: 4;
 	}
 
@@ -157,6 +166,25 @@ import HeroCards from './HeroCards.astro'
 		display: flex;
 	}
 
+	@media (min-width: 768px) {
+		.blob-left {
+			width: 335px;
+			transform: rotate(120deg);
+		}
+		.blob-left-2 {
+			top: -60px;
+			left: -420px;
+			width: 550px;
+			transform: scaleX(-1) rotate(220deg);
+		}
+		.hero-paws {
+			height: 160px;
+			top: -20px;
+			left: -220px;
+			z-index: 7;
+		}
+	}
+
 	@media (min-width: 992px) {
 		.hero-container {
 			display: grid;
@@ -175,12 +203,18 @@ import HeroCards from './HeroCards.astro'
 			display: none;
 		}
 
-		.hero-cat {
-			left: -10px;
+		.blob-left {
+			width: 285px;
 		}
-
-		.mobile-lab {
-			right: -5px;
+		.blob-left-2 {
+			top: -60px;
+			left: -100px;
+		}
+		.hero-paws {
+			height: 160px;
+			top: -100px;
+			left: -150px;
+			transform: rotate(-90deg);
 		}
 	}
 
@@ -191,10 +225,6 @@ import HeroCards from './HeroCards.astro'
 			gap: 1rem;
 			padding: 60px 0;
 		}
-		.mobile-lab,
-		.blob-mobile {
-			display: none;
-		}
 
 		.hero-left,
 		.hero-center,
@@ -202,22 +232,6 @@ import HeroCards from './HeroCards.astro'
 			order: unset;
 			width: 100%;
 			margin: 0;
-		}
-		.hero-paws {
-			height: 110px;
-			top: -110px;
-			left: unset;
-			right: -40px;
-			transform: rotate(-100deg);
-			z-index: -1;
-		}
-		.blob-left {
-			display: flex;
-			width: 100%;
-		}
-
-		.blob-left img {
-			width: 250px;
 		}
 
 		.hero-cat {
@@ -241,13 +255,6 @@ import HeroCards from './HeroCards.astro'
 
 		.blob-right img {
 			width: 290px;
-		}
-
-		.golden-hero {
-			position: absolute;
-			bottom: 0px;
-			right: 50px;
-			height: 360px;
 		}
 	}
 

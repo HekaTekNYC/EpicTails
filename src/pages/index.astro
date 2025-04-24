@@ -15,6 +15,9 @@ import { pricingData } from '../data/PricingData.ts'
 <Main title="Epic Tails">
 	<Hero />
 	<section id="hero-banner-section">
+		<div class="hero-swoop">
+			<img src="/icons/paw-prints-4.svg" alt="" />
+		</div>
 		<div class="hero-cards-container">
 			{
 				heroCardsData.map((card) => (
@@ -78,6 +81,16 @@ import { pricingData } from '../data/PricingData.ts'
 			gap: 20px;
 			width: 100%;
 			max-width: 1300px;
+		}
+
+		.hero-swoop {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+		}
+
+		.hero-swoop img {
+			width: 100%;
 		}
 		/* Services */
 		.services-container {
@@ -180,10 +193,14 @@ import { pricingData } from '../data/PricingData.ts'
 			}
 		}
 
-		@media (min-width: 1200px) {
+		@media (min-width: 1300px) {
 			.hero-cards-container {
 				gap: 5rem;
 				max-width: 900px;
+			}
+
+			.pricing-card-container {
+				gap: 3rem;
 			}
 		}
 	</style>
