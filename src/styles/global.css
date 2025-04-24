@@ -83,7 +83,6 @@ li {
 	list-style: none;
 }
 
-/* hero */
 h1 {
 	font-family: var(--gelica);
 	font-weight: 900;
@@ -93,7 +92,6 @@ h1 {
 	margin: 0;
 }
 
-/* all header sections */
 h2 {
 	font-family: var(--gelica);
 	font-weight: 700;
@@ -105,7 +103,6 @@ h2 {
 	padding-bottom: 10px;
 }
 
-/* above the h2 and h1 */
 h3 {
 	font-family: var(--bryant);
 	font-size: 1.2rem;
@@ -116,7 +113,6 @@ h3 {
 	margin: 0;
 }
 
-/* Card headers and employee names and section internal header */
 h4 {
 	font-family: var(--bryant);
 	font-size: 1.375rem;
@@ -225,17 +221,13 @@ p {
 	width: 100%;
 }
 
-/* Small devices (sm) - 576px and above */
-@media (min-width: 576px) {
-}
-
 /* Medium devices (md) - 768px and above */
 @media (min-width: 768px) {
 	#hero-section {
 		padding: 80px 40px 40px;
 	}
 	#about-section {
-		padding: 60px 30px 10px;
+		padding: 80px 30px 10px;
 	}
 	#contact-section,
 	#services-section,
@@ -254,7 +246,7 @@ p {
 		padding: 100px 60px;
 	}
 	#about-section {
-		padding: 60px 60px 10px;
+		padding: 80px 60px 10px;
 	}
 	#contact-section,
 	#services-section,
@@ -274,7 +266,7 @@ p {
 		padding: 100px 80px 40px;
 	}
 	#about-section {
-		padding: 60px 80px 10px;
+		padding: 80px 80px 10px;
 	}
 
 	#contact-section,
