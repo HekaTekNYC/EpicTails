@@ -260,7 +260,6 @@ p {
 	}
 }
 
-/* Extra large devices (xl) - 1200px and above */
 @media (min-width: 1200px) {
 	#hero-section {
 		padding: 100px 80px 40px;
