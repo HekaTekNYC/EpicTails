@@ -46,15 +46,21 @@ import Button from './Button.astro'
 			</div>
 		</div>
 		<div class="hero-right">
-			<div class="blob-right">
-				<img src="/images/hero-blob-2.svg" alt="light blue blob" height="300" />
+			<div class="hero-right-blobs">
+				<div class="blob-right">
+					<img src="/images/hero-blob-3.svg" alt="light blue blob" />
+				</div>
+				<div class="blob-right-2">
+					<img src="/images/hero-blob-4.svg" alt="light blue blob" />
+				</div>
+				<img
+					src="/icons/paw-prints-hero.svg"
+					alt="light grey colored paw prints"
+					class="hero-paws-right"
+					height="100"
+				/>
 			</div>
-			<img
-				src="/images/golden-lab.webp"
-				alt="golden labrador retriever sitting looking happy"
-				height="400"
-				class="golden-hero"
-			/>
+			<img src="/images/dog.png" alt="dog sitting looking happy" height="400" class="hero-dog" />
 		</div>
 	</div>
 </section>
@@ -234,34 +240,125 @@ import Button from './Button.astro'
 			margin: 0;
 		}
 
+		.blob-left {
+			top: 40px;
+			left: -140px;
+			width: 285px;
+			transform: rotate(-20deg);
+		}
+		.blob-left-2 {
+			top: -250px;
+			left: -350px;
+			transform: scaleX(1) rotate(0deg);
+		}
+
 		.hero-cat {
-			height: 320px;
-			bottom: 0;
-			left: -3px;
-			z-index: 5;
+			height: 220px;
+			bottom: -10px;
+			left: -220px;
+		}
+
+		.hero-paws {
+			height: 160px;
+			top: -140px;
+			left: -160px;
+			transform: rotate(-90deg);
 		}
 
 		.hero-right {
 			position: relative;
 			display: flex;
+			z-index: 2;
+		}
+
+		.hero-right-blobs {
+			position: relative;
+			height: 300px;
+			width: 100%;
+			aspect: 1/1;
+			z-index: 1;
 		}
 
 		.blob-right {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 100%;
+			position: absolute;
+			top: 30px;
+			right: 40px;
+			width: 270px;
+			z-index: 6;
+			transform: rotate(10deg);
 		}
 
-		.blob-right img {
-			width: 290px;
+		.blob-right-2 {
+			position: absolute;
+			top: -200px;
+			right: -300px;
+			width: 600px;
+			z-index: -1;
+		}
+		.hero-paws-right {
+			position: absolute;
+			height: 170px;
+			right: -45px;
+			bottom: -120px;
+			transform: scaleX(-1) rotate(-80deg);
+			z-index: 8;
+		}
+
+		.hero-dog {
+			position: absolute;
+			height: 350px;
+			bottom: -10px;
+			right: -10px;
+			z-index: 4;
 		}
 	}
 
-	/* Extra extra large devices (xxl) - 1400px and above */
-	@media (min-width: 1400px) {
+	@media (min-width: 1200px) {
 		.hero-container {
 			padding: 120px 0;
+		}
+
+		.blob-left {
+			left: -160px;
+			transform: rotate(-10deg);
+		}
+		.blob-left-2 {
+			top: -250px;
+			left: -450px;
+			width: 650px;
+		}
+
+		.hero-cat {
+			left: -220px;
+		}
+
+		.hero-lab {
+			height: 320px;
+			right: -110px;
+		}
+
+		.hero-paws {
+			left: -190px;
+		}
+
+		.blob-right {
+			position: absolute;
+			top: 50px;
+			right: -10px;
+			width: 300px;
+			z-index: 6;
+			transform: rotate(75deg);
+		}
+
+		.blob-right-2 {
+			right: -320px;
+			transform: rotate(10deg);
+		}
+		.hero-paws-right {
+			bottom: -140px;
+		}
+		.hero-dog {
+			right: -40px;
 		}
 	}
 </style>

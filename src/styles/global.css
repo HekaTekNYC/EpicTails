@@ -251,7 +251,7 @@ p {
 /* Large devices (lg) - 992px and above */
 @media (min-width: 992px) {
 	#hero-section {
-		padding: 100px 60px 40px;
+		padding: 100px 60px;
 	}
 	#about-section {
 		padding: 60px 60px 10px;
