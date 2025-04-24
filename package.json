@@ -13,6 +13,8 @@
     "@astrojs/check": "^0.7.0",
     "astro": "^4.10.3",
     "decap-cms-app": "^3.6.1",
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
     "title-case": "^4.3.1",
     "typescript": "^5.4.5"
   },

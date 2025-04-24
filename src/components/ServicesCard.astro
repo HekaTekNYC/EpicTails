@@ -1,146 +1,140 @@
 ---
-// import { string } from 'astro/zod';
+import type { ServiceData } from '../data/ServicesData'
 
-const { icon, iconAlt, title, desc} = Astro.props;
-
-export type Props = {
-  icon: string;
-  iconAlt: string;
-  title: string;
-  desc: string;
-};
+const props = Astro.props as ServiceData
 ---
+
 <div class="service-card-container">
-  <div class="service-blobs">
-    <img src="../assets/images/service-blob.svg" alt="blue small blob" height="140" class="service-blob1"/>
-    <img src="../assets/images/service-blob-2.svg" alt="blue small blob" height="140" class="service-blob2"/>
-  </div>
-  <div class="service-info">
-    <div class="service-icon">    
-      <img src={icon} alt={iconAlt}  height="50"/>
-    </div>
-    <h4>{title}</h4>
-    <p>{desc}</p>
-    <div class="service-read-more">
-      <div class="service-circle">  
-        <i class="fa-solid fa-arrow-right" style="color: #ffffff;"></i>
-      </div>
-      <h6>Read More</h6>
-    </div>
-  </div>
-  <div class="service-paws">
-    <img src="../assets/images/paw-prints-4.png" alt="four paw prints in blue" height="150"/>
-  </div>
+	<div class="service-blobs">
+		<img src="./images/service-blob.svg" alt="blue small blob" height="140" class="service-blob1" />
+		<img
+			src="./images/service-blob-2.svg"
+			alt="blue small blob"
+			height="140"
+			class="service-blob2"
+		/>
+	</div>
+	<div class="service-info">
+		<div class="service-icon-container">
+			<div class="service-icon">
+				<img src={props.icon} alt={props.iconAlt} height="50" />
+			</div>
+		</div>
+		<h4>{props.title}</h4>
+		<p>{props.desc}</p>
+		<div class="service-read-more">
+			<div class="service-circle">
+				<i class="fa-solid fa-arrow-right" style="color: #ffffff;"></i>
+			</div>
+			<h6>Read More</h6>
+		</div>
+	</div>
+	<div class="service-paws">
+		<img src="/icons/paw-prints-4.svg" alt="four paw prints in blue" height="150" />
+	</div>
 </div>
 
+<style>
+	.service-card-container {
+		position: relative;
+		display: flex;
+		flex: 1;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		width: 100%;
+		padding: 25px;
+		background: var(--white);
+		border-radius: 20px;
+		overflow: hidden;
+		z-index: 1;
+	}
 
+	/* Service Card Blobs */
+	.service-blobs {
+		position: absolute;
+		top: -10px;
+		right: -10px;
+		z-index: 2;
+	}
 
-<style >
-  .service-card-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    max-height: 360px;
-    width: 100%;
-    max-width: 516px;
-    padding: 30px;
-    background: var(--white);
-    border-radius: 20px;
-    overflow: hidden;
-    z-index: 1;
-  }
+	.service-blob1 {
+		position: absolute;
+		top: -15px;
+		right: -15px;
+		z-index: 3;
+	}
 
-  /* Service Card Blobs */
-  .service-blobs {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    z-index: 2;
-  }
+	.service-blob2 {
+		position: absolute;
+		top: -5px;
+		right: -5px;
+		transform: scale(1.2);
+		z-index: 2;
+	}
 
-  .service-blob1 {
-    position: absolute;
-    top: -15px;
-    right: -15px;
-    z-index: 3;
-  }
+	/* Service Card Info */
+	.service-info {
+		position: relative;
+		z-index: 10;
+	}
 
-  .service-blob2 {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    transform: scale(1.2);
-    z-index: 2;
-  }
+	.service-info h4 {
+		margin-top: 15px;
+		z-index: 10;
+	}
 
-/* Service Card Info */
-  .service-info {
-  position: relative;
-  z-index: 10;
- }
+	.service-icon-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 90px;
+		width: 90px;
+		border-radius: 50px;
+		background: var(--primary-darker);
+	}
 
- .service-info h4 {
-   margin-top: 15px;
-   z-index: 10;
- }
+	.service-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+	}
+	.service-icon img {
+		height: 55px;
+		width: 55px;
+	}
 
- .service-info p {
-   z-index: 10;
- }
+	.service-read-more {
+		display: flex;
+		align-items: center;
+		padding-top: 10px;
+	}
 
- .service-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90px;
-    width: 90px;
-    border-radius: 50px;
-    background: var(--primary-darker);
-   
-  }
+	.service-read-more h6 {
+		color: var(--primary-darker);
+	}
 
-  .service-icon img {
-    height: 80px;
-  }
+	.service-circle {
+		display: flex;
+		align-items: center;
+		justify-content: start;
+		background-color: var(--primary-dark);
+		border-radius: 50px;
+		border: none;
+		width: 25px;
+		height: 25px;
+		margin-right: 8px;
+	}
 
- .service-read-more {
-  display: flex;
-  align-items: center;
- }
-
- .service-circle {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  background-color: var(--primary-darker);
-  border-radius: 50px;
-  border: none;
-  width: 25px;
-  height: 25px;
-  margin-right: 8px;
- }
-
- /* Service card paw prints */
-  .service-paws {
-    position: absolute;
-    bottom: 0;
-    right: 40px;
-    z-index: 2;
-  }
-  .service-paws img {
-    transform: rotate(-40deg);
-  }
-
-  @media (min-width: 824px) {
-    .service-card-container {
-      width: auto;
-      max-width: 360px;
-
-    }
-}
-
-
-
+	/* Service card paw prints */
+	.service-paws {
+		position: absolute;
+		bottom: -10px;
+		right: 20px;
+		z-index: 2;
+	}
+	.service-paws img {
+		transform: rotate(260deg);
+	}
 </style>

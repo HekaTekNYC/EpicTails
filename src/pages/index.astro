@@ -1,233 +1,207 @@
 ---
-
-// import Cards from "../components/BlogCards.astro";
-
-import Hero from "../components/Hero.astro";
-import About from "../components/About.astro";
-import Main from "../layouts/Main.astro";
-// import ServicesCards from "../components/ServicesCards.astro";
-// import ContactForm from "../components/ContactForm.astro";
-// import ContactInfo from "../components/ContactInfo.astro";
-// import WhyUs from "../components/WhyUs.astro";
-
-
-// import MeetOurTeam from "./meet-our-team.astro";
-const profilePicture = "https://i.imgur.com/JPGFE75.jpg";
-
-
-// Astro.glob
-// const blogs = await Astro.glob<{
-//   poster: string;
-//   title: string;
-//   subtitle: string;
-// }>("../pages/blogs/*.md");
-
-const servicesCardsData = [
-    {
-      icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-      iconAlt: "cat icon",
-      title: "Cat and Critter Care",
-      desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-    },
-    {
-      icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-      iconAlt: "cat icon",
-      title: "Cat and Critter Care",
-      desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-    },
-    {
-      icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-      iconAlt: "cat icon",
-      title: "Cat and Critter Care",
-      desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-    },
-    {
-      icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-      iconAlt: "cat icon",
-      title: "Cat and Critter Care",
-      desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-    },
-    {
-      icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-      iconAlt: "cat icon",
-      title: "Cat and Critter Care",
-      desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-    },
-    {
-      icon: "https://res.cloudinary.com/daecnx7ih/image/upload/v1720016516/pet-clock-1_jjatgy.svg",
-      iconAlt: "cat icon",
-      title: "Cat and Critter Care",
-      desc: "There are many variations of passages orem psum available but the majority have suffered alteration in some.",
-    },
-  ]
-
-  const contactInfoData = [
-  {
-    icon: "fa-solid fa-location-dot",
-    iconDesc: "locaion pin icon",
-    title: "Location",
-    desc: "888 Pacific St, Brooklyn, NY 11238",
-  },
-  {
-    icon: "fa-regular fa-clock",
-    iconDesc: "clock icon",
-    title: "Hours",
-    desc: "Mon - Fri 8:00am - 8:00pm",
-  },
-  {
-    icon: "fa-solid fa-phone-volume",
-    iconDesc: "telephone icon",
-    title: "Telephone",
-    desc: "917-666-4444",
-  },
-  {
-    icon: "fa-regular fa-envelope",
-    iconDesc: "email icon",
-    title: "Email",
-    desc: "info@epictails.com",
-  },
-];
+import Hero from '../components/Hero.astro'
+import About from '../components/About.astro'
+import Main from '../layouts/Main.astro'
+import HeroCard from '../components/HeroCard.astro'
+import { heroCardsData } from '../data/HeroCardsData'
+import ServicesCard from '../components/ServicesCard.astro'
+import Gallery from '../components/PhotoGallery.astro'
+import WhyUs from '../components/WhyUs.astro'
+import PricingCard from '../components/PricingCard.astro'
+import { servicesData } from '../data/ServicesData.ts'
+import { pricingData } from '../data/PricingData.ts'
 ---
 
 <Main title="Epic Tails">
-  <div class="flex flex-col text-blue-600">
-		<a href="/admin">CMS</a>
-		<a href="/admin/config.yml">CMS Config</a>
-		<!-- <a href="/blog/seed">Seed Post</a> -->
-	</div>
-  <Hero />
-  <About/>
+	<Hero />
+	<section id="hero-banner-section">
+		<div class="hero-swoop">
+			<img src="/icons/paw-prints-4.svg" alt="" />
+		</div>
+		<div class="hero-cards-container">
+			{
+				heroCardsData.map((card) => (
+					<HeroCard
+						id={card.id}
+						icon={card.icon}
+						iconDesc={card.iconDesc}
+						title={card.title}
+						blurb={card.blurb}
+					/>
+				))
+			}
+		</div>
+	</section>
 
+	<About />
+	<Gallery />
+	<section id="services-section">
+		<div class="services-container">
+			<div class="services-header">
+				<h3>Services</h3>
+				<h2>Our <span class="focus-font">Pet Care</span> Services</h2>
+				<div class="header-underline"></div>
+			</div>
+			<div class="services-cards-container">
+				{
+					servicesData.map((card) => (
+						<div class="services-cards">
+							<ServicesCard {...card} />
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+	<WhyUs />
+	<section id="pricing-section">
+		<div class="pricing-container">
+			<div class="pricing-header">
+				<h3>Pricing</h3>
+				<h2>Our <span class="focus-font">Pricing</span> Packages</h2>
+				<div class="header-underline"></div>
+			</div>
+			<div class="pricing-card-container">
+				{
+					pricingData.map((card) => (
+						<div class="pricing-cards">
+							<PricingCard {...card} />
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
 
-  <!-- <section id="services-section">
-    <ServicesCards servicesCards={servicesCardsData} />
-  </section>
-  <WhyUs /> -->
-  <!-- <section id="meet-team">
-    <MeetTeam teamMember={teamMembersData} />
-  </section> -->
+	<style>
+		/* Hero Banner */
+		.hero-cards-container {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 20px;
+			width: 100%;
+			max-width: 1300px;
+		}
 
-  <section id="contact-section">
-    <div class="contact-container">
-      <div class="contact-left"></div>
-      <div class="contact-right">
-        <h2>Get In Touch!</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi ipsum consectetur aperiam enim perspiciatis aut placeat aliquam sapiente minus laboriosam!</p>
-      </div>
-    </div>
-  </section>
+		.hero-swoop {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+		}
 
-  <!-- <section id="gallery-section">
-    <h2>Photo Gallery</h2>
-    <!-- <Gallery images={images} /> -->
-  <!-- </section> --> 
+		.hero-swoop img {
+			width: 100%;
+		}
+		/* Services */
+		.services-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			max-width: 1300px;
+		}
 
-  <div class="blue-section">
-  <section id="services-section">
-    <!-- <ServicesCards servicesCards={servicesCardsData} /> -->
- 
-  </section>
-  <!-- <WhyUs /> -->
-  </div>
-  <section id="contact-section">
-    <div class="contact-container">
-      <div class="contact-left">
-        <!-- <ContactForm /> -->
-      </div>
-      <div class="contact-right">
-        <h2>Get In Touch!</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi ipsum consectetur aperiam enim perspiciatis aut placeat aliquam sapiente minus laboriosam!</p>
-        <!-- <ContactInfo contactInfo={contactInfoData} /> -->
-      </div>
-    </div>
-  </section>
+		.services-header {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			text-align: center;
+		}
 
+		.services-header h3 {
+		}
+
+		.services-header h2 {
+			/* color: var(--white); */
+			padding-bottom: 17px;
+		}
+		.services-cards-container {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 1.5rem;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+		}
+
+		.services-cards {
+			height: 100%;
+		}
+
+		/* Pricing Cards */
+
+		.pricing-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+			max-width: 1300px;
+		}
+		.pricing-header {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			text-align: center;
+		}
+		.pricing-card-container {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 1.5rem;
+			width: 100%;
+			height: 100%;
+		}
+
+		.pricing-header h2 {
+			padding-bottom: 17px;
+		}
+
+		/* Media Queries*/
+		@media (min-width: 768px) {
+			.hero-cards-container {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 20px;
+			}
+			.services-cards-container {
+				grid-template-columns: repeat(2, 1fr);
+			}
+			.pricing-card-container {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 3rem;
+			}
+		}
+
+		@media (min-width: 992px) {
+			.hero-cards-container {
+				gap: 2rem;
+				max-width: 800px;
+			}
+			.services-cards-container {
+				grid-template-columns: repeat(3, 1fr);
+				gap: 2rem;
+			}
+		}
+		@media (min-width: 1100px) {
+			.pricing-card-container {
+				grid-template-columns: repeat(4, 1fr);
+				gap: 1.5rem;
+			}
+		}
+
+		@media (min-width: 1300px) {
+			.hero-cards-container {
+				gap: 5rem;
+				max-width: 900px;
+			}
+
+			.pricing-card-container {
+				gap: 3rem;
+			}
+		}
+	</style>
 </Main>
-
-<style>
-  
-  .contact-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-  }
-
-  .contact-left {
-    order: 2;
-    width: 100%;
-  }
-
-  .contact-right {
-    order: 1;
-    width: 100%;
-  }
-
-  .contact-right p {
-    margin-bottom: 40px;
-  }
-
-  @media (min-width: 1024px) {
-    .contact-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      height: auto;
-    }
-
-    .contact-left {
-      order: 1;
-      width: 50%;
-    }
-
-  }
-  .contact-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-  }
-
-  .contact-left {
-    order: 2;
-    width: 100%;
-  }
-
-  .contact-right {
-    order: 1;
-    width: 100%;
-  }
-
-  .contact-right p {
-    margin-bottom: 40px;
-  }
-
-  @media (min-width: 1024px) {
-    .contact-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      height: auto;
-    }
-
-    .contact-left {
-      order: 1;
-      width: 50%;
-   
-    }
-
-
-    .contact-right {
-      order: 2;
-      width: 50%;
-      margin-left: 40px;
-    }
-  }
-
-</style>
-
-
-
-

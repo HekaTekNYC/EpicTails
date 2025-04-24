@@ -1,0 +1,96 @@
+---
+import type { PricingData } from '../data/PricingData'
+import Button from './Button.astro'
+
+const props = Astro.props as PricingData
+---
+
+<div class="pricing-card">
+	<div class="pricing-card-container">
+		<div class="pricing-header">
+			<h4>{props.title}</h4>
+			<div class="price-range">{props.priceRange}</div>
+		</div>
+		<ul class="feature-points">
+			{
+				props.features.map((feature) => (
+					<li>
+						<img src="/icons/greencheck.svg" alt="green check mark" class="pricing-check" />
+						<div class="feature-point">{feature}</div>
+					</li>
+				))
+			}
+		</ul>
+		<div class="pricing-btn">
+			<Button href="#" size="lg" style="secondary">
+				{props.buttonLabel}
+			</Button>
+		</div>
+	</div>
+</div>
+
+<style>
+	.pricing-card {
+		display: flex;
+		padding: 25px;
+		width: 100%;
+		height: 100%;
+		max-width: 500px;
+		border-radius: 20px;
+		box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	}
+
+	.pricing-card-container {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		justify-content: space-between;
+		width: 100%;
+	}
+	.pricing-header {
+		width: 100%;
+	}
+
+	.pricing-card-container h4 {
+		padding-bottom: 10px;
+		font-size: 1.5rem;
+		text-align: center;
+	}
+
+	.price-range {
+		background-color: var(--primary-darkest);
+		font-size: 1.2rem;
+		font-weight: 600;
+		padding: 15px 25px;
+		margin: 10px 0 10px -37px;
+		border-radius: 5px;
+		color: var(--white);
+	}
+
+	.feature-points {
+		padding-bottom: 10px;
+	}
+
+	.pricing-check {
+		height: 23px;
+		width: 23px;
+	}
+
+	.feature-points li {
+		display: flex;
+		align-items: center;
+		justify-content: start;
+		padding: 10px 0;
+	}
+
+	.feature-point {
+		padding-left: 10px;
+	}
+
+	.pricing-btn {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		text-align: center;
+	}
+</style>
