@@ -213,10 +213,10 @@ p {
 }
 
 #services-section {
-	background-color: var(--primary-lightest);
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	background-color: var(--primary-lightest);
 	padding: 60px 30px;
 	width: 100%;
 }
