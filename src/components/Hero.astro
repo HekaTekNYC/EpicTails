@@ -98,38 +98,48 @@ import Button from './Button.astro'
 	.hero-left-container {
 		position: relative;
 		height: 100%;
-		width: min-content;
+		width: 100%;
 	}
 	.hero-left-blobs {
 		position: relative;
 		height: 300px;
 		width: 100%;
-		aspect: 1/1;
 		z-index: 1;
 	}
 
 	.blob-left {
 		position: absolute;
-		bottom: -20px;
-		right: -160px;
-		width: 285px;
-		transform: rotate(130deg);
+		bottom: 0px;
+		right: -60px;
+		height: 100%;
+		width: auto;
+		transform: rotate(240deg);
 		z-index: 6;
+	}
+
+	.blob-left img {
+		height: 250px;
+		width: auto;
 	}
 	.blob-left-2 {
 		position: absolute;
-		top: -200px;
-		left: -390px;
+		top: 0px;
+		left: -10px;
 		height: 100%;
-		width: 450px;
-		transform: scaleX(-1) rotate(40deg);
+		width: auto;
+		transform: scaleX(-1) rotate(-20deg);
 		z-index: -1;
+	}
+
+	.blob-left-2 img {
+		height: 300px;
+		width: auto;
 	}
 	.hero-paws {
 		position: absolute;
 		height: 140px;
 		top: -75px;
-		left: -150px;
+		left: 0;
 		transform: rotate(-100deg);
 		z-index: 3;
 	}
@@ -139,7 +149,7 @@ import Button from './Button.astro'
 		height: 220px;
 		width: auto;
 		bottom: -5px;
-		left: -150px;
+		left: 0;
 		z-index: 5;
 	}
 
@@ -148,7 +158,7 @@ import Button from './Button.astro'
 		height: 320px;
 		width: auto;
 		bottom: 0;
-		right: -150px;
+		right: 0;
 		z-index: 4;
 	}
 
