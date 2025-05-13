@@ -6,21 +6,6 @@ import Button from './Button.astro'
 	<div class="hero-container">
 		<div class="hero-left">
 			<div class="hero-left-container">
-				<div class="hero-left-blobs">
-					<img
-						src="/icons/paw-prints-hero.svg"
-						alt="celeste blue colored paw prints"
-						class="hero-paws"
-						height="100"
-						width="76.3"
-					/>
-					<div class="blob-left">
-						<img src="/images/hero-blob-1.svg" alt="pastel pink blob" height="100" width="97" />
-					</div>
-					<div class="blob-left-2">
-						<img src="/images/hero-blob-2.svg" alt="light blue blob" height="100" width="108" />
-					</div>
-				</div>
 				<picture>
 					<source srcset="/images/russian-blue.webp" type="image/webp" />
 					<source srcset="/images/russian-blue.png" type="image/png" />
@@ -43,6 +28,22 @@ import Button from './Button.astro'
 						width="315"
 					/>
 				</picture>
+
+				<div class="hero-left-blobs">
+					<img
+						src="/icons/paw-prints-hero.svg"
+						alt="celeste blue colored paw prints"
+						class="hero-paws"
+						height="100"
+						width="76.3"
+					/>
+					<div class="blob-left">
+						<img src="/images/hero-blob-1.svg" alt="pastel pink blob" height="100" width="97" />
+					</div>
+					<div class="blob-left-2">
+						<img src="/images/hero-blob-2.svg" alt="light blue blob" height="142" width="165" />
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="hero-center">
@@ -89,7 +90,7 @@ import Button from './Button.astro'
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		margin-bottom: 25px;
+		margin-bottom: 40px;
 		width: 100%;
 		z-index: 2;
 		order: 1;
@@ -97,50 +98,55 @@ import Button from './Button.astro'
 
 	.hero-left-container {
 		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		height: 100%;
-		width: 100%;
+		width: fit-content;
 	}
+
 	.hero-left-blobs {
 		position: relative;
 		height: 300px;
-		width: 100%;
+		width: 300px;
 		z-index: 1;
 	}
 
 	.blob-left {
 		position: absolute;
-		bottom: 0px;
-		right: -60px;
+		bottom: -55px;
+		right: 15px;
 		height: 100%;
 		width: auto;
-		transform: rotate(240deg);
+		transform: rotate(-25deg);
 		z-index: 6;
 	}
 
 	.blob-left img {
-		height: 250px;
+		height: 285px;
 		width: auto;
 	}
 	.blob-left-2 {
 		position: absolute;
 		top: 0px;
-		left: -10px;
+		left: -45px;
 		height: 100%;
 		width: auto;
-		transform: scaleX(-1) rotate(-20deg);
+		transform: scaleX(-1) rotate(130deg);
 		z-index: -1;
 	}
 
 	.blob-left-2 img {
-		height: 300px;
+		height: 325px;
 		width: auto;
 	}
+
 	.hero-paws {
 		position: absolute;
 		height: 140px;
-		top: -75px;
-		left: 0;
-		transform: rotate(-100deg);
+		top: -85px;
+		left: 40px;
+		transform: rotate(-95deg);
 		z-index: 3;
 	}
 
