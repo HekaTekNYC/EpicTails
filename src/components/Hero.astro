@@ -12,26 +12,37 @@ import Button from './Button.astro'
 						alt="celeste blue colored paw prints"
 						class="hero-paws"
 						height="100"
+						width="76.3"
 					/>
 					<div class="blob-left">
-						<img src="/images/hero-blob-1.svg" alt="pastel pink blob" />
+						<img src="/images/hero-blob-1.svg" alt="pastel pink blob" height="100" width="97" />
 					</div>
 					<div class="blob-left-2">
-						<img src="/images/hero-blob-2.svg" alt="light blue blob" />
+						<img src="/images/hero-blob-2.svg" alt="light blue blob" height="100" width="108" />
 					</div>
 				</div>
-				<img
-					src="/images/russian-blue.png"
-					alt="russian blue cat with green eyes sitting"
-					height="300"
-					class="hero-cat"
-				/>
-				<img
-					src="/images/golden-lab.webp"
-					alt="golden labrador retriever sitting looking happy"
-					height="400"
-					class="hero-lab"
-				/>
+				<picture>
+					<source srcset="/images/russian-blue.webp" type="image/webp" />
+					<source srcset="/images/russian-blue.png" type="image/png" />
+					<img
+						src="/images/russian-blue.png"
+						alt="russian blue cat with green eyes sitting"
+						class="hero-cat"
+						height="300"
+						width="180"
+					/>
+				</picture>
+				<picture>
+					<source srcset="/images/golden-lab.webp" type="image/webp" />
+					<source srcset="/images/golden-lab.png" type="image/png" />
+					<img
+						src="/images/golden-lab.png"
+						alt="golden labrador retriever sitting looking happy"
+						class="hero-lab"
+						height="400"
+						width="315"
+					/>
+				</picture>
 			</div>
 		</div>
 		<div class="hero-center">
@@ -126,6 +137,7 @@ import Button from './Button.astro'
 	.hero-cat {
 		position: absolute;
 		height: 220px;
+		width: auto;
 		bottom: -5px;
 		left: -150px;
 		z-index: 5;
@@ -134,6 +146,7 @@ import Button from './Button.astro'
 	.hero-lab {
 		position: absolute;
 		height: 320px;
+		width: auto;
 		bottom: 0;
 		right: -150px;
 		z-index: 4;
