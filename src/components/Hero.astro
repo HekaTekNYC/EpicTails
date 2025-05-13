@@ -82,7 +82,7 @@ import Button from './Button.astro'
 		display: grid;
 		grid-template-columns: 1fr;
 		align-items: center;
-		height: 100%;
+		width: 100%;
 		max-width: 1100px;
 	}
 
@@ -101,7 +101,7 @@ import Button from './Button.astro'
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 100%;
+		height: fit-content;
 		width: fit-content;
 	}
 
@@ -143,11 +143,16 @@ import Button from './Button.astro'
 
 	.hero-paws {
 		position: absolute;
-		height: 140px;
 		top: -85px;
 		left: 40px;
+		width: auto;
 		transform: rotate(-95deg);
 		z-index: 3;
+	}
+
+	.hero-paws img {
+		height: 140px;
+		width: auto;
 	}
 
 	.hero-cat {
@@ -202,21 +207,27 @@ import Button from './Button.astro'
 	}
 
 	@media (min-width: 768px) {
-		.blob-left {
-			width: 335px;
-			transform: rotate(120deg);
+		.hero-left {
+			margin-bottom: 60px;
 		}
+
+		.blob-left {
+			right: 20px;
+			transform: rotate(-20deg);
+		}
+		.blob-left img {
+			width: 330px;
+		}
+
 		.blob-left-2 {
-			top: -60px;
-			left: -420px;
-			width: 550px;
-			transform: scaleX(-1) rotate(220deg);
+			left: -100px;
+		}
+		.blob-left-2 img {
+			height: 370px;
 		}
 		.hero-paws {
-			height: 160px;
-			top: -20px;
-			left: -220px;
-			z-index: 7;
+			top: -100px;
+			left: 10px;
 		}
 	}
 

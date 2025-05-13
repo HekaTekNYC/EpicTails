@@ -174,7 +174,7 @@ p {
 	align-items: center;
 	padding: 80px 30px 60px;
 	width: 100%;
-	height: 100%;
+
 	overflow: hidden;
 }
 
@@ -224,7 +224,8 @@ p {
 /* Medium devices (md) - 768px and above */
 @media (min-width: 768px) {
 	#hero-section {
-		padding: 80px 40px 40px;
+		height: calc(100vh - 115px);
+		padding: 0 40px;
 	}
 	#about-section {
 		padding: 80px 30px 10px;
