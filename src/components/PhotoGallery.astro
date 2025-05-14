@@ -16,7 +16,7 @@ import { galleryImageData } from '../data/GalleryData.ts'
 					<div class="gallery-item">
 						<picture>
 							<source srcset={webp} type="image/webp" />
-							<img src={png} alt={alt || `Gallery image ${i + 1}`} loading="lazy" />
+							<img src={png} alt={alt || `Gallery image ${i + 1}`} decoding="async"/>
 						</picture>
 					</div>
 				))
