@@ -160,7 +160,7 @@ import Button from './Button.astro'
 		height: 220px;
 		width: auto;
 		bottom: -5px;
-		left: 0;
+		left: -5px;
 		z-index: 5;
 	}
 
@@ -168,8 +168,8 @@ import Button from './Button.astro'
 		position: absolute;
 		height: 320px;
 		width: auto;
-		bottom: 0;
-		right: 0;
+		bottom: -2px;
+		right: -4px;
 		z-index: 4;
 	}
 
@@ -205,8 +205,7 @@ import Button from './Button.astro'
 	.hero-points {
 		display: flex;
 	}
-
-	@media (min-width: 768px) {
+	@media (min-width: 768px) and (max-width: 819px) and (orientation: portrait) {
 		.hero-left {
 			margin-bottom: 60px;
 		}
@@ -231,7 +230,13 @@ import Button from './Button.astro'
 		}
 	}
 
-	@media (min-width: 992px) {
+	@media (min-width: 820px) and (max-width: 1023px) and (orientation: portrait) {
+		.hero-left {
+			margin-top: 80px;
+		}
+	}
+
+	/* @media (min-width: 992px) {
 		.hero-container {
 			display: grid;
 			grid-template-columns: 2fr 1fr;
@@ -261,6 +266,15 @@ import Button from './Button.astro'
 			top: -100px;
 			left: -150px;
 			transform: rotate(-90deg);
+		}
+	} */
+
+	@media (min-width: 1024px) and (max-width: 1080px) and (orientation: portrait) {
+		.hero-left {
+			padding-top: 40px;
+		}
+		.hero-header {
+			padding-top: 30px;
 		}
 	}
 

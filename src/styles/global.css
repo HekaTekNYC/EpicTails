@@ -174,7 +174,8 @@ p {
 	align-items: center;
 	padding: 80px 30px 60px;
 	width: 100%;
-
+	height: auto;
+	min-height: calc(100vh - 115px);
 	overflow: hidden;
 }
 
@@ -224,7 +225,6 @@ p {
 /* Medium devices (md) - 768px and above */
 @media (min-width: 768px) {
 	#hero-section {
-		height: calc(100vh - 115px);
 		padding: 0 40px;
 	}
 	#about-section {
@@ -238,6 +238,13 @@ p {
 	}
 	#pricing-section {
 		padding: 0 40px 80px;
+	}
+}
+
+@media (min-width: 820px) and (max-width: 1023px) and (orientation: portrait) {
+	#hero-section {
+		height: calc(70vh - 115px);
+		min-height: unset;
 	}
 }
 
@@ -258,6 +265,13 @@ p {
 
 	#pricing-section {
 		padding: 20px 60px 80px;
+	}
+}
+
+@media (min-width: 1024px) and (max-width: 1080px) and (orientation: portrait) {
+	#hero-section {
+		height: calc(73vh - 115px);
+		min-height: unset;
 	}
 }
 
