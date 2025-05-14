@@ -11,6 +11,8 @@ import Button from './Button.astro'
 					src="/images/dog-kisses_neo4lv.webp"
 					alt="Woman kissing her golden retriever"
 					width="420"
+					height="300"
+					decoding="async"
 				/>
 				<div class="yrs-exp-circle">
 					<p class="yrs-text">
@@ -18,12 +20,13 @@ import Button from './Button.astro'
 						Years of Experience
 					</p>
 				</div>
-				<img class="about-blob" src="./images/about-blob.svg" alt="blue blob shape" width="420/" />
+				<img class="about-blob" src="./images/about-blob.svg" alt="blue blob shape" width="420" />
 			</div>
 		</div>
 		<div class="about-right-side">
 			<h3>About Us</h3>
 			<h2>We Are the Best For Your <span class="focus-font">Pet Care</span> Services</h2>
+			<div class="header-underline"></div>
 			<p class="about-text">
 				At Epic Tales, we provide exceptional pet sitting services that ensure your pets are happy
 				and comfortable while you're away. Our trained sitters are passionate about animals and
@@ -31,16 +34,32 @@ import Button from './Button.astro'
 			</p>
 			<ul class="about-list">
 				<li>
-					<img src="icons/checkmark.svg" height="20px" />
+					<img
+						src="icons/checkmark.svg"
+						height="20px"
+						width="20px"
+						alt="checkmark"
+						decoding="async"
+					/>
 					<p>Customized Sitting Plans: Tailored to your pet's needs and routines.</p>
 				</li>
 				<li>
-					<img src="icons/checkmark.svg" height="20px" /><p>
-						Interactive Play: Engaging activities to keep pets entertained.
-					</p>
+					<img
+						src="icons/checkmark.svg"
+						height="20px"
+						width="20px"
+						alt="checkmark"
+						decoding="async"
+					/><p>Interactive Play: Engaging activities to keep pets entertained.</p>
 				</li>
 				<li>
-					<img src="icons/checkmark.svg" height="20px" /><p>
+					<img
+						src="icons/checkmark.svg"
+						height="20px"
+						width="20px"
+						alt="checkmark"
+						decoding="async"
+					/><p>
 						<span class="bold-li">Regular Updates:</span> Photos and updates to give you peace of mind.
 					</p>
 				</li>
@@ -142,8 +161,13 @@ import Button from './Button.astro'
 	.about-right-side {
 		display: flex;
 		flex-direction: column;
-		align-items: start;
+		align-items: flex-start;
 		height: 100%;
+	}
+
+	.about-right-side .header-underline {
+		margin-left: 0;
+		margin-right: auto;
 	}
 
 	.about-right-side p {

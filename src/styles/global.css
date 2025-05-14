@@ -37,6 +37,8 @@ html {
 	--accent-medium: #9ae2dc;
 	--accent-light: #cdf1ee;
 	--accent-lightest: #e6f8f7;
+
+	scroll-behavior: smooth;
 }
 
 body {
@@ -168,13 +170,24 @@ p {
 	white-space: nowrap;
 }
 
+#hero-section,
+#about-section,
+#gallery-section,
+#services-section,
+#why-us,
+#pricing-section,
+#contact-section {
+	scroll-margin-top: 85px;
+}
+
 #hero-section {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 80px 30px 60px;
 	width: 100%;
-	height: 100%;
+	height: auto;
+	min-height: calc(100vh - 115px);
 	overflow: hidden;
 }
 
@@ -184,6 +197,8 @@ p {
 	justify-content: center;
 	padding: 60px 30px 20px;
 	width: 100%;
+	min-height: calc(90vh - 115px);
+
 	overflow: hidden;
 }
 
@@ -204,6 +219,10 @@ p {
 	overflow: hidden;
 }
 
+#why-us {
+	min-height: calc(100vh - 115px);
+}
+
 #pricing-section {
 	display: flex;
 	align-items: center;
@@ -220,11 +239,19 @@ p {
 	padding: 60px 30px;
 	width: 100%;
 }
+#contact-section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--primary-lightest);
+	padding: 60px 30px;
+	width: 100%;
+}
 
 /* Medium devices (md) - 768px and above */
 @media (min-width: 768px) {
 	#hero-section {
-		padding: 80px 40px 40px;
+		padding: 0 40px;
 	}
 	#about-section {
 		padding: 80px 30px 10px;
@@ -237,6 +264,16 @@ p {
 	}
 	#pricing-section {
 		padding: 0 40px 80px;
+	}
+	#contact-section {
+		padding: 60px 40px;
+	}
+}
+
+@media (min-width: 820px) and (max-width: 1023px) and (orientation: portrait) {
+	#hero-section {
+		height: calc(70vh - 115px);
+		min-height: unset;
 	}
 }
 
@@ -258,6 +295,16 @@ p {
 	#pricing-section {
 		padding: 20px 60px 80px;
 	}
+	#contact-section {
+		padding: 60px;
+	}
+}
+
+@media (min-width: 1024px) and (max-width: 1080px) and (orientation: portrait) {
+	#hero-section {
+		height: calc(73vh - 115px);
+		min-height: unset;
+	}
 }
 
 @media (min-width: 1200px) {
@@ -277,5 +324,8 @@ p {
 
 	#pricing-section {
 		padding: 20px 80px 80px;
+	}
+	#contact-section {
+		padding: 60px 80px;
 	}
 }
