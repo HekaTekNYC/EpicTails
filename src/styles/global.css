@@ -37,6 +37,8 @@ html {
 	--accent-medium: #9ae2dc;
 	--accent-light: #cdf1ee;
 	--accent-lightest: #e6f8f7;
+
+	scroll-behavior: smooth;
 }
 
 body {
@@ -166,6 +168,15 @@ p {
 .focus-font-lt {
 	color: var(--secondary-medium);
 	white-space: nowrap;
+}
+
+#hero-section,
+#about-section,
+#gallery-section,
+#services-section,
+#pricing-section,
+#contact-section {
+	scroll-margin-top: 85px;
 }
 
 #hero-section {
