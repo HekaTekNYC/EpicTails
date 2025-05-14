@@ -26,7 +26,7 @@ const { id, icon, iconDesc, title, blurb } = Astro.props
 		<img src={icon} alt={iconDesc} />
 	</div>
 	<div class="hero-card-text">
-		<h4>{title}</h4>
+		<h3>{title}</h3>
 		<p>{blurb}</p>
 	</div>
 </div>
@@ -48,6 +48,7 @@ const { id, icon, iconDesc, title, blurb } = Astro.props
 		aspect-ratio: 1/1;
 		z-index: 1;
 	}
+
 	.hero-blob-inner,
 	.hero-blob-outer {
 		position: absolute;
