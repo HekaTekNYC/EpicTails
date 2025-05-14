@@ -39,7 +39,7 @@ import { pricingData } from '../data/PricingData.ts'
 	<section id="services-section">
 		<div class="services-container">
 			<div class="services-header">
-				<h3>Services</h3>
+				<p class="eyebrow-text">Services</p>
 				<h2>Our <span class="focus-font">Pet Care</span> Services</h2>
 				<div class="header-underline"></div>
 			</div>
@@ -58,7 +58,7 @@ import { pricingData } from '../data/PricingData.ts'
 	<section id="pricing-section">
 		<div class="pricing-container">
 			<div class="pricing-header">
-				<h3>Pricing</h3>
+				<p class="eyebrow-text">Pricing</p>
 				<h2>Our <span class="focus-font">Pricing</span> Packages</h2>
 				<div class="header-underline"></div>
 			</div>
@@ -76,14 +76,18 @@ import { pricingData } from '../data/PricingData.ts'
 	<section id="contact-section">
 		<div class="contact-container">
 			<div class="contact-header">
-				<h3>Contact</h3>
+				<p class="eyebrow-text">Contact</p>
 				<h2>Contact Us</h2>
 				<div class="header-underline"></div>
-				<p>Please drop us a line with any questions you may have. If the message is sent during business hours we will respond within 2 hours. Outside of normal business hours our response time is 24 hours.</p>
+				<p>
+					Please drop us a line with any questions you may have. If the message is sent during
+					business hours we will respond within 2 hours. Outside of normal business hours our
+					response time is 24 hours.
+				</p>
 			</div>
 			<Contact />
 		</div>
-</section>
+	</section>
 
 	<style>
 		/* Hero Banner */
@@ -163,7 +167,7 @@ import { pricingData } from '../data/PricingData.ts'
 			padding-bottom: 17px;
 		}
 
-				/* Contact Form */
+		/* Contact Form */
 
 		.contact-container {
 			display: flex;
@@ -174,17 +178,13 @@ import { pricingData } from '../data/PricingData.ts'
 			height: auto;
 			max-width: 1300px;
 		}
-	.contact-header {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		text-align:center;
-
-	}
-
-
-
+		.contact-header {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+		}
 
 		/* Media Queries*/
 		@media (min-width: 768px) {
@@ -200,8 +200,7 @@ import { pricingData } from '../data/PricingData.ts'
 				grid-template-columns: repeat(2, 1fr);
 				gap: 3rem;
 			}
-	
-			}
+		}
 
 		@media (min-width: 992px) {
 			.hero-cards-container {
