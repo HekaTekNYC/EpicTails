@@ -10,11 +10,12 @@ import Button from './Button.astro'
 					<source srcset="/images/russian-blue.webp" type="image/webp" />
 					<source srcset="/images/russian-blue.png" type="image/png" />
 					<img
-						src="/images/russian-blue.png"
+						src="/images/russian-blue.webp"
 						alt="russian blue cat with green eyes sitting"
 						class="hero-cat"
 						height="300"
-						width="180"
+						width="200"
+						decoding="async"
 					/>
 				</picture>
 				<picture>
@@ -24,8 +25,9 @@ import Button from './Button.astro'
 						src="/images/golden-lab.png"
 						alt="golden labrador retriever sitting looking happy"
 						class="hero-lab"
-						height="400"
-						width="315"
+						height="300"
+						width="480"
+						decoding="async"
 					/>
 				</picture>
 				<div class="hero-left-blobs">
@@ -37,10 +39,10 @@ import Button from './Button.astro'
 						width="76.3"
 					/>
 					<div class="blob-left">
-						<img src="/images/hero-blob-1.svg" alt="pastel pink blob" height="100" width="97" />
+						<img src="/images/hero-blob-1.svg" alt="pastel pink blob" height="100" width="97" decoding="async"/>
 					</div>
 					<div class="blob-left-2">
-						<img src="/images/hero-blob-2.svg" alt="light blue blob" height="142" width="165" />
+						<img src="/images/hero-blob-2.svg" alt="light blue blob" height="142" width="165" decoding="async" />
 					</div>
 				</div>
 			</div>
