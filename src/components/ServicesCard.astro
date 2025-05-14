@@ -24,7 +24,14 @@ const props = Astro.props as ServiceData
 		<p>{props.desc}</p>
 		<div class="service-read-more">
 			<div class="service-circle">
-				<i class="fa-solid fa-arrow-right" style="color: #ffffff;"></i>
+				<img
+					src="/icons/arrow.svg"
+					alt="White Right Arrow"
+					width="18"
+					height="16"
+					decoding="async"
+					loading="lazy"
+				/>
 			</div>
 			<h6>Read More</h6>
 		</div>
@@ -118,7 +125,7 @@ const props = Astro.props as ServiceData
 		display: flex;
 		align-items: center;
 		justify-content: start;
-		background-color: var(--primary-dark);
+		background-color: var(--primary-darker);
 		border-radius: 50px;
 		border: none;
 		width: 25px;
