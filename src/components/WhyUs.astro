@@ -6,11 +6,19 @@ import Button from './Button.astro'
 	<div class="why-us-container">
 		<div class="why-visual-wrap">
 			<img class="why-blob" src="./images/blob-1.svg" alt="pink background blob" />
-			<img class="why-img" src="/images/blob-2-hugging-dog.webp" alt="woman hugging dog" width="700" height="460" decoding="async"/>
+			<img
+				class="why-img"
+				src="/images/blob-2-hugging-dog.webp"
+				alt="woman hugging dog"
+				width="700"
+				height="460"
+				decoding="async"
+			/>
 		</div>
 		<div class="why-us-left">
 			<h3>Why Choose Us</h3>
 			<h2>We Take Care of<span class="focus-font"> Your Pets </span> and Keep Them Happy Time</h2>
+			<div class="header-underline"></div>
 			<p class="why-spacer">
 				At Epic Tails, we treat your pets like family. Our trusted sitters and flexible scheduling
 				options ensure your pets get the attention, love, and care they deserve—whether you're
@@ -96,6 +104,11 @@ import Button from './Button.astro'
 	.why-us-left {
 		max-width: 900px;
 		width: 100%;
+	}
+
+	.why-us-left .header-underline {
+		margin-left: 0;
+		margin-right: auto;
 	}
 
 	.why-spacer {
