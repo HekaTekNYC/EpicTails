@@ -28,11 +28,10 @@ import Button from './Button.astro'
 						width="315"
 					/>
 				</picture>
-
 				<div class="hero-left-blobs">
 					<img
 						src="/icons/paw-prints-hero.svg"
-						alt="celeste blue colored paw prints"
+						alt="four paw prints"
 						class="hero-paws"
 						height="100"
 						width="76.3"
@@ -58,21 +57,28 @@ import Button from './Button.astro'
 			</div>
 		</div>
 		<div class="hero-right">
+			<img
+				src="/images/dog.png"
+				alt="dog sitting looking happy"
+				height="400"
+				width="246"
+				class="hero-dog"
+			/>
 			<div class="hero-right-blobs">
 				<div class="blob-right">
-					<img src="/images/hero-blob-3.svg" alt="light blue blob" />
+					<img src="/images/hero-blob-3.svg" height="300" width="273" alt="light blue blob" />
 				</div>
 				<div class="blob-right-2">
-					<img src="/images/hero-blob-4.svg" alt="light blue blob" />
+					<img src="/images/hero-blob-4.svg" height="242" width="300" alt="light blue blob" />
 				</div>
 				<img
 					src="/icons/paw-prints-hero.svg"
 					alt="light grey colored paw prints"
 					class="hero-paws-right"
-					height="100"
+					height="90"
+					width="69"
 				/>
 			</div>
-			<img src="/images/dog.png" alt="dog sitting looking happy" height="400" class="hero-dog" />
 		</div>
 	</div>
 </section>
@@ -83,7 +89,7 @@ import Button from './Button.astro'
 		grid-template-columns: 1fr;
 		align-items: center;
 		width: 100%;
-		max-width: 1100px;
+		max-width: 1200px;
 	}
 
 	.hero-left {
@@ -143,16 +149,12 @@ import Button from './Button.astro'
 
 	.hero-paws {
 		position: absolute;
-		top: -85px;
+		top: -75px;
 		left: 40px;
+		height: 90px;
 		width: auto;
 		transform: rotate(-95deg);
 		z-index: 3;
-	}
-
-	.hero-paws img {
-		height: 140px;
-		width: auto;
 	}
 
 	.hero-cat {
@@ -235,40 +237,6 @@ import Button from './Button.astro'
 			margin-top: 80px;
 		}
 	}
-
-	/* @media (min-width: 992px) {
-		.hero-container {
-			display: grid;
-			grid-template-columns: 2fr 1fr;
-			gap: 2rem;
-		}
-
-		.hero-left {
-			order: 2;
-		}
-
-		.hero-center {
-			order: 1;
-		}
-		.hero-right {
-			display: none;
-		}
-
-		.blob-left {
-			width: 285px;
-		}
-		.blob-left-2 {
-			top: -60px;
-			left: -100px;
-		}
-		.hero-paws {
-			height: 160px;
-			top: -100px;
-			left: -150px;
-			transform: rotate(-90deg);
-		}
-	} */
-
 	@media (min-width: 1024px) and (max-width: 1080px) and (orientation: portrait) {
 		.hero-left {
 			padding-top: 40px;
@@ -294,125 +262,110 @@ import Button from './Button.astro'
 			margin: 0;
 		}
 
-		.blob-left {
-			top: 40px;
-			left: -140px;
-			width: 285px;
-			transform: rotate(-20deg);
+		.hero-header {
+			margin: 0;
 		}
+
+		.blob-left {
+			bottom: -55px;
+			left: 0px;
+			transform: rotate(-25deg);
+		}
+
+		.blob-left img {
+			height: 285px;
+		}
+
 		.blob-left-2 {
-			top: -250px;
-			left: -350px;
-			transform: scaleX(1) rotate(0deg);
+			top: -20px;
+			left: -40px;
+			transform: scaleX(1) rotate(80deg);
+		}
+
+		.blob-left-2 img {
+			height: 325px;
 		}
 
 		.hero-cat {
-			height: 220px;
-			bottom: -10px;
-			left: -220px;
+			left: -10px;
 		}
 
 		.hero-paws {
-			height: 160px;
-			top: -140px;
-			left: -160px;
+			top: -110px;
+			left: 0;
+			height: 110px;
 			transform: rotate(-90deg);
 		}
 
 		.hero-right {
 			position: relative;
 			display: flex;
+			align-items: center;
+			justify-content: center;
 			z-index: 2;
 		}
 
 		.hero-right-blobs {
 			position: relative;
 			height: 300px;
-			width: 100%;
-			aspect: 1/1;
+			width: 300px;
 			z-index: 1;
 		}
 
 		.blob-right {
 			position: absolute;
-			top: 30px;
-			right: 40px;
-			width: 270px;
+			top: 55px;
+			right: 5px;
+			width: auto;
+			transform: rotate(30deg);
 			z-index: 6;
-			transform: rotate(10deg);
+		}
+
+		.blob-right img {
+			height: 270px;
+			width: auto;
 		}
 
 		.blob-right-2 {
 			position: absolute;
-			top: -200px;
-			right: -300px;
-			width: 600px;
+			top: 0px;
+			right: -60px;
+			width: auto;
+			transform: rotate(300deg);
 			z-index: -1;
+		}
+
+		.blob-right-2 img {
+			height: 300px;
+			width: auto;
 		}
 		.hero-paws-right {
 			position: absolute;
-			height: 170px;
-			right: -45px;
-			bottom: -120px;
-			transform: scaleX(-1) rotate(-80deg);
+			height: 120px;
+			width: auto;
+			right: 5px;
+			bottom: -170px;
+			transform: scaleX(-1) rotate(-90deg);
 			z-index: 8;
 		}
 
 		.hero-dog {
 			position: absolute;
 			height: 350px;
+			width: auto;
 			bottom: -10px;
-			right: -10px;
+			right: 60px;
 			z-index: 4;
 		}
 	}
 
 	@media (min-width: 1200px) {
 		.hero-container {
-			padding: 120px 0;
+			grid-template-columns: 25% 50% 25%;
 		}
 
-		.blob-left {
-			left: -160px;
-			transform: rotate(-10deg);
-		}
-		.blob-left-2 {
-			top: -250px;
-			left: -450px;
-			width: 650px;
-		}
-
-		.hero-cat {
-			left: -220px;
-		}
-
-		.hero-lab {
-			height: 320px;
-			right: -110px;
-		}
-
-		.hero-paws {
-			left: -190px;
-		}
-
-		.blob-right {
-			position: absolute;
-			top: 50px;
-			right: -10px;
-			width: 300px;
-			z-index: 6;
-			transform: rotate(75deg);
-		}
-
-		.blob-right-2 {
-			right: -320px;
-			transform: rotate(10deg);
-		}
-		.hero-paws-right {
-			bottom: -140px;
-		}
-		.hero-dog {
-			right: -40px;
+		.hero-center {
+			padding: 0 40px;
 		}
 	}
 </style>
