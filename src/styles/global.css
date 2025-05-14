@@ -220,6 +220,14 @@ p {
 	padding: 60px 30px;
 	width: 100%;
 }
+#contact-section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--primary-lightest);
+	padding: 60px 30px;
+	width: 100%;
+}
 
 /* Medium devices (md) - 768px and above */
 @media (min-width: 768px) {
@@ -237,6 +245,9 @@ p {
 	}
 	#pricing-section {
 		padding: 0 40px 80px;
+	}
+	#contact-section {
+		padding: 60px 40px;
 	}
 }
 
@@ -258,6 +269,9 @@ p {
 	#pricing-section {
 		padding: 20px 60px 80px;
 	}
+	#contact-section {
+		padding: 60px;
+	}
 }
 
 @media (min-width: 1200px) {
@@ -277,5 +291,8 @@ p {
 
 	#pricing-section {
 		padding: 20px 80px 80px;
+	}
+	#contact-section {
+		padding: 60px 80px;
 	}
 }
