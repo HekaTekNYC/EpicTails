@@ -38,7 +38,7 @@ html {
 	--accent-light: #cdf1ee;
 	--accent-lightest: #e6f8f7;
 
-	scroll-behavior: smooth;
+	/* scroll-behavior: smooth; */
 }
 
 body {
@@ -51,7 +51,9 @@ body {
 	width: 100%;
 	color: var(--dark-gray);
 	background: var(--background);
-	overflow-x: hidden;
+	overflow-y: auto;
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE and Edge */
 }
 
 body::-webkit-scrollbar,
@@ -250,7 +252,7 @@ p {
 /* Medium devices (md) - 768px and above */
 @media (min-width: 768px) {
 	#hero-section {
-		padding: 0 40px;
+		padding: 80px 40px;
 	}
 	#about-section {
 		padding: 80px 30px 10px;
