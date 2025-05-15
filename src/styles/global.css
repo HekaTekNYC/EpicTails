@@ -38,7 +38,7 @@ html {
 	--accent-light: #cdf1ee;
 	--accent-lightest: #e6f8f7;
 
-	scroll-behavior: smooth;
+	/* scroll-behavior: smooth; */
 }
 
 body {
@@ -51,7 +51,9 @@ body {
 	width: 100%;
 	color: var(--dark-gray);
 	background: var(--background);
-	overflow-x: hidden;
+	overflow-y: auto;
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE and Edge */
 }
 
 body::-webkit-scrollbar,
@@ -107,16 +109,6 @@ h2 {
 
 h3 {
 	font-family: var(--bryant);
-	font-size: 1.2rem;
-	font-weight: 600;
-	line-height: 2rem;
-	text-transform: uppercase;
-	color: var(--primary-darker);
-	margin: 0;
-}
-
-h4 {
-	font-family: var(--bryant);
 	font-size: 1.375rem;
 	line-height: 1.2;
 	font-weight: 600;
@@ -124,7 +116,7 @@ h4 {
 	margin: 0;
 }
 
-h5 {
+h4 {
 	font-family: var(--bryant);
 	font-size: 1.2rem;
 	font-weight: 700;
@@ -132,8 +124,7 @@ h5 {
 	margin: 0;
 }
 
-/* mini subheaders */
-h6 {
+h5 {
 	font-family: var(--bryant);
 	font-size: 1.1rem;
 	font-weight: 600;
@@ -159,6 +150,16 @@ p {
 	font-weight: 400;
 	font-style: normal;
 	line-height: 1.5;
+}
+
+.eyebrow-text {
+	font-family: var(--bryant);
+	font-size: 1.2rem;
+	font-weight: 600;
+	line-height: 2rem;
+	text-transform: uppercase;
+	color: var(--primary-darker);
+	margin: 0;
 }
 
 .focus-font {
@@ -251,7 +252,7 @@ p {
 /* Medium devices (md) - 768px and above */
 @media (min-width: 768px) {
 	#hero-section {
-		padding: 0 40px;
+		padding: 80px 40px;
 	}
 	#about-section {
 		padding: 80px 30px 10px;
