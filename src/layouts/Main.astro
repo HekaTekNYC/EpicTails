@@ -13,29 +13,29 @@ const { title } = Astro.props
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-	
-		<!-- Adobe Typekit Font Optimization -->
-		<link rel="preconnect" href="https://use.typekit.net" crossorigin>
-		<link rel="preconnect" href="https://p.typekit.net" crossorigin>
-		<link 
-			rel="preload" 
-			href="https://use.typekit.net/ixi4ixd.css" 
-			as="style" 
-			onload="this.onload=null;this.rel='stylesheet'"
-		>
-		<noscript>
-			<link rel="stylesheet" href="https://use.typekit.net/ixi4ixd.css">
-		</noscript>
-	
-		<meta name="description" content="Epic Tails website" />
-		<title>{title}</title>
-	</head>
-	
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<meta name="viewport" content="width=device-width" />
+	<meta name="generator" content={Astro.generator} />
+
+	<!-- Adobe Typekit Font Optimization -->
+	<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+	<link rel="preconnect" href="https://p.typekit.net" crossorigin>
+	<link 
+		rel="preload" 
+		href="https://use.typekit.net/ixi4ixd.css" 
+		as="style" 
+		onload="this.onload=null;this.rel='stylesheet'"
+	>
+	<noscript>
+		<link rel="stylesheet" href="https://use.typekit.net/ixi4ixd.css">
+	</noscript>
+
+	<meta name="description" content="Epic Tails website" />
+	<title>{title}</title>
+</head>
+
 	<body>
 		<main>
 			<TopBanner />
