@@ -20,7 +20,7 @@ const props = Astro.props as ServiceData
 				<img src={props.icon} alt={props.iconAlt} height="50" />
 			</div>
 		</div>
-		<h4>{props.title}</h4>
+		<h3>{props.title}</h3>
 		<p>{props.desc}</p>
 		<div class="service-read-more">
 			<div class="service-circle">
@@ -33,7 +33,7 @@ const props = Astro.props as ServiceData
 					loading="lazy"
 				/>
 			</div>
-			<h6>Read More</h6>
+			<h4>Read More</h4>
 		</div>
 	</div>
 	<div class="service-paws">
@@ -85,7 +85,7 @@ const props = Astro.props as ServiceData
 		z-index: 10;
 	}
 
-	.service-info h4 {
+	.service-info h3 {
 		margin-top: 15px;
 		z-index: 10;
 	}
@@ -117,7 +117,8 @@ const props = Astro.props as ServiceData
 		padding-top: 10px;
 	}
 
-	.service-read-more h6 {
+	.service-read-more h4 {
+		font-size: 1.1rem;
 		color: var(--primary-darker);
 	}
 

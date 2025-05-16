@@ -39,17 +39,29 @@ import Button from './Button.astro'
 						width="76.3"
 					/>
 					<div class="blob-left">
-						<img src="/images/hero-blob-1.svg" alt="pastel pink blob" height="100" width="97" decoding="async"/>
+						<img
+							src="/images/hero-blob-1.svg"
+							alt="pastel pink blob"
+							height="100"
+							width="97"
+							decoding="async"
+						/>
 					</div>
 					<div class="blob-left-2">
-						<img src="/images/hero-blob-2.svg" alt="light blue blob" height="142" width="165" decoding="async" />
+						<img
+							src="/images/hero-blob-2.svg"
+							alt="light blue blob"
+							height="142"
+							width="165"
+							decoding="async"
+						/>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="hero-center">
 			<div class="hero-header">
-				<h3>Pet Sitting & Dog Walking</h3>
+				<p class="eyebrow-text">Pet Sitting & Dog Walking</p>
 				<h1>Caring for <span class="focus-font">Your Pets</span> Like They're Our Own</h1>
 				<p class="hero-p">
 					Providing compassionate and attentive pet sitting services that prioritize your pet's
@@ -59,6 +71,9 @@ import Button from './Button.astro'
 			</div>
 		</div>
 		<div class="hero-right">
+			<picture>
+				<source srcset="/images/dog.webp" type="image/webp" />
+				<source srcset="/images/dog.png" type="image/png" />
 			<img
 				src="/images/dog.png"
 				alt="dog sitting looking happy"
@@ -66,6 +81,7 @@ import Button from './Button.astro'
 				width="246"
 				class="hero-dog"
 			/>
+		</picture>
 			<div class="hero-right-blobs">
 				<div class="blob-right">
 					<img src="/images/hero-blob-3.svg" height="300" width="273" alt="light blue blob" />
@@ -74,11 +90,11 @@ import Button from './Button.astro'
 					<img src="/images/hero-blob-4.svg" height="242" width="300" alt="light blue blob" />
 				</div>
 				<img
-					src="/icons/paw-prints-hero.svg"
+					src="/icons/paw-prints-8.svg"
 					alt="light grey colored paw prints"
 					class="hero-paws-right"
-					height="90"
-					width="69"
+					height="200"
+					width="200"
 				/>
 			</div>
 		</div>
@@ -343,12 +359,12 @@ import Button from './Button.astro'
 		}
 		.hero-paws-right {
 			position: absolute;
-			height: 120px;
+			height: 300px;
 			width: auto;
-			right: 5px;
-			bottom: -170px;
-			transform: scaleX(-1) rotate(-90deg);
-			z-index: 8;
+			right: -140px;
+			bottom: -190px;
+			transform: scaleX(-1) rotate(-67deg);
+			z-index: -2;
 		}
 
 		.hero-dog {
